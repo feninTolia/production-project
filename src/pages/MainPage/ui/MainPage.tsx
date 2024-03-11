@@ -1,5 +1,5 @@
+import { useTheme } from 'app/providers/ThemeProvider';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../../theme/useTheme';
 
 const MainPage = () => {
   const { toggleTheme } = useTheme();

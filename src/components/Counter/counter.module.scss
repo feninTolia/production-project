@@ -1,0 +1,16 @@
+h1 {
+  color: red;
+}
+
+.btn {
+  border-radius: 1em;
+  background-color: darkslategrey;
+  color: wheat;
+  padding: 1em 2em;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}

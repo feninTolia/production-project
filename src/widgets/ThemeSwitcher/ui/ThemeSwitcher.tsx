@@ -18,7 +18,7 @@ export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className }) => {
       className={classNames(cls.ThemeSwitcher, {}, [className])}
       theme={ButtonTheme.CLEAR}
     >
-      {theme === Theme.DARK ? <ThemeLightSvg /> : <ThemeDarkSvg />}
+      {theme === Theme.DARK ? <ThemeDarkSvg /> : <ThemeLightSvg />}
     </Button>
   );
 };

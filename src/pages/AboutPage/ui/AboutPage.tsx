@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-type Props = {};
-
-const AboutPage = (props: Props) => {
+const AboutPage = () => {
+  const { t } = useTranslation('about');
   return (
     <div>
-      <h1>About Page</h1>
+      <h1>{t('About page')}</h1>
     </div>
   );
 };

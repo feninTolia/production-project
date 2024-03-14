@@ -6,12 +6,15 @@
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
-    "build:dev": "webpack  --env mode=development"
+    "build:dev": "webpack  --env mode=development",
+    "lint:scss": "npx stylelint '**/*.scss'",
+    "lint:scss:fix": "npx stylelint '**/*.scss' --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@svgr/webpack": "^6.2.1",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
@@ -23,17 +26,19 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "react-refresh": "^0.12.0",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^14.5.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.2",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
-    "react-refresh": "^0.12.0"
+    "webpack-dev-server": "^4.7.2"
   },
   "dependencies": {
     "i18next": "^21.6.11",

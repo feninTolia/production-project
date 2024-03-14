@@ -1,10 +1,10 @@
 import webpack from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import {
-  IBuildOptions,
   IBuildPaths,
   BuildMode,
   IBuildEnv,
+  IBuildOptions,
 } from './config/build/types';
 import path from 'path';
 

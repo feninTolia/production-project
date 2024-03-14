@@ -1,0 +1,11 @@
+.PageError {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #00d720;
+  background: #0d0789;
+}

@@ -1,4 +1,4 @@
-import { classNames } from '.';
+import { classNames } from 'shared/lib/classNames';
 
 describe('classNames', () => {
   it('should return root class', () => {
@@ -8,6 +8,11 @@ describe('classNames', () => {
   it('should return root class with additional', () => {
     const expected = 'rootClass class1 class2';
     expect(classNames('rootClass', {}, ['class1 class2'])).toBe(expected);
+  });
+
+  it('should return root class without additional undefined', () => {
+    const expected = 'rootClass';
+    expect(classNames('rootClass', {}, [undefined])).toBe(expected);
   });
 
   it('should return root class with additional and mods', () => {

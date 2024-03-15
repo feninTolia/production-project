@@ -1,11 +1,11 @@
 {
-    "css.validate": false,
-	"less.validate": false,
-	"scss.validate": false,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
 
-	// "editor.formatOnSave": false,
-	"editor.codeActionsOnSave": {
-		"source.fixAll.stylelint": true
-	},
-	"files.autoSaveDelay": 500,
+  // "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  },
+  "files.autoSaveDelay": 500
 }

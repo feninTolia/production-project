@@ -19,6 +19,7 @@
       }
     ]
   },
+  "include": ["./config/jest/jest-setup.ts", "src/**/*"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

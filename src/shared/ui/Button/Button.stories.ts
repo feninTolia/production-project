@@ -3,7 +3,6 @@ import { fn } from '@storybook/test';
 import { Button, ButtonTheme } from './Button';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import 'app/styles/index.scss';
 
 const meta: Meta<typeof Button> = {
   title: 'shared/Button',

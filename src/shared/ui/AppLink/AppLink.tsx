@@ -18,12 +18,14 @@ export const AppLink: FC<IAppLinkProps> = (props) => {
     className,
     children,
     theme = AppLinkTheme.PRIMARY,
+    to,
     ...linkProps
   } = props;
 
   return (
     <Link
       {...linkProps}
+      to={to}
       className={classNames('', {}, [className, cls[theme]])}
     >
       {children}

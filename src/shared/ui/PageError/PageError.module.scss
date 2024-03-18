@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: #00d720;
-  background: #0d0789;
+
+  // color: #00d720;
+  // background: #0d0789;
+
+  color: var(--primary-color);
+  background: var(--bg-color);
 }

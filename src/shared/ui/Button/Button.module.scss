@@ -18,3 +18,45 @@
   background: none;
   border: 1px solid var(--primary-color);
 }
+
+.backgroundInverted {
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+.background {
+  color: var(--inverted-primary-color);
+  background-color: var(--inverted-bg-color);
+}
+
+.squared {
+  padding: 0;
+  border-radius: 0;
+
+  &.size_m {
+    width: calc(var(--font-line-m) * 1.3);
+    height: calc(var(--font-line-m) * 1.3);
+  }
+
+  &.size_l {
+    width: calc(var(--font-line-l) * 1.3);
+    height: calc(var(--font-line-l) * 1.3);
+  }
+
+  &.size_xl {
+    width: calc(var(--font-line-xl) * 1.3);
+    height: calc(var(--font-line-xl) * 1.3);
+  }
+}
+
+.size_m {
+  font: var(--font-m);
+}
+
+.size_l {
+  font: var(--font-l);
+}
+
+.size_xl {
+  font: var(--font-xl);
+}

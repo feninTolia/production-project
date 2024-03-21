@@ -6,12 +6,21 @@
   border-radius: 20px;
   outline: none;
   transition: all 150ms;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
-.clear {
+.clear,
+.clearInverted {
   padding: 0;
   background: none;
   border: none;
+}
+
+.clearInverted {
+  color: var(--inverted-primary-color);
 }
 
 .outlined {

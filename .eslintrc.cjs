@@ -21,7 +21,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'react-hooks'],
   rules: {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
@@ -36,5 +36,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'warn',
     'react/display-name': 'off',
     '@typescript-eslint/naming-convention': 'warn',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
   },
 };

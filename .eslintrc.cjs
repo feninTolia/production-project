@@ -33,7 +33,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': 'off',
     'space-before-function-paren': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/naming-convention': 'warn',
     '@typescript-eslint/strict-boolean-expressions': 'off',

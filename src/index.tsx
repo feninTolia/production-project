@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+import { StoreProvider } from 'app/providers/StoreProvider';
 import 'shared/config/i18n/i18n';
 import 'app/styles/index.scss';
 
@@ -13,7 +14,9 @@ render(
     <BrowserRouter>
       <ErrorBoundary>
         <ThemeProvider>
-          <App />
+          <StoreProvider>
+            <App />
+          </StoreProvider>
         </ThemeProvider>
       </ErrorBoundary>
     </BrowserRouter>

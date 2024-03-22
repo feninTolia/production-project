@@ -1,6 +1,5 @@
-import { useTheme } from 'app/providers/ThemeProvider';
+// import { useTheme } from 'app/providers/ThemeProvider';
 import { createPortal } from 'react-dom';
-import { classNames } from 'shared/lib/classNames';
 
 interface IPortalProps {
   children: React.ReactNode;
@@ -8,11 +7,6 @@ interface IPortalProps {
 }
 
 export const Portal = (props: IPortalProps) => {
-  const { theme } = useTheme();
-
   const { children, element = document.body } = props;
-  return createPortal(
-    <div className={classNames('app', {}, [theme])}>{children}</div>,
-    element
-  );
+  return createPortal(<div>{children}</div>, element);
 };

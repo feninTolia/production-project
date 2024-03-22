@@ -4,12 +4,12 @@
 @import 'themes/light';
 
 body {
-  min-height: 100vh;
   font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .app {
-  color: var(--primary-color);
+  min-height: 100vh;
   background-color: var(--bg-color);
 }
 

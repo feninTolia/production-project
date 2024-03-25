@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Input } from './Input';
+import { LoginForm } from './LoginForm';
 
-const meta: Meta<typeof Input> = {
-  title: 'shared/Input',
-  component: Input,
+const meta: Meta<typeof LoginForm> = {
+  title: 'features/LoginForm',
+  component: LoginForm,
   tags: ['autodocs'],
   argTypes: {},
-  args: { placeholder: 'Placeholder' },
+  args: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof LoginForm>;
 
 export const Light: Story = {
   args: {},

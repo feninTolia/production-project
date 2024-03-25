@@ -5,7 +5,12 @@ module.exports = {
   },
   extends: ['standard-with-typescript', 'plugin:react/recommended'],
 
-  ignorePatterns: ['.eslintrc.cjs', 'config', 'webpack.config.ts'],
+  ignorePatterns: [
+    '.eslintrc.cjs',
+    'config',
+    'webpack.config.ts',
+    'json-server',
+  ],
   overrides: [
     {
       env: {

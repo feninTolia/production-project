@@ -1,9 +1,9 @@
 import { FC, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import cls from './Navbar.module.scss';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
 
 interface INavbarProps {
   className?: string;
@@ -26,12 +26,7 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
       >
         {t('Login')}
       </Button>
-      <Modal isOpen={isAuthModal} onClose={onToggleAuthModal}>
-        Lorem ipsum dolor sit consectetur, provident e libero quia o. Lorem
-        ipsum dolor sit consectetur, provident e libero quia o. Lorem ipsum
-        dolor sit consectetur, provident e libero quia o. Lorem ipsum dolor sit
-        consectetur, provident e libero quia o.
-      </Modal>
+      <LoginModal isOpen={isAuthModal} onClose={onToggleAuthModal} />
     </div>
   );
 };

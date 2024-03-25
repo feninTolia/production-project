@@ -1,0 +1,45 @@
+.inputWrapper {
+  display: flex;
+}
+
+.input {
+  width: 100%;
+  color: transparent;
+  text-shadow: 0 0 0 var(--primary-color);
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.placeholder {
+  margin-right: 5px;
+}
+
+.trolleyWrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.trolley {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 9px;
+  height: 3px;
+  background-color: var(--primary-color);
+  animation: blink 700ms forwards infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

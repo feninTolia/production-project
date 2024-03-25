@@ -1,6 +1,5 @@
 import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -8,15 +7,17 @@ interface IModalProps {
   className?: string;
   isOpen: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 150;
 
 export const Modal: FC<IModalProps> = (props) => {
-  const { className, children, isOpen, onClose } = props;
+  const { className, children, isOpen, onClose, lazy } = props;
+
+  // const [isMounted, setIsMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const { t } = useTranslation();
 
   const handleClose = useCallback(() => {
     if (onClose != null) {
@@ -43,6 +44,12 @@ export const Modal: FC<IModalProps> = (props) => {
     [handleClose]
   );
 
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     setIsMounted(true);
+  //   }
+  // }, [isOpen]);
+
   useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onEscapeClick);
@@ -56,6 +63,11 @@ export const Modal: FC<IModalProps> = (props) => {
     };
   }, [isOpen, onEscapeClick]);
 
+  // if (lazy && !isMounted) {
+  if (lazy && !isOpen) {
+    return null;
+  }
+
   return (
     <Portal>
       <div
@@ -67,7 +79,6 @@ export const Modal: FC<IModalProps> = (props) => {
       >
         <div className={cls.overlay} onClick={handleClose}>
           <div className={cls.content} onClick={onContentClick}>
-            {t('Modal')}
             {children}
           </div>
         </div>

@@ -6,5 +6,5 @@
   ],
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": [{ "name": "typicode" }],
-  "users": [{ "id": 1, "password": "json-server", "username": "typicode" }]
+  "users": [{ "id": 1, "password": "123", "username": "admin" }]
 }

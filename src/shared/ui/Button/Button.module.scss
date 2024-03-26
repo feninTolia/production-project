@@ -6,10 +6,6 @@
   border-radius: 20px;
   outline: none;
   transition: all 150ms;
-
-  &:hover {
-    opacity: 0.9;
-  }
 }
 
 .clear,
@@ -68,4 +64,9 @@
 
 .size_xl {
   font: var(--font-xl);
+}
+
+.disabled {
+  cursor: auto;
+  opacity: 0.5;
 }

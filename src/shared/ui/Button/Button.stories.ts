@@ -102,3 +102,13 @@ export const BackgroundSquaredXL: Story = {
     squared: true,
   },
 };
+
+export const BackgroundSquaredDisabledXL: Story = {
+  args: {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND,
+    size: ButtonSize.XL,
+    squared: true,
+    disabled: true,
+  },
+};

@@ -40,7 +40,6 @@ export const Input: FC<IInputProps> = memo((props: IInputProps) => {
     if (autoFocus) {
       setIsFocused(true);
       ref.current?.focus();
-      console.log('dd');
     }
   }, [autoFocus]);
 

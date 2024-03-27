@@ -1,3 +1,7 @@
 export { createReduxStore } from './config/store';
 export { StoreProvider } from './ui/StoreProvider';
-export { type IStateSchema } from './config/StateSchema';
+export type {
+  IStateSchema,
+  IStoreWithReducersManager,
+  IStateSchemaKey,
+} from './config/StateSchema';

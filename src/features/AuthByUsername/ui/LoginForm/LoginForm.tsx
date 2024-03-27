@@ -1,24 +1,33 @@
 import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import cls from './LoginForm.module.scss';
+import { classNames } from 'shared/lib/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
-import { loginActions } from '../../model/slice/loginSlice';
-import { getLoginState } from '../../model/selectors/getLoginData/getLoginState';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { getLoginFormIsLoading } from '../../model/selectors/getLoginFormIsLoading/getLoginFormIsLoading';
+import { getLoginFormPassword } from '../../model/selectors/getLoginFormPassword/getLoginFormPassword';
+import { getLoginFormUserName } from '../../model/selectors/getLoginFormUsername/getLoginFormUsername';
+import { getLoginFormError } from '../../model/selectors/getLoginFormError/getLoginFormError';
+import cls from './LoginForm.module.scss';
 
 interface ILoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo((props: ILoginFormProps) => {
+const initialReducers = { loginForm: loginReducer };
+
+const LoginForm = memo((props: ILoginFormProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { password, username, isLoading, error } = useSelector(getLoginState);
+  const password = useSelector(getLoginFormPassword);
+  const username = useSelector(getLoginFormUserName);
+  const isLoading = useSelector(getLoginFormIsLoading);
+  const error = useSelector(getLoginFormError);
 
   const onChangePassword = useCallback(
     (value: string) => {
@@ -38,27 +47,31 @@ export const LoginForm = memo((props: ILoginFormProps) => {
   }, [dispatch, password, username]);
 
   return (
-    <div className={classNames(cls.LoginForm, {}, [className])}>
-      <Text title={t('Authorization form')} />
-      {error && <Text theme={TextTheme.ERROR} text={error} />}
-      <Input
-        placeholder={t('Enter username')}
-        onChange={onChangeUsername}
-        value={username}
-        autoFocus
-      />
-      <Input
-        placeholder={t('Enter password')}
-        onChange={onChangePassword}
-        value={password}
-      />
-      <Button
-        className={cls.loginBtn}
-        onClick={onLoginClick}
-        disabled={isLoading}
-      >
-        {t('Login')}
-      </Button>
-    </div>
+    <DynamicModuleLoader reducers={initialReducers}>
+      <div className={classNames(cls.LoginForm, {}, [className])}>
+        <Text title={t('Authorization form')} />
+        {error && <Text theme={TextTheme.ERROR} text={error} />}
+        <Input
+          placeholder={t('Enter username')}
+          onChange={onChangeUsername}
+          value={username}
+          autoFocus
+        />
+        <Input
+          placeholder={t('Enter password')}
+          onChange={onChangePassword}
+          value={password}
+        />
+        <Button
+          className={cls.loginBtn}
+          onClick={onLoginClick}
+          disabled={isLoading}
+        >
+          {t('Login')}
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   );
 });
+
+export default LoginForm;

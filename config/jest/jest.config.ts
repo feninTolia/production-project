@@ -23,6 +23,7 @@ export default {
     //   '<rootDir>/__mocks__/fileMock.js',
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'JestEmptyComponent.tsx'),
+    '^axios$': '<rootDir>node_modules/axios', // Ensure axios is properly mapped
   },
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
@@ -163,10 +164,7 @@ export default {
   // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "/node_modules/",
-  //   "\\.pnp\\.[^\\/]+$"
-  // ],
+  // transformIgnorePatterns: ['/node_modules/', '\\.pnp\\.[^\\/]+$'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

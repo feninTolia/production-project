@@ -4,7 +4,7 @@ import { Counter } from './Counter';
 
 describe('Counter', () => {
   test('should render', () => {
-    renderComponent(<Counter />);
+    renderComponent(<Counter />, { initialState: { counter: { value: 10 } } });
     expect(screen.getByTestId('value-title')).toBeInTheDocument();
   });
 

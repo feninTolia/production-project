@@ -21,3 +21,5 @@ export const StoreProvider: FC<IStoreProviderProps> = ({
 
   return <Provider store={store}>{children}</Provider>;
 };
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

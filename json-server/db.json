@@ -5,6 +5,17 @@
     { "id": "3", "title": "json", "author": "typicode" }
   ],
   "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
-  "profile": [{ "name": "typicode" }],
-  "users": [{ "id": "1", "password": "123", "username": "admin" }]
+  "users": [{ "id": "1", "password": "123", "username": "admin" }],
+  "profile": [
+    {
+      "firstname": "Anatolii",
+      "lastname": "Fenin",
+      "age": 25,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Kharkiv",
+      "username": "admin",
+      "avatar": "https://i.pinimg.com/736x/8d/31/cc/8d31cca1c749792b9aaa7fd64499d888.jpg"
+    }
+  ]
 }

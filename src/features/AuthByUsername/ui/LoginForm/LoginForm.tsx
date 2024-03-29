@@ -10,7 +10,7 @@ import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginFormIsLoading } from '../../model/selectors/getLoginFormIsLoading/getLoginFormIsLoading';
 import { getLoginFormPassword } from '../../model/selectors/getLoginFormPassword/getLoginFormPassword';
-import { getLoginFormUserName } from '../../model/selectors/getLoginFormUsername/getLoginFormUsername';
+import { getLoginFormUsername } from '../../model/selectors/getLoginFormUsername/getLoginFormUsername';
 import { getLoginFormError } from '../../model/selectors/getLoginFormError/getLoginFormError';
 import cls from './LoginForm.module.scss';
 
@@ -25,7 +25,7 @@ const LoginForm = memo((props: ILoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const password = useSelector(getLoginFormPassword);
-  const username = useSelector(getLoginFormUserName);
+  const username = useSelector(getLoginFormUsername);
   const isLoading = useSelector(getLoginFormIsLoading);
   const error = useSelector(getLoginFormError);
 

@@ -6,7 +6,7 @@ import {
 import { FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
-type ReducersList = {
+export type ReducersList = {
   [name in IStateSchemaKey]?: Reducer;
 };
 type ReducersListEntry = [IStateSchemaKey, Reducer];

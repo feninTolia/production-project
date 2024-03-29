@@ -7,6 +7,7 @@ import {
 } from '@reduxjs/toolkit';
 import { ThunkMiddlewareFor } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
 import { ICounterSchema } from 'entities/Counter';
+import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
 
@@ -16,6 +17,7 @@ export interface IStateSchema {
 
   //Async reducers
   loginForm?: ILoginSchema;
+  profile?: IProfileSchema;
 }
 
 export type IStateSchemaKey = keyof IStateSchema;

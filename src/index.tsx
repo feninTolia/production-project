@@ -12,13 +12,13 @@ import 'app/styles/index.scss';
 render(
   <Suspense fallback="">
     <BrowserRouter>
-      <ErrorBoundary>
-        <ThemeProvider>
-          <StoreProvider>
+      <StoreProvider>
+        <ErrorBoundary>
+          <ThemeProvider>
             <App />
-          </StoreProvider>
-        </ThemeProvider>
-      </ErrorBoundary>
+          </ThemeProvider>
+        </ErrorBoundary>
+      </StoreProvider>
     </BrowserRouter>
   </Suspense>,
   document.getElementById('root')

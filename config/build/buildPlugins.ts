@@ -11,7 +11,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export function buildPlugins(options: IBuildOptions): WebpackPluginInstance[] {
-  const { paths, isDev } = options;
+  const { paths, isDev, apiUrl } = options;
 
   const plugins = [
     new HtmlWebpackPlugin({
@@ -24,6 +24,7 @@ export function buildPlugins(options: IBuildOptions): WebpackPluginInstance[] {
     }),
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
     new ReactRefreshWebpackPlugin(),
   ];

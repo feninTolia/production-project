@@ -6,10 +6,12 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { ThunkMiddlewareFor } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
+import { AxiosInstance } from 'axios';
 import { ICounterSchema } from 'entities/Counter';
 import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
+import { NavigateOptions, To } from 'react-router-dom';
 
 export interface IStateSchema {
   counter: ICounterSchema;
@@ -39,4 +41,14 @@ export interface IStoreWithReducersManager
     [ThunkMiddlewareFor<IStateSchema>]
   > {
   reducerManager?: IReducerManager;
+}
+
+export interface IThunkExtraArg {
+  api: AxiosInstance;
+  navigate: (to: To, options?: NavigateOptions) => void;
+}
+
+export interface IThunkConfig<T> {
+  rejectValue: T;
+  extra: IThunkExtraArg;
 }

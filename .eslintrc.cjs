@@ -11,6 +11,7 @@ module.exports = {
     'webpack.config.ts',
     'json-server',
   ],
+  globals: { __IS_DEV__: true, __API__: true },
   overrides: [
     {
       env: {

@@ -9,7 +9,6 @@ import { useDispatch, useStore } from 'react-redux';
 export type ReducersList = {
   [name in IStateSchemaKey]?: Reducer;
 };
-type ReducersListEntry = [IStateSchemaKey, Reducer];
 
 interface IDynamicModuleLoaderProps {
   reducers: ReducersList;
@@ -22,15 +21,15 @@ const DynamicModuleLoader: FC<IDynamicModuleLoaderProps> = (props) => {
   const store: IStoreWithReducersManager = useStore();
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-      store.reducerManager?.add(name, reducer);
+    Object.entries(reducers).forEach(([name, reducer]) => {
+      store.reducerManager?.add(name as IStateSchemaKey, reducer);
       dispatch({ type: `@INIT ${name} reducer` });
     });
 
     return () => {
       if (removeAfterUnmount) {
-        Object.entries(reducers).forEach(([name]: ReducersListEntry) => {
-          store.reducerManager?.remove(name);
+        Object.entries(reducers).forEach(([name]) => {
+          store.reducerManager?.remove(name as IStateSchemaKey);
           dispatch({ type: `@DESTROY ${name} reducer` });
         });
       }

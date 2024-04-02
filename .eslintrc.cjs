@@ -47,5 +47,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     indent: 'off',
     '@typescript-eslint/indent': 'off',
+    'no-undef': 'off',
+    '@typescript-eslint/no-confusing-void-expression': 'off',
   },
 };

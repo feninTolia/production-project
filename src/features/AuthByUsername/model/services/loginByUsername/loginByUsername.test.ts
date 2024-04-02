@@ -1,10 +1,8 @@
-import axios from 'axios';
 import { loginByUsername } from './loginByUsername';
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 jest.mock('axios');
-const mockedAxios = jest.mocked(axios, true);
 
 describe('loginByUsername.test', () => {
   // let dispatch: ThunkDispatch<IStateSchema, undefined, AnyAction>;
@@ -52,9 +50,10 @@ describe('loginByUsername.test', () => {
 
   it('should work with data ', async () => {
     const userValue = { username: 'TestUser', id: '8912342' };
-    mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
     const thunk = new TestAsyncThunk(loginByUsername);
+    thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
+
     const result = await thunk.callThunk({
       username: 'admin',
       password: '123',
@@ -65,16 +64,17 @@ describe('loginByUsername.test', () => {
     );
     expect(thunk.dispatch).toHaveBeenCalledTimes(3);
     // eslint-disable-next-line @typescript-eslint/unbound-method
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(userValue);
   });
 
   it('should return error', async () => {
     const userValue = { username: 'TestUser', id: '8912342' };
-    mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
 
     const thunk = new TestAsyncThunk(loginByUsername);
+    thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
+
     const result = await thunk.callThunk({
       username: 'admin',
       password: '123',
@@ -86,7 +86,7 @@ describe('loginByUsername.test', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
 
     // eslint-disable-next-line @typescript-eslint/unbound-method
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toBe('Error');
   });

@@ -5,9 +5,7 @@ import { lazy } from 'react';
 export const LoginFormAsync = lazy(
   async () =>
     await new Promise((resolve) => {
-      setTimeout(() => {
-        //   @ts-expect-error sss
-        resolve(import('./LoginForm'));
-      }, 1500);
+      // @ts-expect-error ???
+      setTimeout(() => resolve(import('./LoginForm')), 1500);
     })
 );

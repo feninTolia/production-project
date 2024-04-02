@@ -6,7 +6,7 @@ export const ProfilePageAsync = lazy(
   async () =>
     await new Promise((resolve) => {
       setTimeout(() => {
-        //   @ts-expect-error sss
+        //   @ts-expect-error ???
         resolve(import('./ProfilePage'));
       }, 400);
     })

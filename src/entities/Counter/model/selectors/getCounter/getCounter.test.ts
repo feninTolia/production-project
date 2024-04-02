@@ -1,6 +1,5 @@
 import { IStateSchema } from 'app/providers/StoreProvider';
 import { getCounter } from './getCounter';
-import { DeepPartial } from '@reduxjs/toolkit';
 
 describe('getCounter', () => {
   it('should return value of 10', () => {

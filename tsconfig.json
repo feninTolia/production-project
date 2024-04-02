@@ -10,6 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
+    "strict": true,
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]

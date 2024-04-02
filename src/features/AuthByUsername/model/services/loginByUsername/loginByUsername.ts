@@ -24,9 +24,9 @@ export const loginByUsername = createAsyncThunk<
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     dispatch(userActions.setAuthData(response.data));
 
-    thunkApi.extra.navigate('/about');
+    thunkApi.extra.navigate?.('/about');
     return response.data;
-  } catch (err) {
+  } catch (err: any) {
     console.log('err ==---', err.message);
     return rejectWithValue('Error');
   }

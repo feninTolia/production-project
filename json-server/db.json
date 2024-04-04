@@ -1,19 +1,43 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" },
-    { "id": "2", "title": "server", "author": "typicode" },
-    { "id": "3", "title": "json", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "server",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json",
+      "author": "typicode"
+    }
   ],
-  "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
-  "users": [{ "id": "1", "password": "123", "username": "admin" }],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "password": "123",
+      "username": "admin"
+    }
+  ],
   "profile": {
     "firstname": "Anatolii",
     "lastname": "Fenin",
     "age": 25,
-    "currency": "UAH",
-    "country": "Ukraine",
+    "currency": "EUR",
+    "country": "Poland",
     "city": "Kharkiv",
-    "username": "admin",
-    "avatar": "https://i.pinimg.com/736x/8d/31/cc/8d31cca1c749792b9aaa7fd64499d888.jpg"
+    "username": "tolikfe",
+    "avatar": "https://images-s.kinorium.com/movie/cast/2470860/w150_5370239.jpg?1704947930"
   }
 }

@@ -4,7 +4,7 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { CombinedState, Dispatch } from 'redux';
+import { CombinedState } from 'redux';
 import { ThunkMiddlewareFor } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
 import { AxiosInstance } from 'axios';
 import { ICounterSchema } from 'entities/Counter';
@@ -51,5 +51,5 @@ export interface IThunkExtraArg {
 export interface IThunkConfig<T> {
   rejectValue: T;
   extra: IThunkExtraArg;
-  dispatch?: Dispatch;
+  state?: IStateSchema;
 }

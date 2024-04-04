@@ -7,18 +7,19 @@ import {
   useRef,
   useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { Mods, classNames } from 'shared/lib/classNames';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange'
+  'value' | 'onChange' | 'readOnly'
 >;
 
 interface IInputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
+  readonly?: boolean;
 }
 
 export const Input: FC<IInputProps> = memo((props: IInputProps) => {
@@ -29,6 +30,7 @@ export const Input: FC<IInputProps> = memo((props: IInputProps) => {
     placeholder,
     type = 'text',
     autoFocus,
+    readonly,
     ...other
   } = props;
 
@@ -57,8 +59,12 @@ export const Input: FC<IInputProps> = memo((props: IInputProps) => {
     setTrolleyPosition((e?.target?.selectionStart || 0) as number);
   };
 
+  const mods: Mods = {
+    [cls.readonly]: readonly,
+  };
+  const isTrolleyVisible = isFocused && !readonly;
   return (
-    <div className={classNames(cls.inputWrapper, {}, [className])}>
+    <div className={classNames(cls.inputWrapper, mods, [className])}>
       {placeholder && (
         <div className={cls.placeholder}>{placeholder + '>'}</div>
       )}
@@ -73,8 +79,9 @@ export const Input: FC<IInputProps> = memo((props: IInputProps) => {
           onFocus={onFocus}
           onBlur={onBlur}
           onSelect={onSelect}
+          readOnly={readonly}
         />
-        {isFocused && (
+        {isTrolleyVisible && (
           <span className={cls.trolley} style={{ left: trolleyPosition * 9 }} />
         )}
       </div>

@@ -48,6 +48,7 @@ module.exports = {
     indent: 'off',
     '@typescript-eslint/indent': 'off',
     'no-undef': 'off',
+    'multiline-ternary': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
   },
 };

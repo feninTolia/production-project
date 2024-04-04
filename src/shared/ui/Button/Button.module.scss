@@ -3,7 +3,8 @@
   color: var(--primary-color);
   cursor: pointer;
   border: none;
-  border-radius: 20px;
+
+  // border-radius: 20px;
   outline: none;
   transition: all 150ms;
 }
@@ -22,6 +23,12 @@
 .outlined {
   background: none;
   border: 1px solid var(--primary-color);
+}
+
+.outlinedRed {
+  color: var(--red-light);
+  background: none;
+  border: 1px solid var(--red-light);
 }
 
 .backgroundInverted {

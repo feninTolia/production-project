@@ -26,6 +26,7 @@ export const Sidebar = memo((props: ISidebarProps) => {
         path={item.path}
         text={item.text}
         collapsed={collapsed}
+        authOnly={item.authOnly}
       />
     ));
   }, [collapsed]);

@@ -14,7 +14,6 @@ export const fetchProfileData = createAsyncThunk<
     if (!response.data) {
       throw new Error('No profile found');
     }
-
     return response.data;
   } catch (err: any) {
     console.log('err ==---', err.message);

@@ -32,7 +32,6 @@ export const ProfilePageHeader: FC<IProfilePageHeaderProps> = (props) => {
 
   const onSave = useCallback(() => {
     void dispatch(updateProfileData());
-    dispatch(profileActions.cancelEdit());
   }, [dispatch]);
 
   return (

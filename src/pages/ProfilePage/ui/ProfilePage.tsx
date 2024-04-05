@@ -1,10 +1,12 @@
 import {
   ProfileCard,
+  ValidateProfileError,
   fetchProfileData,
   getProfileError,
   getProfileForm,
   getProfileIsLoading,
   getProfileReadOnly,
+  getProfileValidateErrors,
   profileActions,
   profileReducer,
 } from 'entities/Profile';
@@ -17,16 +19,29 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 
 const initialReducers: ReducersList = { profile: profileReducer };
 
 const ProfilePage = () => {
   const dispatch = useAppDispatch();
-
+  const { t } = useTranslation();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadOnly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorTranslates = {
+    [ValidateProfileError.INCORRECT_USER_AGE]: t('Enter correct user age'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t(
+      'Enter correct user firstname or surname'
+    ),
+    [ValidateProfileError.INCORRECT_USER_USERNAME]: t('Enter correct username'),
+    [ValidateProfileError.NO_PROFILE_DATA]: t('No profile info'),
+    [ValidateProfileError.SERVER_ERROR]: t('Something went wrong'),
+  };
 
   useEffect(() => {
     void dispatch(fetchProfileData());
@@ -84,6 +99,15 @@ const ProfilePage = () => {
   return (
     <DynamicModuleLoader reducers={initialReducers}>
       <ProfilePageHeader />
+      {validateErrors?.map((valError) => {
+        return (
+          <Text
+            text={validateErrorTranslates[valError]}
+            key={valError}
+            theme={TextTheme.ERROR}
+          />
+        );
+      })}
       <ProfileCard
         data={formData}
         isLoading={isLoading}

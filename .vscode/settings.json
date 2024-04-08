@@ -7,5 +7,25 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": "explicit"
   },
-  "files.autoSaveDelay": 500
+  "files.autoSaveDelay": 500,
+  "folderTemplates.structures": [
+    {
+      "name": "My Custom Template UI Component",
+      "omitParentDirectory": false,
+      "structure": [
+        {
+          "fileName": "<FTName>.tsx",
+          "template": "rc"
+        },
+        {
+          "fileName": "<FTName>.module.scss",
+          "template": ".<FTName> {  }"
+        },
+        {
+          "fileName": "<FTName>.stories.ts",
+          "template": "ss"
+        }
+      ]
+    }
+  ]
 }

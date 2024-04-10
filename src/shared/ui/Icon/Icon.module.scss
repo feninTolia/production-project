@@ -1,0 +1,15 @@
+.Icon {
+  display: inline-flex;
+  fill: var(--primary-color);
+
+  & path {
+    fill: var(--primary-color);
+  }
+
+  & :hover,
+  & :focus {
+    opacity: 0.8;
+    fill-opacity: 0.8;
+    stroke-opacity: 0.8;
+  }
+}

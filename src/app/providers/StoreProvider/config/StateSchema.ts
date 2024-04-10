@@ -12,6 +12,7 @@ import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { NavigateFunction } from 'react-router-dom';
+import { IArticleDetailsSchema } from 'entities/Article';
 
 export interface IStateSchema {
   counter: ICounterSchema;
@@ -20,6 +21,7 @@ export interface IStateSchema {
   //Async reducers
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
+  articleDetails?: IArticleDetailsSchema;
 }
 
 export type IStateSchemaKey = keyof IStateSchema;

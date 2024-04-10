@@ -5,4 +5,13 @@
   --secondary-color: #c2c2c2;
   --inverted-primary-color: #920fb3;
   --inverted-secondary-color: #6b0a84;
+
+  // skeleton
+  --skeleton-color: #ffa4cd;
+  --skeleton-shadow: #a61060;
+  --skeleton-bg: #f5178d;
+
+  // redefine error colors for pink theme for readability
+  --red-light: #840505;
+  --red-dark: #730000;
 }

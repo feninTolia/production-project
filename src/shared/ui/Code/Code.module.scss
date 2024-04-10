@@ -1,0 +1,26 @@
+.codeWrapper {
+  position: relative;
+  padding: 18px 32px;
+  background-color: var(--skeleton-bg);
+  border: 1px solid var(--primary-color);
+}
+
+.copyBtn {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+
+  &:hover {
+    stroke-opacity: 0.8;
+  }
+
+  path {
+    stroke: var(--primary-color);
+  }
+}
+
+.code {
+  width: 100%;
+  overflow-x: scroll;
+  text-overflow: ellipsis;
+}

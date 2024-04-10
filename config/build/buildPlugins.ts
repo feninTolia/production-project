@@ -16,6 +16,7 @@ export function buildPlugins(options: IBuildOptions): WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
+      favicon: paths.favicon,
     }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin({

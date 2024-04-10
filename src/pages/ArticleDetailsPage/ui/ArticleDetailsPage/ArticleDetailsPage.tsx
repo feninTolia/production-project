@@ -1,7 +1,9 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleDetails } from 'entities/Article';
+import { useParams } from 'react-router-dom';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -9,11 +11,24 @@ interface IArticleDetailsPageProps {
 
 const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
   const { className } = props;
-  const { t } = useTranslation('article');
+  const { id } = useParams<{ id: string }>();
+  const ID = __PROJECT__ === 'storybook' ? '1' : id;
+
+  if (!ID || !Number.isInteger(+ID)) {
+    return (
+      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <Text
+          title="Article not found"
+          theme={TextTheme.ERROR}
+          align={TextAlign.CENTER}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-      {t('ArticleDetailsPage')}
+      <ArticleDetails id={ID} />
     </div>
   );
 });

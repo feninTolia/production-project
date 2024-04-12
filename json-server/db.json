@@ -106,12 +106,14 @@
       "id": "1",
       "password": "123",
       "username": "admin",
+      "avatar": "https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI",
       "role": "ADMIN"
     },
     {
       "id": "2",
       "password": "123",
       "username": "user",
+      "avatar": "https://hips.hearstapps.com/hmg-prod/images/jess-hong-netflix-2-65fd9b0847eb3.jpg",
       "role": "USER"
     }
   ],

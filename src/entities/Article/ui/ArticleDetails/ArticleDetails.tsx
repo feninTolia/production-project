@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -24,6 +24,7 @@ import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import cls from './ArticleDetails.module.scss';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 
 interface IArticleDetailsProps {
   className?: string;
@@ -40,11 +41,9 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
   const error = useSelector(getArticleDetailsError);
   const isLoading = useSelector(getArticleDetailsIsLoading);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      void dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    void dispatch(fetchArticleById(id));
+  });
 
   const renderBlock = useCallback((block: IArticleBlock) => {
     switch (block.type) {

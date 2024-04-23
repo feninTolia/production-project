@@ -1,10 +1,11 @@
 import { memo, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { sidebarItemsList } from '../../model/items';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import cls from './Sidebar.module.scss';
 
 interface ISidebarProps {
@@ -14,6 +15,8 @@ interface ISidebarProps {
 export const Sidebar = memo((props: ISidebarProps) => {
   const { className } = props;
   const [collapsed, setCollapsed] = useState(false);
+  const sidebarItemsList = useSelector(getSidebarItems);
+
   const onToggle = (): void => {
     setCollapsed((prev) => !prev);
   };
@@ -29,7 +32,7 @@ export const Sidebar = memo((props: ISidebarProps) => {
         authOnly={item.authOnly}
       />
     ));
-  }, [collapsed]);
+  }, [collapsed, sidebarItemsList]);
 
   return (
     <div

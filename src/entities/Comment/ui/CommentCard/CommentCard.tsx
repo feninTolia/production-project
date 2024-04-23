@@ -5,10 +5,12 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import cls from './CommentCard.module.scss';
 import { Text } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface ICommentCardProps {
   className?: string;
-  comment: IComment;
+  comment?: IComment;
   isLoading?: boolean;
 }
 
@@ -17,7 +19,9 @@ export const CommentCard = memo((props: ICommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentCard, {}, [className])}>
+      <div
+        className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+      >
         <div className={cls.userInfoBlock}>
           <Skeleton width="30px" height="30px" borderRadius="50%" />
           <Skeleton width="100px" height="16px" />
@@ -28,14 +32,21 @@ export const CommentCard = memo((props: ICommentCardProps) => {
     );
   }
 
+  if (!comment) {
+    return null;
+  }
+
   return (
     <div className={classNames(cls.CommentCard, {}, [className])}>
-      <div className={cls.userInfoBlock}>
+      <AppLink
+        className={cls.userInfoBlock}
+        to={RoutePath.profile + comment.user.id}
+      >
         {comment.user.avatar ? (
           <Avatar src={comment.user.avatar ?? ''} alt="avatar" size="30px" />
         ) : null}
         <Text title={comment.user.username} />
-      </div>
+      </AppLink>
 
       <Text text={comment.text} className={cls.commentText} />
     </div>

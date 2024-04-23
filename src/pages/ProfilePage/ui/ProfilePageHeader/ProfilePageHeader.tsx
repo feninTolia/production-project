@@ -6,11 +6,13 @@ import { Text } from 'shared/ui/Text/Text';
 import cls from './ProfilePageHeader.module.scss';
 import { useSelector } from 'react-redux';
 import {
+  getProfileData,
   getProfileReadOnly,
   profileActions,
   updateProfileData,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { getUserAuthData } from 'entities/User';
 
 interface IProfilePageHeaderProps {
   className?: string;
@@ -21,6 +23,10 @@ export const ProfilePageHeader: FC<IProfilePageHeaderProps> = (props) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const readOnly = useSelector(getProfileReadOnly);
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+
+  const canEdit = authData?.id === profileData?.id;
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false));
@@ -37,20 +43,21 @@ export const ProfilePageHeader: FC<IProfilePageHeaderProps> = (props) => {
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <Text title={t('Profile')} />
-      {readOnly ? (
-        <Button theme={ButtonTheme.OUTLINED} onClick={onEdit}>
-          {t('Edit')}
-        </Button>
-      ) : (
-        <div className={cls.buttonsWrapper}>
-          <Button theme={ButtonTheme.OUTLINED_RED} onClick={onCancelEdit}>
-            {t('Cancel')}
+      {canEdit &&
+        (readOnly ? (
+          <Button theme={ButtonTheme.OUTLINED} onClick={onEdit}>
+            {t('Edit')}
           </Button>
-          <Button theme={ButtonTheme.OUTLINED} onClick={onSave}>
-            {t('Save')}
-          </Button>
-        </div>
-      )}
+        ) : (
+          <div className={cls.buttonsWrapper}>
+            <Button theme={ButtonTheme.OUTLINED_RED} onClick={onCancelEdit}>
+              {t('Cancel')}
+            </Button>
+            <Button theme={ButtonTheme.OUTLINED} onClick={onSave}>
+              {t('Save')}
+            </Button>
+          </div>
+        ))}
     </div>
   );
 };

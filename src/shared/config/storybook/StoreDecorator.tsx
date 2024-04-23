@@ -5,11 +5,15 @@ import { articleDetailsReducer } from 'entities/Article';
 import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'features/AuthByUsername';
 import 'app/styles/index.scss';
+import { addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentFormSlice';
+import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slice/ArticleDetailsCommentsSlice';
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsComments: articleDetailsCommentsReducer,
 };
 
 export const StoreDecorator =

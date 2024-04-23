@@ -24,7 +24,9 @@
       "img": "https://korzh.com/assets/images/javascript.png",
       "views": 2045,
       "createdAt": "09.04.2024",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -99,6 +101,60 @@
       "text": "some bad comment",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "nNniytP"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "233435",
+      "id": "8t5vCFQ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "3 body hahaha",
+      "id": "PKUbtKY"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "irpin",
+      "id": "hpZdbjR"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "how are you guys",
+      "id": "POD0Zgk"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hello",
+      "id": "62em_KO"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "d",
+      "id": "kfq9D-3"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "  bbbbb",
+      "id": "lCzzkj3"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sdcsdcsdc",
+      "id": "DPuUPuy"
     }
   ],
   "users": [
@@ -117,14 +173,28 @@
       "role": "USER"
     }
   ],
-  "profile": {
-    "firstname": "Anatolii",
-    "lastname": "Fenin",
-    "age": 25,
-    "currency": "EUR",
-    "country": "Poland",
-    "city": "Kharkiv",
-    "username": "tolikfe",
-    "avatar": "https://m.media-amazon.com/images/M/MV5BOTgzZGI1OGItZGM3Mi00M2IyLWFkMDktNDA1MGU0NGVmM2YxXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Anatolii",
+      "lastname": "Fenin",
+      "age": 25,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Kharkiv",
+      "username": "admin",
+      "avatar": "https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI"
+    },
+    {
+      "id": "2",
+      "firstname": "Jess",
+      "lastname": "Hong",
+      "age": 29,
+      "currency": "EUR",
+      "country": "Poland",
+      "city": "Kharkiv",
+      "username": "user",
+      "avatar": "https://m.media-amazon.com/images/M/MV5BOTgzZGI1OGItZGM3Mi00M2IyLWFkMDktNDA1MGU0NGVmM2YxXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg"
+    }
+  ]
 }

@@ -8,7 +8,18 @@ const meta: Meta<typeof CommentCard> = {
   component: CommentCard,
   tags: ['autodocs'],
   argTypes: {},
-  args: {},
+  args: {
+    comment: {
+      id: '2',
+      text: 'Some text',
+      user: {
+        id: '1',
+        username: 'Tolik',
+        avatar:
+          'https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI',
+      },
+    },
+  },
 };
 
 export default meta;
@@ -20,5 +31,10 @@ export const Light: Story = {
 
 export const Dark: Story = {
   args: {},
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const IsLoading: Story = {
+  args: { isLoading: true },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

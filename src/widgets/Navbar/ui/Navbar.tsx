@@ -6,6 +6,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface INavbarProps {
   className?: string;
@@ -45,13 +46,21 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         </>
       )}
       {user && (
-        <Button
-          className={cls.links}
-          onClick={onLogout}
-          theme={ButtonTheme.CLEAR_INVERTED}
-        >
-          {t('Logout')}
-        </Button>
+        <>
+          <Button
+            className={cls.links}
+            onClick={onLogout}
+            theme={ButtonTheme.CLEAR_INVERTED}
+          >
+            {t('Logout')}
+          </Button>
+          <Avatar
+            src={user.avatar ?? ''}
+            alt="avatar"
+            size="30px"
+            className={cls.avatar}
+          />
+        </>
       )}
     </div>
   );

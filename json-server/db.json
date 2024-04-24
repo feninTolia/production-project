@@ -24,9 +24,8 @@
       "img": "https://korzh.com/assets/images/javascript.png",
       "views": 2045,
       "createdAt": "09.04.2024",
-      "type": [
-        "IT"
-      ],
+      "userId": "1",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",

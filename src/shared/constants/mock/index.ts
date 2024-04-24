@@ -6,19 +6,26 @@ import {
 
 export const mockArticle: IArticle = {
   id: '1',
-  title: 'Javascript news',
+  title: 'Javascript news news news news news news',
   subtitle: "What's new in JS in 2024",
   img: 'https://korzh.com/assets/images/javascript.png',
   views: 2045,
   createdAt: '09.04.2024',
-  type: [IArticleTypes.IT],
+  user: {
+    id: '1',
+    username: 'admin',
+    avatar:
+      'https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI',
+    role: 'ADMIN',
+  },
+  type: [IArticleTypes.IT, IArticleTypes.ECONOMICS, IArticleTypes.POLITICS],
   blocks: [
     {
       id: '1',
       type: ArticleBlockTypes.TEXT,
       title: 'Introduction',
       paragraphs: [
-        'As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes.',
+        'As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes. As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes. As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes. As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes.',
       ],
     },
     {

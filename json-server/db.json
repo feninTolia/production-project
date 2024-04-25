@@ -214,6 +214,314 @@
           ]
         }
       ]
+    },
+    {
+      "id": "4",
+      "title": "Some news",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Galaxy features",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Some6 news",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Galaxy7 features",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Som8e news",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Galax9y features",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "So10me news",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Galax11y features",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Som12e news",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Galaxy13 features",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Some14 news",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Galaxy15 features",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Some16 news",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Galaxy17 features",
+      "subtitle": "What's new in JS in 2024",
+      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
+      "views": 2045,
+      "createdAt": "09.04.2024",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "As technology evolves, so does JavaScript. In 2024, JavaScript enthusiasts and developers have exciting new features to explore and integrate into their projects. Let’s delve into some of the cutting-edge additions to the language that promise to enhance productivity and streamline development processes."
+          ]
+        }
+      ]
     }
   ],
   "comments": [
@@ -312,6 +620,18 @@
       "userId": "2",
       "text": "Життя до ранку ....",
       "id": "VOMyZZd"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "ascas",
+      "id": "LANFVww"
+    },
+    {
+      "articleId": "16",
+      "userId": "2",
+      "text": "16 tttt",
+      "id": "0IV86l4"
     }
   ],
   "users": [

@@ -30,7 +30,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+    <header className={classNames(cls.Navbar, {}, [className])}>
       {!user && (
         <>
           <Button
@@ -62,6 +62,6 @@ export const Navbar = memo(({ className }: INavbarProps) => {
           />
         </>
       )}
-    </div>
+    </header>
   );
 });

@@ -9,6 +9,7 @@ import DynamicModuleLoader, {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Page } from 'shared/ui/Page/Page';
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -20,6 +21,7 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import cls from './ArticlesPage.module.scss';
 
 interface IArticlesPageProps {
@@ -39,8 +41,8 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
   const view = useSelector(getArticlesPageView);
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(fetchArticlesList({ page: 1 }));
   });
 
   const onViewClick = useCallback(
@@ -50,15 +52,22 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
     [dispatch]
   );
 
+  const handleLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticlesPage, {}, [className])}>
+      <Page
+        className={classNames(cls.ArticlesPage, {}, [className])}
+        onScrollEnd={handleLoadNextPart}
+      >
         <ArticleViewSelector view={view} onViewClick={onViewClick} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
         {error && (
           <Text theme={TextTheme.ERROR} text={t('Something went wrong')} />
         )}
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });

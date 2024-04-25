@@ -23,6 +23,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 
 const initialReducers: ReducersList = { profile: profileReducer };
 
@@ -103,30 +104,32 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <ProfilePageHeader />
-      {validateErrors?.map((valError) => {
-        return (
-          <Text
-            text={validateErrorTranslates[valError]}
-            key={valError}
-            theme={TextTheme.ERROR}
-          />
-        );
-      })}
-      <ProfileCard
-        data={formData}
-        isLoading={isLoading}
-        readonly={readonly}
-        error={error}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCity={onChangeCity}
-        onChangeAvatar={onChangeAvatar}
-        onChangeUsername={onChangeUsername}
-        onChangeCurrency={onChangeCurrency}
-        onChangeCountry={onChangeCountry}
-      />
+      <Page>
+        <ProfilePageHeader />
+        {validateErrors?.map((valError) => {
+          return (
+            <Text
+              text={validateErrorTranslates[valError]}
+              key={valError}
+              theme={TextTheme.ERROR}
+            />
+          );
+        })}
+        <ProfileCard
+          data={formData}
+          isLoading={isLoading}
+          readonly={readonly}
+          error={error}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeAvatar={onChangeAvatar}
+          onChangeUsername={onChangeUsername}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
+        />
+      </Page>
     </DynamicModuleLoader>
   );
 };

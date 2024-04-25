@@ -22,6 +22,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import cls from './ArticleDetailsPage.module.scss';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -59,19 +60,19 @@ const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
 
   if (!ID || !Number.isInteger(+ID)) {
     return (
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Text
           title="Article not found"
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
         />
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <Button theme={ButtonTheme.OUTLINED} onClick={onBackToList}>
           {t('Back to list')}
         </Button>
@@ -79,7 +80,7 @@ const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
         <Text title={t('Comments')} className={cls.commentTitle} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });

@@ -15,7 +15,6 @@ interface IArticleViewSelectorProps {
 
 export const ArticleViewSelector = memo((props: IArticleViewSelectorProps) => {
   const { className, view, onViewClick } = props;
-  console.log(view);
 
   const viewTypes = [
     {

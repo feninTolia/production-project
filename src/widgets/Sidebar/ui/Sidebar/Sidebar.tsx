@@ -5,7 +5,7 @@ import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { getSidebarItems } from '../../model/selectrors/getSidebarItems';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import cls from './Sidebar.module.scss';
 
 interface ISidebarProps {
@@ -35,7 +35,7 @@ export const Sidebar = memo((props: ISidebarProps) => {
   }, [collapsed, sidebarItemsList]);
 
   return (
-    <div
+    <menu
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
@@ -56,6 +56,6 @@ export const Sidebar = memo((props: ISidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher />
       </div>
-    </div>
+    </menu>
   );
 });

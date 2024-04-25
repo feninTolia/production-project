@@ -9,7 +9,7 @@ export const ArticleDetailsPageAsync = lazy(
         () =>
           //   @ts-expect-error ???
           resolve(import('./ArticleDetailsPage')),
-        1500
+        400
       );
     })
 );

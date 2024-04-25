@@ -21,7 +21,7 @@ const initialState =
   });
 
 const articleDetailsCommentsSlice = createSlice({
-  name: 'posts',
+  name: 'articleDetailsCommentsSlice',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -47,8 +47,6 @@ const articleDetailsCommentsSlice = createSlice({
 export const getArticleComments = commentsAdapter.getSelectors<IStateSchema>(
   (state) => state.articleDetailsComments ?? commentsAdapter.getInitialState()
 );
-
-// export const {} = articleDetailsCommentsSlice.actions;
 
 export const { reducer: articleDetailsCommentsReducer } =
   articleDetailsCommentsSlice;

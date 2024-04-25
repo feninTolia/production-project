@@ -6,6 +6,6 @@ export const LoginFormAsync = lazy(
   async () =>
     await new Promise((resolve) => {
       // @ts-expect-error ???
-      setTimeout(() => resolve(import('./LoginForm')), 1500);
+      setTimeout(() => resolve(import('./LoginForm')), 400);
     })
 );

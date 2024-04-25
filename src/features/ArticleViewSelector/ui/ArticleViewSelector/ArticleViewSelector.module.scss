@@ -1,0 +1,24 @@
+.ArticleViewSelector {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid gray;
+  border-radius: 6px;
+
+  button {
+    height: 20px;
+  }
+
+  path {
+    fill: none;
+    stroke: var(--primary-color);
+  }
+}
+
+.notSelected {
+  path {
+    stroke: var(--secondary-color);
+  }
+}

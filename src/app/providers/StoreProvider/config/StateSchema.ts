@@ -16,10 +16,12 @@ import { IArticleDetailsSchema } from 'entities/Article';
 import { IArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { IAddCommentFormSchema } from 'features/addCommentForm';
 import { IArticlesPageSchema } from 'pages/ArticlesPage';
+import { IScrollSaveSchema } from 'features/ScrollSave';
 
 export interface IStateSchema {
   counter: ICounterSchema;
   user: IUserSchema;
+  scrollSave: IScrollSaveSchema;
 
   //Async reducers
   loginForm?: ILoginSchema;

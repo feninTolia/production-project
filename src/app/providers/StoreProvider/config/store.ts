@@ -12,8 +12,7 @@ import { NavigateFunction } from 'react-router-dom';
 
 export const createReduxStore = (
   initialState?: IStateSchema,
-  asyncReducers?: ReducersMapObject<IStateSchema>,
-  navigate?: NavigateFunction
+  asyncReducers?: ReducersMapObject<IStateSchema>
 ) => {
   const rootReducers: ReducersMapObject<IStateSchema> = {
     ...asyncReducers,
@@ -23,7 +22,7 @@ export const createReduxStore = (
 
   const reducerManager = createReducerManager(rootReducers);
 
-  const extraArg: IThunkExtraArg = { api: $api, navigate };
+  const extraArg: IThunkExtraArg = { api: $api };
 
   const store = configureStore({
     // @ts-expect-error !!!

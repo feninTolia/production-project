@@ -20,8 +20,8 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import cls from './ArticlesPage.module.scss';
 
 interface IArticlesPageProps {
@@ -41,8 +41,7 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
   const view = useSelector(getArticlesPageView);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   const onViewClick = useCallback(
@@ -57,7 +56,7 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         className={classNames(cls.ArticlesPage, {}, [className])}
         onScrollEnd={handleLoadNextPart}

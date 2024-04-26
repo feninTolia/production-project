@@ -4,7 +4,12 @@ import {
   ReducersMapObject,
   combineReducers,
 } from '@reduxjs/toolkit';
-import { IReducerManager, IStateSchema, IStateSchemaKey } from './StateSchema';
+import {
+  IReducerManager,
+  IStateSchema,
+  IStateSchemaKey,
+  MountedReducers,
+} from './StateSchema';
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<IStateSchema>
@@ -34,7 +39,6 @@ export function createReducerManager(
       }
 
       reducers[key] = reducer;
-
       combinedReducer = combineReducers(reducers);
     },
 

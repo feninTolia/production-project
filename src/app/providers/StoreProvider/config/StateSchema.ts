@@ -31,6 +31,7 @@ export interface IStateSchema {
 }
 
 export type IStateSchemaKey = keyof IStateSchema;
+export type MountedReducers = OptionalRecord<IStateSchemaKey, boolean>;
 
 export interface IReducerManager {
   getReducerMap: () => ReducersMapObject<IStateSchema>;

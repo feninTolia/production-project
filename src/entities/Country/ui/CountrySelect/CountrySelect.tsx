@@ -10,7 +10,7 @@ interface ICountrySelectProps {
   onChange?: (value: Country) => void;
 }
 
-const countriesOptions: ISelectOption[] = [
+const countriesOptions: Array<ISelectOption<Country>> = [
   { value: Country.Estonia, content: Country.Estonia },
   { value: Country.Germany, content: Country.Germany },
   { value: Country.Greece, content: Country.Greece },

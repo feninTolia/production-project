@@ -1,28 +1,28 @@
-import { memo, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import cls from './Select.module.scss';
 
-export interface ISelectOption {
-  value: string;
+export interface ISelectOption<T extends string> {
+  value: T;
   content: string;
 }
 
-interface ISelectProps {
+interface ISelectProps<T extends string> {
   className?: string;
   label?: string;
-  options?: ISelectOption[];
-  value?: string;
-  onChange?: (value: string) => void;
+  options?: Array<ISelectOption<T>>;
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-export const Select = memo((props: ISelectProps) => {
+export const Select = <T extends string>(props: ISelectProps<T>) => {
   const { className, label, options, onChange, readonly, value } = props;
   const mods = { [cls.readonly]: readonly };
 
   const onChangeHandler = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
-      onChange?.(e.target.value);
+      onChange?.(e.target.value as T);
     },
     [onChange]
   );
@@ -48,4 +48,4 @@ export const Select = memo((props: ISelectProps) => {
       </select>
     </div>
   );
-});
+};

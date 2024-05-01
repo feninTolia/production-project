@@ -1,7 +1,7 @@
 import {
   ArticleBlockTypes,
   IArticle,
-  IArticleTypes,
+  IArticleType,
 } from 'entities/Article/model/types/article';
 
 export const mockArticle: IArticle = {
@@ -18,7 +18,7 @@ export const mockArticle: IArticle = {
       'https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI',
     role: 'ADMIN',
   },
-  type: [IArticleTypes.IT, IArticleTypes.ECONOMICS, IArticleTypes.POLITICS],
+  type: [IArticleType.IT, IArticleType.ECONOMICS, IArticleType.POLITICS],
   blocks: [
     {
       id: '1',

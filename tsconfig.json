@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "noEmitOnError": false,
     "noImplicitAny": true,
     "module": "ESNext",
     "target": "es5",

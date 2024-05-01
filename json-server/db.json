@@ -25,9 +25,7 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -91,9 +89,7 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -157,9 +153,7 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -220,12 +214,10 @@
       "title": "Some news",
       "subtitle": "What's new in JS in 2024",
       "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
-      "views": 2045,
-      "createdAt": "09.04.2024",
+      "views": 20435,
+      "createdAt": "09.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -242,12 +234,10 @@
       "title": "Galaxy features",
       "subtitle": "What's new in JS in 2024",
       "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
-      "views": 2045,
-      "createdAt": "09.04.2024",
+      "views": 12045,
+      "createdAt": "09.01.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -264,12 +254,10 @@
       "title": "Some6 news",
       "subtitle": "What's new in JS in 2024",
       "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
-      "views": 2045,
-      "createdAt": "09.04.2024",
+      "views": 4045,
+      "createdAt": "09.04.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -286,12 +274,10 @@
       "title": "Galaxy7 features",
       "subtitle": "What's new in JS in 2024",
       "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
-      "views": 2045,
-      "createdAt": "09.04.2024",
+      "views": 6045,
+      "createdAt": "02.01.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -308,12 +294,10 @@
       "title": "Som8e news",
       "subtitle": "What's new in JS in 2024",
       "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
-      "views": 2045,
+      "views": 23425,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -330,12 +314,10 @@
       "title": "Galax9y features",
       "subtitle": "What's new in JS in 2024",
       "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
-      "views": 2045,
+      "views": 456,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT", "POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -349,15 +331,13 @@
     },
     {
       "id": "10",
-      "title": "So10me news",
+      "title": "POLITICS news",
       "subtitle": "What's new in JS in 2024",
-      "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
-      "views": 2045,
+      "img": "https://media.pbseducation.org/craft.prod/assets/_1200x671_crop_center-center_75/Engaging-Young-People-in-Politics.png",
+      "views": 6783,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -371,15 +351,13 @@
     },
     {
       "id": "11",
-      "title": "Galax11y features",
+      "title": "Galax11y SCIENCE",
       "subtitle": "What's new in JS in 2024",
       "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
-      "views": 2045,
+      "views": 345342,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -396,12 +374,10 @@
       "title": "Som12e news",
       "subtitle": "What's new in JS in 2024",
       "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
-      "views": 2045,
+      "views": 7867,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -415,15 +391,13 @@
     },
     {
       "id": "13",
-      "title": "Galaxy13 features",
+      "title": "SCIENCE IS TRILLING!!!!",
       "subtitle": "What's new in JS in 2024",
-      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
-      "views": 2045,
+      "img": "https://cdn.vox-cdn.com/thumbor/MQU8A_Z_Cfq0UGhxiH82OBi7qWM=/0x502:6280x5212/1200x800/filters:focal(0x502:6280x5212)/cdn.vox-cdn.com/uploads/chorus_image/image/46622634/shutterstock_172355312.0.0.jpg",
+      "views": 7777,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -440,12 +414,10 @@
       "title": "Some14 news",
       "subtitle": "What's new in JS in 2024",
       "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
-      "views": 2045,
+      "views": 323,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -462,12 +434,10 @@
       "title": "Galaxy15 features",
       "subtitle": "What's new in JS in 2024",
       "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
-      "views": 2045,
+      "views": 20,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -484,12 +454,10 @@
       "title": "Some16 news",
       "subtitle": "What's new in JS in 2024",
       "img": "https://timeweb.com/ru/community/article/3c/3c0cefa6f99fda8d9596da474fc7e264.jpg",
-      "views": 2045,
+      "views": 453,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -503,15 +471,13 @@
     },
     {
       "id": "17",
-      "title": "Galaxy17 features",
+      "title": "Galaxy17 ECONOMICS",
       "subtitle": "What's new in JS in 2024",
-      "img": "https://twinslash.com/assets/images/uploads/ruby-on-rails-development.jpg",
-      "views": 2045,
-      "createdAt": "09.04.2024",
+      "img": "https://arts-sciences.buffalo.edu/content/arts-sciences/economics/about/what-is-economics/_jcr_content/par/image.img.680.auto.jpg/1515613194181.jpg",
+      "views": 678880,
+      "createdAt": "21.07.2020",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -668,7 +634,7 @@
       "lastname": "Hong",
       "age": 29,
       "currency": "EUR",
-      "country": "Poland",
+      "country": "Germany ",
       "city": "Kharkiv",
       "username": "user",
       "avatar": "https://m.media-amazon.com/images/M/MV5BOTgzZGI1OGItZGM3Mi00M2IyLWFkMDktNDA1MGU0NGVmM2YxXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg"

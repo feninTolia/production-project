@@ -9,6 +9,7 @@ import { IBuildOptions } from './types';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins(options: IBuildOptions): WebpackPluginInstance[] {
   const { paths, isDev, apiUrl, project } = options;
@@ -34,6 +35,7 @@ export function buildPlugins(options: IBuildOptions): WebpackPluginInstance[] {
   if (isDev) {
     plugins.push(new HotModuleReplacementPlugin());
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+    plugins.push(new ForkTsCheckerWebpackPlugin());
   }
 
   return plugins;

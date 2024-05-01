@@ -82,4 +82,11 @@
 .disabled {
   cursor: auto;
   opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+    fill-opacity: 0.5;
+    stroke-opacity: 0.5;
+  }
 }

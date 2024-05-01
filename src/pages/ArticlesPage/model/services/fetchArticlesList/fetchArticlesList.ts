@@ -30,7 +30,7 @@ export const fetchArticlesList = createAsyncThunk<
   const type = getArticlesPageType(getState() as IStateSchema);
 
   try {
-    addQueryParams({ sort, order, search });
+    addQueryParams({ sort, order, search, type });
 
     const response = await extra.api.get<IArticle[]>('/articles', {
       params: {

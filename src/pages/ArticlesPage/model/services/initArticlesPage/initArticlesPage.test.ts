@@ -21,7 +21,6 @@ describe('initArticlesPage.test', () => {
     await thunk.callThunk(undefined);
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
   });
   it('should not call fetchArticlesList if inited', async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {

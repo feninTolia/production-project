@@ -45,7 +45,8 @@ const articleDetailsCommentsSlice = createSlice({
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<IStateSchema>(
-  (state) => state.articleDetailsComments ?? commentsAdapter.getInitialState()
+  (state) =>
+    state.articleDetailsPage?.comments ?? commentsAdapter.getInitialState()
 );
 
 export const { reducer: articleDetailsCommentsReducer } =

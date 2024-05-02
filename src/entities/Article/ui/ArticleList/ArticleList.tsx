@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { IArticle, IArticlesView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -12,6 +12,7 @@ interface IArticleListProps {
   articles: IArticle[];
   isLoading?: boolean;
   view?: IArticlesView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: IArticlesView) => {
@@ -21,11 +22,24 @@ const getSkeletons = (view: IArticlesView) => {
 };
 
 export const ArticleList = memo((props: IArticleListProps) => {
-  const { className, articles, view = IArticlesView.SMALL, isLoading } = props;
+  const {
+    className,
+    articles,
+    view = IArticlesView.SMALL,
+    isLoading,
+    target,
+  } = props;
   const { t } = useTranslation();
 
   const renderArticle = (article: IArticle) => {
-    return <ArticleListItem key={article.id} article={article} view={view} />;
+    return (
+      <ArticleListItem
+        key={article.id}
+        article={article}
+        view={view}
+        target={target}
+      />
+    );
   };
 
   if (!isLoading && !articles.length) {

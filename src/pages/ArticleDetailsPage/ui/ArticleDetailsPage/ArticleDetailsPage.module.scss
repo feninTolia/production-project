@@ -1,3 +1,9 @@
 .commentTitle {
   margin-block: 24px;
 }
+
+.recommendedArticles {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}

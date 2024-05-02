@@ -13,7 +13,10 @@ import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { NavigateFunction } from 'react-router-dom';
 import { IArticleDetailsSchema } from 'entities/Article';
-import { IArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import {
+  ArticleDetailsPageSchema,
+  IArticleDetailsCommentsSchema,
+} from 'pages/ArticleDetailsPage';
 import { IAddCommentFormSchema } from 'features/addCommentForm';
 import { IArticlesPageSchema } from 'pages/ArticlesPage';
 import { IScrollSaveSchema } from 'features/ScrollSave';
@@ -27,9 +30,9 @@ export interface IStateSchema {
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
   articleDetails?: IArticleDetailsSchema;
-  articleDetailsComments?: IArticleDetailsCommentsSchema;
   addCommentForm?: IAddCommentFormSchema;
   articlesPage?: IArticlesPageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type IStateSchemaKey = keyof IStateSchema;

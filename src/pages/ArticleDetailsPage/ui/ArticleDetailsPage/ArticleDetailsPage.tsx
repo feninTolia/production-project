@@ -2,27 +2,29 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/addCommentForm';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { classNames } from 'shared/lib/classNames';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import DynamicModuleLoader, {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-  articleDetailsCommentsReducer,
-  getArticleComments,
-} from '../../model/slice/ArticleDetailsCommentsSlice';
-import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import cls from './ArticleDetailsPage.module.scss';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'shared/ui/Page/Page';
+
+import { getArticleComments } from '../../model/slice/ArticleDetailsCommentsSlice';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { getArticleRecommendations } from '../../model/slice/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../../model/slice';
+import cls from './ArticleDetailsPage.module.scss';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -34,15 +36,20 @@ const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
+  const recommendationsIsLoading = useSelector(
+    getArticleRecommendationsIsLoading
+  );
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
   useInitialEffect(() => {
     void dispatch(fetchCommentsByArticleId(id));
+    void dispatch(fetchArticleRecommendations());
   });
 
   const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
   };
 
   const onBackToList = useCallback(() => {
@@ -77,7 +84,22 @@ const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
           {t('Back to list')}
         </Button>
         <ArticleDetails id={ID} />
-        <Text title={t('Comments')} className={cls.commentTitle} />
+        <Text
+          title={t('Recommend')}
+          className={cls.commentTitle}
+          size={TextSize.L}
+        />
+        <ArticleList
+          articles={recommendations}
+          isLoading={recommendationsIsLoading}
+          className={cls.recommendedArticles}
+          target="_blank"
+        />
+        <Text
+          title={t('Comments')}
+          className={cls.commentTitle}
+          size={TextSize.L}
+        />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
       </Page>

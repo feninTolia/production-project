@@ -25,7 +25,9 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -89,7 +91,9 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -153,7 +157,9 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -217,7 +223,10 @@
       "views": 20435,
       "createdAt": "09.02.2024",
       "userId": "1",
-      "type": ["IT", "ECONOMICS"],
+      "type": [
+        "IT",
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -237,7 +246,9 @@
       "views": 12045,
       "createdAt": "09.01.2024",
       "userId": "1",
-      "type": ["POLITICS"],
+      "type": [
+        "POLITICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -257,7 +268,9 @@
       "views": 4045,
       "createdAt": "09.04.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -277,7 +290,9 @@
       "views": 6045,
       "createdAt": "02.01.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -297,7 +312,9 @@
       "views": 23425,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -317,7 +334,10 @@
       "views": 456,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT", "POLITICS"],
+      "type": [
+        "IT",
+        "POLITICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -337,7 +357,9 @@
       "views": 6783,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["POLITICS"],
+      "type": [
+        "POLITICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -357,7 +379,10 @@
       "views": 345342,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -377,7 +402,9 @@
       "views": 7867,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -397,7 +424,10 @@
       "views": 7777,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -417,7 +447,9 @@
       "views": 323,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -437,7 +469,10 @@
       "views": 20,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -457,7 +492,9 @@
       "views": 453,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -477,7 +514,10 @@
       "views": 678880,
       "createdAt": "21.07.2020",
       "userId": "1",
-      "type": ["IT", "ECONOMICS"],
+      "type": [
+        "IT",
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -598,6 +638,12 @@
       "userId": "2",
       "text": "16 tttt",
       "id": "0IV86l4"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "m",
+      "id": "tq3ounL"
     }
   ],
   "users": [

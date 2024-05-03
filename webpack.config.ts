@@ -10,12 +10,16 @@ import path from 'path';
 
 export default (env: IBuildEnv) => {
   const mode: BuildMode = env.mode || 'development';
+  const build = path.resolve(__dirname, 'build');
+
   const paths: IBuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
-    build: path.resolve(__dirname, 'build'),
+    build,
     html: path.resolve(__dirname, 'public', 'index.html'),
     src: path.resolve(__dirname, 'src'),
     favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
+    locales: path.resolve(__dirname, 'public', 'locales'),
+    buildLocales: path.resolve(build, 'locales'),
   };
   const isDev = mode === 'development';
   const port = env.port || 3001;

@@ -50,5 +50,6 @@ module.exports = {
     'no-undef': 'off',
     'multiline-ternary': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
+    '@typescript-eslint/promise-function-async': 'off',
   },
 };

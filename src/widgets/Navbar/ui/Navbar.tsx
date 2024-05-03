@@ -7,6 +7,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 interface INavbarProps {
   className?: string;
@@ -31,6 +34,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
+      <Text title="LOGO" theme={TextTheme.INVERTED} />
       {!user && (
         <>
           <Button
@@ -46,12 +50,11 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         </>
       )}
       {user && (
-        <>
-          <Button
-            className={cls.links}
-            onClick={onLogout}
-            theme={ButtonTheme.CLEAR_INVERTED}
-          >
+        <div className={cls.links}>
+          <AppLink to={RoutePath.article_create} theme={AppLinkTheme.INVERTED}>
+            {t('Create New Article')}
+          </AppLink>
+          <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED}>
             {t('Logout')}
           </Button>
           <Avatar
@@ -60,7 +63,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
             size="30px"
             className={cls.avatar}
           />
-        </>
+        </div>
       )}
     </header>
   );

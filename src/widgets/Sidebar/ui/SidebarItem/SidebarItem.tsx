@@ -1,11 +1,11 @@
+import { getUserAuthData } from 'entities/User';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { classNames } from 'shared/lib/classNames';
-import cls from './SidebarItem.module.scss';
-import { ISidebarItem } from 'widgets/Sidebar/model/types';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
+import { classNames } from 'shared/lib/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { ISidebarItem } from '../../model/types';
+import cls from './SidebarItem.module.scss';
 
 interface ISidebarItemProps extends ISidebarItem {
   collapsed: boolean;

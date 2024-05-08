@@ -27,7 +27,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'ftoe-plugin'],
   rules: {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
@@ -51,5 +51,6 @@ module.exports = {
     'multiline-ternary': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/promise-function-async': 'off',
+    'ftoe-plugin/path-checker': 'error',
   },
 };

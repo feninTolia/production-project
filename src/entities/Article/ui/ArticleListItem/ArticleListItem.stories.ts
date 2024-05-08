@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleListItem } from './ArticleListItem';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { mockArticle } from 'shared/constants/mock';
-import { IArticlesView } from 'entities/Article/model/types/article';
+import { IArticlesView } from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {
   title: 'entities/Article/ArticleListItem',

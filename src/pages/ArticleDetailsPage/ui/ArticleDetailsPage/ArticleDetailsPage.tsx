@@ -13,7 +13,6 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Page } from 'shared/ui/Page/Page';
 import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
-
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -22,8 +21,8 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { articleDetailsPageReducer } from '../../model/slice';
 import { getArticleComments } from '../../model/slice/ArticleDetailsCommentsSlice';
 import { getArticleRecommendations } from '../../model/slice/articleDetailsPageRecommendationsSlice';
-import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import cls from './ArticleDetailsPage.module.scss';
 
 interface IArticleDetailsPageProps {
   className?: string;

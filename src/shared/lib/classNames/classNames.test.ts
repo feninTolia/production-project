@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '../classNames';
 
 describe('classNames', () => {
   it('should return root class', () => {

@@ -1,33 +1,7 @@
-.ArticleDetailsSkeleton {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .skeletonAvatar {
   align-self: center;
 }
 
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 44px;
-}
-
 .headline {
-  margin-bottom: 24px;
-}
-
-.infoBlock {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.articleBlocks {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-block: 24px;
+  margin-bottom: 12px;
 }

@@ -17,13 +17,6 @@
   width: 100%;
 }
 
-.items {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-inline: 15px;
-}
-
 .collapseBtn {
   position: absolute;
   right: calc((var(--font-line-l) * (-1.3)));

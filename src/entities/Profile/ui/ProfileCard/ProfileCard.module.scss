@@ -1,16 +1,11 @@
 .ProfileCard {
+  width: 100%;
   padding: 30px;
   border: 2px solid var(--inverted-bg-color);
 }
 
 .editing {
   border: 2px solid var(--inverted-primary-color);
-}
-
-.data {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .loading,

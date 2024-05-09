@@ -9,6 +9,7 @@ import { Currency, CurrencySelect } from 'entities/Currency';
 import { IProfile } from '../../model/types/profile';
 import { Country, CountrySelect } from 'entities/Country';
 import cls from './ProfileCard.module.scss';
+import { VStack } from 'shared/ui/Stack';
 
 interface IProfileCardProps {
   className?: string;
@@ -75,7 +76,7 @@ export const ProfileCard: FC<IProfileCardProps> = (props) => {
         </div>
       )}
 
-      <div className={cls.data}>
+      <VStack gap="12">
         <Input
           value={data.firstname}
           placeholder={t('Your name')}
@@ -122,7 +123,7 @@ export const ProfileCard: FC<IProfileCardProps> = (props) => {
           value={data.country}
           onChange={onChangeCountry}
         />
-      </div>
+      </VStack>
     </div>
   );
 };

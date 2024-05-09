@@ -25,6 +25,7 @@ import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import cls from './ArticleDetails.module.scss';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface IArticleDetailsProps {
   className?: string;
@@ -79,7 +80,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
   let content;
   if (isLoading) {
     content = (
-      <div className={cls.ArticleDetailsSkeleton}>
+      <VStack gap="16">
         <Skeleton
           className={cls.skeletonAvatar}
           borderRadius="100%"
@@ -90,7 +91,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
         <Skeleton width="60%" height="24px" />
         <Skeleton width="100%" height="200px" />
         <Skeleton width="100%" height="200px" />
-      </div>
+      </VStack>
     );
   }
   if (error) {
@@ -104,41 +105,41 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
   }
   if (article) {
     content = (
-      <>
-        <div className={cls.avatarWrapper}>
+      <VStack gap="16">
+        <HStack justify="center" max>
           <Avatar
             size="200px"
             src={article.img}
             alt="avatar"
             className={cls.avatar}
           />
-        </div>
+        </HStack>
         <Text
           title={article.title}
           text={article.subtitle}
           size={TextSize.L}
           className={cls.headline}
         />
-        <div className={cls.infoBlock}>
-          <Icon Svg={EyeIcon} />
-          <Text text={String(article.views)} />
-        </div>
-        <div className={cls.infoBlock}>
-          <Icon Svg={DateIcon} />
-          <Text text={article.createdAt} />
-        </div>
-        <div className={cls.articleBlocks}>
+        <VStack gap="8">
+          <HStack align="center" gap="8">
+            <Icon Svg={EyeIcon} />
+            <Text text={String(article.views)} />
+          </HStack>
+          <HStack align="center" gap="8">
+            <Icon Svg={DateIcon} />
+            <Text text={article.createdAt} />
+          </HStack>
+        </VStack>
+        <VStack gap="32" className={cls.articleBlocks}>
           {article.blocks?.map(renderBlock)}
-        </div>
-      </>
+        </VStack>
+      </VStack>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
-        {content}
-      </div>
+      <div className={classNames('', {}, [className])}>{content}</div>
     </DynamicModuleLoader>
   );
 });

@@ -22,14 +22,7 @@ export const Dark: Story = {
   args: { title: 'Lorem ipsum ', text: 'Some description' },
   decorators: [ThemeDecorator(Theme.DARK)],
 };
-export const SizeM: Story = {
-  args: { title: 'Lorem ipsum ', text: 'Some description', size: TextSize.M },
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
-export const SizeL: Story = {
-  args: { title: 'Lorem ipsum ', text: 'Some description', size: TextSize.L },
-  decorators: [ThemeDecorator(Theme.DARK)],
-};
+
 export const OnlyTitle: Story = {
   args: { title: 'Lorem ipsum ' },
 };
@@ -43,5 +36,18 @@ export const Error: Story = {
     text: 'Some description',
     theme: TextTheme.ERROR,
   },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const SizeS: Story = {
+  args: { title: 'Lorem ipsum S ', text: 'Some description', size: TextSize.S },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+export const SizeM: Story = {
+  args: { title: 'Lorem ipsum M', text: 'Some description', size: TextSize.M },
+  decorators: [ThemeDecorator(Theme.DARK)],
+};
+export const SizeL: Story = {
+  args: { title: 'Lorem ipsum L', text: 'Some description', size: TextSize.L },
   decorators: [ThemeDecorator(Theme.DARK)],
 };

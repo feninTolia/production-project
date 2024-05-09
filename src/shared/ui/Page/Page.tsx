@@ -53,13 +53,13 @@ export const Page = memo((props: PropsWithChildren<IPageProps>) => {
   }, 500);
 
   return (
-    <section
+    <main
       className={classNames(cls.Page, {}, [className])}
       ref={wrapperRef}
       onScroll={handleScroll}
     >
       {children}
       {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}
-    </section>
+    </main>
   );
 });

@@ -4,14 +4,13 @@ import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from '../Button/Button';
 import { HStack } from '../Stack';
 import cls from './ListBox.module.scss';
+import { DropdownDirection } from 'shared/types/ui';
 
 export interface ILIstBoxItem {
   value: string;
   content: ReactNode;
   disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface IListBoxProps {
   items: ILIstBoxItem[];
@@ -24,7 +23,7 @@ interface IListBoxProps {
   direction?: DropdownDirection;
 }
 
-export function ListBox(props: IListBoxProps) {
+export function ListBox(props: Readonly<IListBoxProps>) {
   const {
     items,
     className,
@@ -33,7 +32,7 @@ export function ListBox(props: IListBoxProps) {
     onChange,
     label,
     disabled,
-    direction = 'bottom',
+    direction = 'bottomRight',
   } = props;
 
   return (

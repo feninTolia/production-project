@@ -37,7 +37,7 @@ export const CountrySelect = memo((props: ICountrySelectProps) => {
       items={countriesOptions}
       label={t('Select your country')}
       disabled={readonly}
-      direction="top"
+      direction="topRight"
     />
   );
 });

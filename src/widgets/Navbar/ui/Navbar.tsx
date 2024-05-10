@@ -10,6 +10,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 
 interface INavbarProps {
   className?: string;
@@ -54,14 +55,27 @@ export const Navbar = memo(({ className }: INavbarProps) => {
           <AppLink to={RoutePath.article_create} theme={AppLinkTheme.INVERTED}>
             {t('Create New Article')}
           </AppLink>
-          <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED}>
-            {t('Logout')}
-          </Button>
-          <Avatar
-            src={user.avatar ?? ''}
-            alt="avatar"
-            size="30px"
-            className={cls.avatar}
+
+          <Dropdown
+            direction="bottomLeft"
+            trigger={
+              <Avatar
+                src={user.avatar ?? ''}
+                alt="avatar"
+                size="30px"
+                className={cls.avatar}
+              />
+            }
+            items={[
+              {
+                content: t('Profile'),
+                href: RoutePath.profile + user.id,
+              },
+              {
+                content: t('Logout'),
+                onClick: onLogout,
+              },
+            ]}
           />
         </div>
       )}

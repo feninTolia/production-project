@@ -26,7 +26,7 @@ const currencyOptions = [
 ];
 
 export const CurrencySelect: FC<ICurrencySelectProps> = (props) => {
-  const { readonly, value, onChange } = props;
+  const { readonly, value, onChange, className } = props;
   const { t } = useTranslation();
 
   const onChangeHandler = useCallback(
@@ -38,12 +38,13 @@ export const CurrencySelect: FC<ICurrencySelectProps> = (props) => {
 
   return (
     <ListBox
+      className={className}
       value={value}
       onChange={onChangeHandler}
       items={currencyOptions}
       label={t('Set your currency')}
       disabled={readonly}
-      direction="top"
+      direction="topRight"
     />
   );
 };

@@ -4,27 +4,26 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { CombinedState } from 'redux';
 import { ThunkMiddlewareFor } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
 import { AxiosInstance } from 'axios';
+import { IArticleDetailsSchema } from 'entities/Article';
 import { ICounterSchema } from 'entities/Counter';
-import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { ILoginSchema } from 'features/AuthByUsername';
-import { NavigateFunction } from 'react-router-dom';
-import { IArticleDetailsSchema } from 'entities/Article';
-import {
-  ArticleDetailsPageSchema,
-  IArticleDetailsCommentsSchema,
-} from 'pages/ArticleDetailsPage';
-import { IAddCommentFormSchema } from 'features/addCommentForm';
-import { IArticlesPageSchema } from 'pages/ArticlesPage';
 import { IScrollSaveSchema } from 'features/ScrollSave';
+import { IAddCommentFormSchema } from 'features/addCommentForm';
+import { IProfileSchema } from 'features/editableProfileCard';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
+import { IArticlesPageSchema } from 'pages/ArticlesPage';
+import { NavigateFunction } from 'react-router-dom';
+import { CombinedState } from 'redux';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface IStateSchema {
   counter: ICounterSchema;
   user: IUserSchema;
   scrollSave: IScrollSaveSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   //Async reducers
   loginForm?: ILoginSchema;

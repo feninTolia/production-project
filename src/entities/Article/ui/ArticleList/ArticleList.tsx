@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 interface IArticleListProps {
   className?: string;
-  articles: IArticle[];
+  articles?: IArticle[];
   isLoading?: boolean;
   view?: IArticlesView;
   target?: HTMLAttributeAnchorTarget;
@@ -42,7 +42,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
     );
   };
 
-  if (!isLoading && !articles.length) {
+  if (!articles) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         <Text title={t('No articles found')} />

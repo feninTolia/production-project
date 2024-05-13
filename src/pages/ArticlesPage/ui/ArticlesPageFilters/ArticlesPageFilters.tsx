@@ -1,20 +1,20 @@
-import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { SortOrder } from 'shared/types';
-import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import {
   ArticleSortField,
   ArticleSortSelector,
   ArticleTypeTabs,
-  IArticlesView,
   IArticleType,
+  IArticlesView,
 } from 'entities/Article';
-import { articlesPageActions } from '../../model/slice/articlesPageSlice';
+import { ArticleViewSelector } from 'features/ArticleViewSelector';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames';
+import { useDebounce } from 'shared/lib/hooks/useDebounce';
+import { SortOrder } from 'shared/types';
+import { Card } from 'shared/ui/Card/Card';
+import { Input } from 'shared/ui/Input/Input';
+import { HStack, VStack } from 'shared/ui/Stack';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
@@ -23,6 +23,7 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { articlesPageActions } from '../../model/slice/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
 
 interface IArticlesPageFiltersProps {
@@ -43,26 +44,27 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
     dispatch(fetchArticlesList({ replace: true }));
   }, [dispatch]);
 
-  const debouncedFetchData = useDebounce(fetchData, 500);
+  const debounceInterval = 500;
+  const debouncedFetchData = useDebounce(fetchData, debounceInterval);
 
   const onChangeView = useCallback(
-    (view: IArticlesView) => {
-      dispatch(articlesPageActions.setView(view));
+    (newView: IArticlesView) => {
+      dispatch(articlesPageActions.setView(newView));
       fetchData();
     },
     [dispatch, fetchData]
   );
   const handleChangeSort = useCallback(
-    (sort: ArticleSortField) => {
-      dispatch(articlesPageActions.setSort(sort));
+    (newSort: ArticleSortField) => {
+      dispatch(articlesPageActions.setSort(newSort));
       dispatch(articlesPageActions.setPage(1));
       fetchData();
     },
     [dispatch, fetchData]
   );
   const handleChangeOrder = useCallback(
-    (order: SortOrder) => {
-      dispatch(articlesPageActions.setOrder(order));
+    (newOrder: SortOrder) => {
+      dispatch(articlesPageActions.setOrder(newOrder));
       dispatch(articlesPageActions.setPage(1));
       fetchData();
     },
@@ -70,8 +72,8 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
   );
 
   const handleChangeSearch = useCallback(
-    (search: string) => {
-      dispatch(articlesPageActions.setSearch(search));
+    (newSearch: string) => {
+      dispatch(articlesPageActions.setSearch(newSearch));
       dispatch(articlesPageActions.setPage(1));
       debouncedFetchData();
     },
@@ -79,8 +81,8 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
   );
 
   const handleTypeChange = useCallback(
-    (type: IArticleType) => {
-      dispatch(articlesPageActions.setType(type));
+    (newType: IArticleType) => {
+      dispatch(articlesPageActions.setType(newType));
       dispatch(articlesPageActions.setPage(1));
       debouncedFetchData();
     },
@@ -88,8 +90,8 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
   );
 
   return (
-    <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-      <div className={cls.sortWrapper}>
+    <VStack gap="16" max className={classNames('', {}, [className])}>
+      <HStack justify="between" align="center" max>
         <ArticleSortSelector
           order={order}
           sort={sort}
@@ -97,7 +99,7 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
           onChangeSort={handleChangeSort}
         />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </HStack>
       <Card className={cls.search}>
         <Input
           placeholder={t('Search')}
@@ -106,6 +108,6 @@ export const ArticlesPageFilters = memo((props: IArticlesPageFiltersProps) => {
         />
       </Card>
       <ArticleTypeTabs value={type} onChangeType={handleTypeChange} />
-    </div>
+    </VStack>
   );
 });

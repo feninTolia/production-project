@@ -10,6 +10,7 @@ module.exports = {
     'config',
     'webpack.config.ts',
     'json-server',
+    'scripts',
   ],
   globals: { __IS_DEV__: true, __API__: true, __PROJECT__: true },
   overrides: [

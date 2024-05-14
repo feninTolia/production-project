@@ -25,6 +25,8 @@ interface ITextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
+
+  'data-testid'?: string;
 }
 type HeaderTag = 'h1' | 'h2' | 'h3';
 
@@ -41,6 +43,7 @@ export const Text = memo((props: ITextProps) => {
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
     size = TextSize.M,
+    'data-testid': dataTestId = 'Text',
   } = props;
   const HeaderTag = mapSizeToHeaderTag[size];
   return (
@@ -52,8 +55,16 @@ export const Text = memo((props: ITextProps) => {
         cls[size],
       ])}
     >
-      {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
-      {description && <p className={cls.description}>{description}</p>}
+      {title && (
+        <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>
+          {title}
+        </HeaderTag>
+      )}
+      {description && (
+        <p className={cls.description} data-testid={`${dataTestId}.Paragraph`}>
+          {description}
+        </p>
+      )}
     </div>
   );
 });

@@ -3,6 +3,7 @@ import {
   IArticle,
   IArticleType,
 } from 'entities/Article/model/types/article';
+import { UserRole } from 'entities/User/model/types/userSchema';
 
 export const mockArticle: IArticle = {
   id: '1',
@@ -16,7 +17,7 @@ export const mockArticle: IArticle = {
     username: 'admin',
     avatar:
       'https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI',
-    role: 'ADMIN',
+    roles: [UserRole.ADMIN],
   },
   type: [IArticleType.IT, IArticleType.ECONOMICS, IArticleType.POLITICS],
   blocks: [

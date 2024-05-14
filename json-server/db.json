@@ -25,9 +25,7 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -91,9 +89,7 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -157,9 +153,7 @@
       "views": 2045,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -223,10 +217,7 @@
       "views": 20435,
       "createdAt": "09.02.2024",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -246,9 +237,7 @@
       "views": 12045,
       "createdAt": "09.01.2024",
       "userId": "1",
-      "type": [
-        "POLITICS"
-      ],
+      "type": ["POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -268,9 +257,7 @@
       "views": 4045,
       "createdAt": "09.04.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -290,9 +277,7 @@
       "views": 6045,
       "createdAt": "02.01.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -312,9 +297,7 @@
       "views": 23425,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -334,10 +317,7 @@
       "views": 456,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT",
-        "POLITICS"
-      ],
+      "type": ["IT", "POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -357,9 +337,7 @@
       "views": 6783,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "POLITICS"
-      ],
+      "type": ["POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -379,10 +357,7 @@
       "views": 345342,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -402,9 +377,7 @@
       "views": 7867,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -424,10 +397,7 @@
       "views": 7777,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -447,9 +417,7 @@
       "views": 323,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -469,10 +437,7 @@
       "views": 20,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -492,9 +457,7 @@
       "views": 453,
       "createdAt": "09.04.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -514,10 +477,7 @@
       "views": 678880,
       "createdAt": "21.07.2020",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -652,14 +612,21 @@
       "password": "123",
       "username": "admin",
       "avatar": "https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI",
-      "role": "ADMIN"
+      "roles": ["ADMIN"]
     },
     {
       "id": "2",
       "password": "123",
       "username": "user",
       "avatar": "https://hips.hearstapps.com/hmg-prod/images/jess-hong-netflix-2-65fd9b0847eb3.jpg",
-      "role": "USER"
+      "roles": ["USER"]
+    },
+    {
+      "id": "3",
+      "password": "123",
+      "username": "manager",
+      "avatar": "https://kinowar.com/wp-content/uploads/2022/09/%D0%95%D0%B9%D1%81%D0%B0-%D0%93%D0%BE%D0%BD%D1%81%D0%B0%D0%BB%D0%B5%D1%81-%D1%84%D0%BE%D1%82%D0%BE-Eiza-Gonz%C3%A1lez-photo-7.jpg",
+      "roles": ["MANAGER"]
     }
   ],
   "profile": [

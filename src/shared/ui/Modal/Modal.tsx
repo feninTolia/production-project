@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
@@ -8,14 +8,14 @@ interface IModalProps {
   isOpen: boolean;
   onClose?: () => void;
   lazy?: boolean;
+  children: ReactNode;
 }
 
 const ANIMATION_DELAY = 150;
 
-export const Modal: FC<IModalProps> = (props) => {
+export const Modal = (props: IModalProps) => {
   const { className, children, isOpen, onClose, lazy } = props;
 
-  // const [isMounted, setIsMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -44,12 +44,6 @@ export const Modal: FC<IModalProps> = (props) => {
     [handleClose]
   );
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     setIsMounted(true);
-  //   }
-  // }, [isOpen]);
-
   useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onEscapeClick);
@@ -63,7 +57,6 @@ export const Modal: FC<IModalProps> = (props) => {
     };
   }, [isOpen, onEscapeClick]);
 
-  // if (lazy && !isMounted) {
   if (lazy && !isOpen) {
     return null;
   }

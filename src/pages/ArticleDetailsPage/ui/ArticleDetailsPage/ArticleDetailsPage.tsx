@@ -7,12 +7,11 @@ import DynamicModuleLoader, {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from 'shared/ui/Page/Page';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
-import { VStack } from 'shared/ui/Stack';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -26,26 +25,12 @@ const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
     articleDetailsPage: articleDetailsPageReducer,
   };
 
-  const ID = __PROJECT__ === 'storybook' ? '1' : id;
-
-  if (!ID || !Number.isInteger(+ID)) {
-    return (
-      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Text
-          title="Article not found"
-          theme={TextTheme.ERROR}
-          align={TextAlign.CENTER}
-        />
-      </Page>
-    );
-  }
-
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <VStack gap="32" max>
           <ArticleDetailsPageHeader />
-          <ArticleDetails id={ID} />
+          <ArticleDetails id={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

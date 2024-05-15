@@ -1,6 +1,5 @@
 import { StoryFn } from '@storybook/react';
 import { IStateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import 'app/styles/index.scss';
 import { articleDetailsReducer } from 'entities/Article';
 import { loginReducer } from 'features/AuthByUsername';
 import { addCommentFormReducer } from 'features/addCommentForm';

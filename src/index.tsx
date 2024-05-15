@@ -9,7 +9,15 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 import 'shared/config/i18n/i18n';
 import 'app/styles/index.scss';
 
-render(
+import { createRoot } from 'react-dom/client';
+const container = document.getElementById('root');
+
+if (!container) {
+  throw new Error('Root container not found');
+}
+
+const root = createRoot(container);
+root.render(
   <Suspense fallback="">
     <BrowserRouter>
       <StoreProvider>
@@ -20,6 +28,5 @@ render(
         </ErrorBoundary>
       </StoreProvider>
     </BrowserRouter>
-  </Suspense>,
-  document.getElementById('root')
+  </Suspense>
 );

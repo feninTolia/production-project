@@ -4,7 +4,7 @@ import {
   IStateSchemaKey,
   IStoreWithReducersManager,
 } from 'app/providers/StoreProvider';
-import { FC, useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 export type ReducersList = {
@@ -14,9 +14,10 @@ export type ReducersList = {
 interface IDynamicModuleLoaderProps {
   reducers: ReducersList;
   removeAfterUnmount?: boolean;
+  children: ReactNode;
 }
 
-const DynamicModuleLoader: FC<IDynamicModuleLoaderProps> = (props) => {
+const DynamicModuleLoader = (props: IDynamicModuleLoaderProps) => {
   const { children, reducers, removeAfterUnmount = true } = props;
   const dispatch = useDispatch();
   const store: IStoreWithReducersManager = useStore();

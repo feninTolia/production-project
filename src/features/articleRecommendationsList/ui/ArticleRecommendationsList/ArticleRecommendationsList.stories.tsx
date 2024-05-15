@@ -35,6 +35,3 @@ export const Dark: Story = {
   args: {},
   decorators: [ThemeDecorator(Theme.DARK)],
 };
-
-// const Template = () => <ArticleRecommendationsList />;
-// export const FetchCall = Template.bind({});

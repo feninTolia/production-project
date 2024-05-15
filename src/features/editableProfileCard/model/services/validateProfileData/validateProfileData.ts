@@ -1,5 +1,5 @@
 import { IProfile } from 'entities/Profile';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../constants';
 
 export const validateProfileData = (profile?: IProfile) => {
   const errors: ValidateProfileError[] = [];

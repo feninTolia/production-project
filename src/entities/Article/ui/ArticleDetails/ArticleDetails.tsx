@@ -15,11 +15,12 @@ import DateIcon from 'shared/assets/icons/date.svg';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import {
+  ArticleBlockTypes,
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from '../../';
-import { ArticleBlockTypes, IArticleBlock } from '../../model/types/article';
+import { IArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';

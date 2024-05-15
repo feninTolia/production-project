@@ -9,14 +9,10 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import Eye from 'shared/assets/icons/eye-outlined.svg';
-import {
-  ArticleBlockTypes,
-  IArticle,
-  IArticleTextBlock,
-  IArticlesView,
-} from '../../model/types/article';
+import { IArticle, IArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import cls from './ArticleListItem.module.scss';
+import { ArticleBlockTypes, IArticlesView } from '../../model/constants';
 
 interface IArticleListItemProps {
   className?: string;

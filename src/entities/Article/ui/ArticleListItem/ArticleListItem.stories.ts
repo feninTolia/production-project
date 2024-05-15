@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { mockArticle } from 'shared/constants/mock';
-import { IArticlesView } from '../../model/types/article';
+import { IArticlesView } from '../../model/constants';
 import { ArticleListItem } from './ArticleListItem';
 
 const meta: Meta<typeof ArticleListItem> = {

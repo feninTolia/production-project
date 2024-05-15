@@ -1,9 +1,5 @@
-import {
-  ArticleBlockTypes,
-  IArticle,
-  IArticleType,
-} from 'entities/Article/model/types/article';
-import { UserRole } from 'entities/User/model/types/userSchema';
+import { ArticleBlockTypes, IArticle, IArticleType } from 'entities/Article';
+import { UserRole } from 'entities/User/model/constants';
 
 export const mockArticle: IArticle = {
   id: '1',

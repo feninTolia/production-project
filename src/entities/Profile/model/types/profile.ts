@@ -1,4 +1,4 @@
-import { Country } from 'entities/Country/model/types/country';
+import { Country } from 'entities/Country/model/constants';
 import { Currency } from 'entities/Currency';
 
 export interface IProfile {

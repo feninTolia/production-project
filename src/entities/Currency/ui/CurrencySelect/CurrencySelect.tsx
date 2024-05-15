@@ -1,5 +1,5 @@
+import { Currency } from '../../model/constants';
 import { FC, useCallback } from 'react';
-import { Currency } from '../../model/types/currency';
 import { useTranslation } from 'react-i18next';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
 

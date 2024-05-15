@@ -1,32 +1,30 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-
+import DateIcon from 'shared/assets/icons/date.svg';
+import EyeIcon from 'shared/assets/icons/eye-outlined.svg';
 import { classNames } from 'shared/lib/classNames';
 import DynamicModuleLoader from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import EyeIcon from 'shared/assets/icons/eye-outlined.svg';
-import DateIcon from 'shared/assets/icons/date.svg';
-
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
+import { ArticleBlockTypes } from '../../model/constants';
 import {
-  ArticleBlockTypes,
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
-} from '../../';
+} from '../../model/selectors/articleDetailsSelectors';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { IArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import cls from './ArticleDetails.module.scss';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { HStack, VStack } from 'shared/ui/Stack';
 
 interface IArticleDetailsProps {
   className?: string;

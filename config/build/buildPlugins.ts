@@ -1,17 +1,17 @@
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {
   DefinePlugin,
   HotModuleReplacementPlugin,
   ProgressPlugin,
   WebpackPluginInstance,
 } from 'webpack';
-import { IBuildOptions } from './types';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
-import CircularDependencyPlugin from 'circular-dependency-plugin';
+import { IBuildOptions } from './types';
 
 export function buildPlugins(options: IBuildOptions): WebpackPluginInstance[] {
   const { paths, isDev, apiUrl, project } = options;
@@ -39,12 +39,20 @@ export function buildPlugins(options: IBuildOptions): WebpackPluginInstance[] {
       exclude: /node_modules/,
       failOnError: true,
     }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
+    }),
   ];
 
   if (isDev) {
     plugins.push(new HotModuleReplacementPlugin());
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
-    plugins.push(new ForkTsCheckerWebpackPlugin());
   }
 
   return plugins;

@@ -1,26 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Dropdown } from './Dropdown';
-import { Button } from '../Button/Button';
+import { NotificationItem } from './NotificationItem';
 
-const meta: Meta<typeof Dropdown> = {
-  title: 'shared/Dropdown',
-  component: Dropdown,
+const meta: Meta<typeof NotificationItem> = {
+  title: 'entities/Notification/NotificationItem',
+  component: NotificationItem,
   tags: ['autodocs'],
   argTypes: {},
-  args: {
-    trigger: <Button>More</Button>,
-    items: [
-      { content: 'content1' },
-      { content: 'content2' },
-      { content: 'content3' },
-    ],
-  },
+  args: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof Dropdown>;
+type Story = StoryObj<typeof NotificationItem>;
 
 export const Light: Story = {
   args: {},

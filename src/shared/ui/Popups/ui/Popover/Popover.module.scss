@@ -1,0 +1,7 @@
+.content {
+  position: absolute;
+  z-index: var(--listbox-z-index);
+  padding: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--primary-color);
+}

@@ -1,0 +1,44 @@
+import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames';
+import { Card, CardTheme } from 'shared/ui/Card/Card';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { INotification } from '../../types';
+import cls from './NotificationItem.module.scss';
+
+interface INotificationItemProps {
+  className?: string;
+  notification: INotification;
+}
+
+export const NotificationItem = memo((props: INotificationItemProps) => {
+  const { className, notification } = props;
+
+  const content = (
+    <Card
+      theme={CardTheme.OUTLINED}
+      className={classNames(cls.NotificationItem, {}, [className])}
+    >
+      <Text
+        title={notification.title}
+        text={notification.description}
+        className={cls.text}
+        size={TextSize.S}
+      />
+    </Card>
+  );
+
+  if (notification.href) {
+    return (
+      <a
+        target="_blank"
+        href={notification.href}
+        rel="noreferrer"
+        className={cls.link}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return content;
+});

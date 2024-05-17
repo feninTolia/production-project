@@ -13,3 +13,11 @@
     stroke-opacity: 0.8;
   }
 }
+
+.inverted {
+  fill: var(--inverted-primary-color);
+
+  & path {
+    fill: var(--inverted-primary-color);
+  }
+}

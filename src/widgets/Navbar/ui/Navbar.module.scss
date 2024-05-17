@@ -1,19 +1,9 @@
 .Navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: var(--navbar-height);
   padding: 20px;
   background: var(--inverted-bg-color);
-}
-
-.links {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-inline-start: auto;
-}
-
-.avatar {
-  margin-left: 20px;
 }

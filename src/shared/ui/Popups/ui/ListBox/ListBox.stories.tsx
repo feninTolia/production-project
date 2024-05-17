@@ -9,7 +9,7 @@ const meta: Meta<typeof ListBox> = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div style={{ padding: 200 }}>
+      <div style={{ padding: 200, width: 'fit-content' }}>
         <Story />
       </div>
     ),

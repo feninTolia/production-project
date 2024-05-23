@@ -1,5 +1,6 @@
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -28,12 +29,6 @@ export const Modal = (props: IModalProps) => {
       }, ANIMATION_DELAY);
     }
   }, [onClose]);
-
-  const onContentClick = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ): void => {
-    e.stopPropagation();
-  };
 
   const onEscapeClick = useCallback(
     (e: KeyboardEvent): void => {
@@ -70,11 +65,8 @@ export const Modal = (props: IModalProps) => {
           [className]
         )}
       >
-        <div className={cls.overlay} onClick={handleClose}>
-          <div className={cls.content} onClick={onContentClick}>
-            {children}
-          </div>
-        </div>
+        <Overlay className={cls.overlay} onClick={handleClose} />
+        <div className={cls.content}>{children}</div>
       </div>
     </Portal>
   );

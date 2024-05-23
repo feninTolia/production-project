@@ -1,5 +1,5 @@
 .NotificationItem {
-  width: 200px;
+  width: 100%;
   white-space: nowrap;
 }
 
@@ -13,6 +13,7 @@
 }
 
 .link {
+  width: 100%;
   border-radius: 12px;
   transition: 200ms;
 

@@ -1,4 +1,3 @@
-// import { useTheme } from 'app/providers/ThemeProvider';
 import { createPortal } from 'react-dom';
 
 interface IPortalProps {

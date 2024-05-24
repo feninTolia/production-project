@@ -1,4 +1,4 @@
-import { IUser } from 'entities/User';
+import { IUser } from '@/entities/User';
 import { ArticleBlockTypes, IArticleType } from '../constants';
 
 export interface IArticleBlocksBase {

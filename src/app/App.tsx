@@ -1,10 +1,10 @@
-import { AppRouter } from 'app/providers/router';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
-import { classNames } from 'shared/lib/classNames';
+import { AppRouter } from '@/app/providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { classNames } from '@/shared/lib/classNames';
 import { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserIsMounted, userActions } from 'entities/User';
+import { getUserIsMounted, userActions } from '@/entities/User';
 
 export const App: FC = () => {
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import {
   IStateSchema,
   IStateSchemaKey,
   IStoreWithReducersManager,
-} from 'app/providers/StoreProvider';
+} from '@/app/providers/StoreProvider';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 

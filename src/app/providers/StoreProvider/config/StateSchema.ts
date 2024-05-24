@@ -6,18 +6,18 @@ import {
 } from '@reduxjs/toolkit';
 import { ThunkMiddlewareFor } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
 import { AxiosInstance } from 'axios';
-import { IArticleDetailsSchema } from 'entities/Article';
-import { ICounterSchema } from 'entities/Counter';
-import { IUserSchema } from 'entities/User';
-import { ILoginSchema } from 'features/AuthByUsername';
-import { IScrollSaveSchema } from 'features/ScrollSave';
-import { IAddCommentFormSchema } from 'features/addCommentForm';
-import { IProfileSchema } from 'features/editableProfileCard';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { IArticlesPageSchema } from 'pages/ArticlesPage';
+import { IArticleDetailsSchema } from '@/entities/Article';
+import { ICounterSchema } from '@/entities/Counter';
+import { IUserSchema } from '@/entities/User';
+import { ILoginSchema } from '@/features/AuthByUsername';
+import { IScrollSaveSchema } from '@/features/ScrollSave';
+import { IAddCommentFormSchema } from '@/features/addCommentForm';
+import { IProfileSchema } from '@/features/editableProfileCard';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { IArticlesPageSchema } from '@/pages/ArticlesPage';
 import { NavigateFunction } from 'react-router-dom';
 import { CombinedState } from 'redux';
-import { rtkApi } from 'shared/api/rtkApi';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface IStateSchema {
   counter: ICounterSchema;

@@ -1,7 +1,7 @@
+import { Code } from '@/shared/ui/Code/Code';
+import { Text } from '@/shared/ui/Text/Text';
 import { memo } from 'react';
-import { Text } from 'shared/ui/Text/Text';
 import cls from './ArticleCodeBlock.module.scss';
-import { Code } from 'shared/ui/Code/Code';
 
 interface IArticleCodeBlockProps {
   className?: string;

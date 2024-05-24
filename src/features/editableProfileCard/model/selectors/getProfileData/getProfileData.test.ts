@@ -1,7 +1,7 @@
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 import { getProfileData } from './getProfileData';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 describe('getProfileData.test', () => {
   it('should return profile data', () => {

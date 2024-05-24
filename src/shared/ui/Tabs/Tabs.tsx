@@ -1,9 +1,9 @@
 import { ReactNode, memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { Card, CardTheme } from '../Card/Card';
 import { Button, ButtonTheme } from '../Button/Button';
 import cls from './Tabs.module.scss';
-import { IArticleType } from 'entities/Article';
+import { IArticleType } from '@/entities/Article';
 
 export interface ITabItem {
   value: string;

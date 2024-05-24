@@ -1,5 +1,5 @@
 import { getLoginFormIsLoading } from './getLoginFormIsLoading';
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 
 describe('getLoginFormIsLoading.test', () => {
   it('should return true ', () => {

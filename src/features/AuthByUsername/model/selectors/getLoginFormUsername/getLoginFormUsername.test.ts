@@ -1,5 +1,5 @@
 import { getLoginFormUsername } from './getLoginFormUsername';
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 
 describe('getLoginFormUsername.test', () => {
   it('should return "test user" ', () => {

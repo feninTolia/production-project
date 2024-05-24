@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 import { getLoginFormPassword } from './getLoginFormPassword';
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 
 describe('getLoginFormPassword.test', () => {
   it('should return "test123" ', () => {

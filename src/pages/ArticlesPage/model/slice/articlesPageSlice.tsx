@@ -3,17 +3,17 @@ import {
   createEntityAdapter,
   createSlice,
 } from '@reduxjs/toolkit';
-import { IStateSchema } from 'app/providers/StoreProvider';
+import { IStateSchema } from '@/app/providers/StoreProvider';
 import {
   ArticleSortField,
   IArticle,
   IArticleType,
   IArticlesView,
-} from 'entities/Article';
+} from '@/entities/Article';
 import { IArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
-import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from 'shared/constants/localStorage';
-import { SortOrder } from 'shared/types';
+import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from '@/shared/constants/localStorage';
+import { SortOrder } from '@/shared/types';
 
 const articlesAdapter = createEntityAdapter<IArticle>();
 

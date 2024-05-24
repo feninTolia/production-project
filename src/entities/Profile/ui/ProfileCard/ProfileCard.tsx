@@ -1,15 +1,15 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Mods, classNames } from 'shared/lib/classNames';
-import { Input } from 'shared/ui/Input/Input';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Currency, CurrencySelect } from 'entities/Currency';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { Mods, classNames } from '@/shared/lib/classNames';
+import { Input } from '@/shared/ui/Input/Input';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Currency, CurrencySelect } from '@/entities/Currency';
 import { IProfile } from '../../model/types/profile';
-import { Country, CountrySelect } from 'entities/Country';
+import { Country, CountrySelect } from '@/entities/Country';
 import cls from './ProfileCard.module.scss';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 interface IProfileCardProps {
   className?: string;

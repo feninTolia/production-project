@@ -5,18 +5,18 @@ import {
   memo,
   useRef,
 } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './Page.module.scss';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getScrollSaveScrollByPath,
   scrollSaveActions,
-} from 'features/ScrollSave';
+} from '@/features/ScrollSave';
 import { useLocation } from 'react-router-dom';
-import { IStateSchema } from 'app/providers/StoreProvider';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { useThrottle } from 'shared/lib/hooks/useThrottle';
+import { IStateSchema } from '@/app/providers/StoreProvider';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle';
 
 interface IPageProps {
   className?: string;

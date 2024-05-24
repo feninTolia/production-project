@@ -1,9 +1,9 @@
 import { ReactNode, memo, useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Drawer.module.scss';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 
 interface IDrawerProps {
   className?: string;

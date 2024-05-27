@@ -3,7 +3,10 @@ import { classNames } from '@/shared/lib/classNames';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Drawer.module.scss';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider';
 
 interface IDrawerProps {
   className?: string;
@@ -90,11 +93,19 @@ const DrawerContent = memo((props: IDrawerProps) => {
   );
 });
 
-export const Drawer = memo((props: IDrawerProps) => {
+const DrawerAsync = (props: IDrawerProps) => {
   const { isLoaded } = useAnimationLibs();
   if (!isLoaded) {
     return null;
   }
 
   return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: IDrawerProps) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+};

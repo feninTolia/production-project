@@ -7,6 +7,7 @@ export default ({ config }: { config: Configuration }) => {
 
   config.resolve?.modules?.push(src, 'node_modules');
   config.resolve?.extensions?.push('.ts', '.tsx');
+  config!.resolve!.alias = { ...config!.resolve!.alias, '@': src };
   config.module?.rules?.push(buildCssLoader(true));
 
   //@ts-ignore

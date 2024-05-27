@@ -11,6 +11,7 @@ module.exports = {
     'webpack.config.ts',
     'json-server',
     'scripts',
+    'vite.config.ts',
   ],
   globals: { __IS_DEV__: true, __API__: true, __PROJECT__: true },
   overrides: [

@@ -8,6 +8,7 @@ import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
+import { isMobile } from 'react-device-detect';
 
 interface ISidebarProps {
   className?: string;
@@ -15,7 +16,7 @@ interface ISidebarProps {
 
 export const Sidebar = memo((props: ISidebarProps) => {
   const { className } = props;
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(!!isMobile);
   const sidebarItemsList = useSelector(getSidebarItems);
 
   const onToggle = (): void => {

@@ -14,6 +14,17 @@
   }
 }
 
+.disabled {
+  & :hover,
+  & :focus {
+    opacity: 1;
+    fill-opacity: 1;
+    stroke-opacity: 1;
+  }
+
+  cursor: auto;
+}
+
 .inverted {
   fill: var(--inverted-primary-color);
 

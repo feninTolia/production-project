@@ -2,8 +2,8 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
-import { pathsToModuleNameMapper } from 'ts-jest';
-import { compilerOptions } from '../../tsconfig.json';
+// import { pathsToModuleNameMapper } from 'ts-jest';
+// import { compilerOptions } from '../../tsconfig.json';
 import path from 'path';
 
 export default {
@@ -22,10 +22,10 @@ export default {
   moduleNameMapper: {
     // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
     //   '<rootDir>/__mocks__/fileMock.js',
-pathsToModuleNameMapper(compilerOptions.paths || {}, { prefix: '<rootDir>/' }),
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'JestEmptyComponent.tsx'),
     '^axios$': '<rootDir>node_modules/axios', // Ensure axios is properly mapped
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',

@@ -1,4 +1,3 @@
-import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Card } from '@/shared/ui/Card/Card';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
@@ -9,21 +8,31 @@ import { StarRating } from '@/shared/ui/StarRating/StarRating';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
+import { useTranslation } from 'react-i18next';
 
 interface IRatingCardProps {
   className?: string;
   title?: string;
   feedbackTitle?: string;
   hasFeedback?: boolean;
+  rate?: number;
   onCancel?: (starCount: number) => void;
   onAccept?: (starCount: number, feedback: string) => void;
 }
 
 export const RatingCard = memo((props: IRatingCardProps) => {
-  const { className, hasFeedback, title, feedbackTitle, onAccept, onCancel } =
-    props;
+  const {
+    className,
+    hasFeedback,
+    title,
+    feedbackTitle,
+    onAccept,
+    onCancel,
+    rate = 0,
+  } = props;
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
   const handleSelect = useCallback(
@@ -58,10 +67,13 @@ export const RatingCard = memo((props: IRatingCardProps) => {
 
   return (
     <>
-      <Card className={classNames('', {}, [className])}>
+      <Card className={className} max>
         <VStack gap="16" align="center">
-          <Text size={TextSize.L} title={title} />
-          <StarRating onSelect={handleSelect} />
+          <Text
+            size={TextSize.L}
+            title={starsCount ? t('Thank you for your feedback') : title}
+          />
+          <StarRating selectedStars={starsCount} onSelect={handleSelect} />
         </VStack>
       </Card>
 

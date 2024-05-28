@@ -21,6 +21,7 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ValidateProfileError } from '../../model/constants';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { ProfileRating } from '@/features/profileRating';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -133,6 +134,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
+
+        {formData && <ProfileRating profileId={id} />}
       </VStack>
     </DynamicModuleLoader>
   );

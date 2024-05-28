@@ -744,5 +744,70 @@
       "username": "user",
       "avatar": "https://m.media-amazon.com/images/M/MV5BOTgzZGI1OGItZGM3Mi00M2IyLWFkMDktNDA1MGU0NGVmM2YxXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Nice to read",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Nice to read",
+      "articleId": "2",
+      "userId": "1"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 1,
+      "feedback": "sxasxasxasx",
+      "id": "hxLTAjn"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "id": "GNdrbEI"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 2,
+      "id": "X7VHJ_T"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 5,
+      "feedback": "",
+      "id": "upmIo7U"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "wow",
+      "id": "EqM3w0m"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 4,
+      "feedback": "",
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 2,
+      "feedback": "",
+      "id": 2
+    }
   ]
 }

@@ -1,15 +1,14 @@
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Card } from '@/shared/ui/Card/Card';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Input } from '@/shared/ui/Input/Input';
 import { Modal } from '@/shared/ui/Modal/Modal';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { StarRating } from '@/shared/ui/StarRating/StarRating';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { memo, useCallback, useState } from 'react';
-import cls from './RatingCard.module.scss';
-import { Input } from '@/shared/ui/Input/Input';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
 
 interface IRatingCardProps {
   className?: string;
@@ -59,7 +58,7 @@ export const RatingCard = memo((props: IRatingCardProps) => {
 
   return (
     <>
-      <Card className={classNames(cls.RatingCard, {}, [className])}>
+      <Card className={classNames('', {}, [className])}>
         <VStack gap="16" align="center">
           <Text size={TextSize.L} title={title} />
           <StarRating onSelect={handleSelect} />

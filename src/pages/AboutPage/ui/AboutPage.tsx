@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/shared/ui/Page/Page';
 import { StarRating } from '@/shared/ui/StarRating/StarRating';
-import { RatingCard } from '@/entities/Rating/ui/RatingCard/RatingCard';
+import { RatingCard } from '@/entities/Rating';
 
 const AboutPage = () => {
   const { t } = useTranslation('about');

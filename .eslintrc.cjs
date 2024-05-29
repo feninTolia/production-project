@@ -53,6 +53,6 @@ module.exports = {
     'multiline-ternary': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/promise-function-async': 'off',
-    'ftoe-plugin/path-checker': 'error',
+    'ftoe-plugin/path-checker': ['error', { alias: '@' }],
   },
 };

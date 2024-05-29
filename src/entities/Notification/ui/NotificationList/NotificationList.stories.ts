@@ -9,6 +9,30 @@ const meta: Meta<typeof NotificationList> = {
   tags: ['autodocs'],
   argTypes: {},
   args: {},
+  parameters: {
+    mockData: [
+      {
+        url: __API__ + '/notifications',
+        method: 'GET',
+        status: 200,
+        response: [
+          {
+            id: '1',
+            title: 'Title 1',
+            description: 'Some Description',
+            userId: '1',
+            href: '#',
+          },
+          {
+            id: '2',
+            title: 'Title 2',
+            description: 'Some Other Description',
+            userId: '1',
+          },
+        ],
+      },
+    ],
+  },
 };
 
 export default meta;

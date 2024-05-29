@@ -12,6 +12,7 @@ interface INotificationItemProps {
 
 export const NotificationItem = memo((props: INotificationItemProps) => {
   const { className, notification } = props;
+  if (!notification) return null;
 
   const content = (
     <Card

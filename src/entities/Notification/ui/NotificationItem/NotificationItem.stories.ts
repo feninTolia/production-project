@@ -8,7 +8,15 @@ const meta: Meta<typeof NotificationItem> = {
   component: NotificationItem,
   tags: ['autodocs'],
   argTypes: {},
-  args: {},
+  args: {
+    notification: {
+      id: '1',
+      title: 'Title 1',
+      description: 'Some Description',
+      userId: '1',
+      href: '#',
+    },
+  },
 };
 
 export default meta;

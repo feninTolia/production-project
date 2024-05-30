@@ -38,7 +38,7 @@ export const createReduxStore = (
       }).concat(rtkApi.middleware),
   });
 
-  // @ts-ignore
+  // @ts-expect-error ????
   store.reducerManager = reducerManager;
 
   return store;

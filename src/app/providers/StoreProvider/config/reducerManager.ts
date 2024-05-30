@@ -8,7 +8,7 @@ import {
   IReducerManager,
   IStateSchema,
   IStateSchemaKey,
-  MountedReducers,
+  // MountedReducers,
 } from './StateSchema';
 
 export function createReducerManager(
@@ -24,7 +24,8 @@ export function createReducerManager(
     reduce: (state: IStateSchema, action: AnyAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state };
-        for (let key of keysToRemove) {
+        for (const key of keysToRemove) {
+          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
           delete state[key];
         }
         keysToRemove = [];
@@ -47,6 +48,7 @@ export function createReducerManager(
         return;
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete reducers[key];
       keysToRemove.push(key);
       combinedReducer = combineReducers(reducers);

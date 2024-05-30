@@ -26,7 +26,7 @@ export enum AppRoutes {
   ADMIN_PANEL = 'admin_panel',
   FORBIDDEN = 'forbidden',
 
-  //last
+  // last
   NOT_FOUND = 'not_found',
 }
 
@@ -41,7 +41,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ADMIN_PANEL]: '/admin',
   [AppRoutes.FORBIDDEN]: '/forbidden',
 
-  //last
+  // last
   [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -85,7 +85,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     authOnly: true,
   },
 
-  //last
+  // last
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,
     element: <NotFoundPage />,

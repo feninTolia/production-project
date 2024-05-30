@@ -25,7 +25,7 @@ export interface IStateSchema {
   scrollSave: IScrollSaveSchema;
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
-  //Async reducers
+  // Async reducers
   loginForm?: ILoginSchema;
   profile?: IProfileSchema;
   articleDetails?: IArticleDetailsSchema;

@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { PageError } from './PageError';
+import { Theme } from '@/shared/constants/theme';
+import { Page } from './Page';
 
-const meta: Meta<typeof PageError> = {
-  title: 'shared/PageError',
-  component: PageError,
+const meta: Meta<typeof Page> = {
+  title: 'shared/Page',
+  component: Page,
   tags: ['autodocs'],
   argTypes: {},
   args: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof PageError>;
+type Story = StoryObj<typeof Page>;
 
 export const Light: Story = {
   args: {},

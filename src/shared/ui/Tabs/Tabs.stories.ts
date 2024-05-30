@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/constants/theme';
 import { Tabs } from './Tabs';
-import { IArticleType } from '@/entities/Article';
 
 const meta: Meta<typeof Tabs> = {
   title: 'shared/Tabs',
@@ -15,7 +14,7 @@ const meta: Meta<typeof Tabs> = {
       { value: 'tab2', content: 'Tab2' },
       { value: 'tab3', content: 'Tab3' },
     ],
-    value: IArticleType.ALL,
+    value: 'ALL',
   },
 };
 

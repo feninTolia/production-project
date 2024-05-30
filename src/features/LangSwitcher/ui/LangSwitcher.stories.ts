@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { Page } from './Page';
+import { Theme } from '@/shared/constants/theme';
+import { LangSwitcher } from './LangSwitcher';
 
-const meta: Meta<typeof Page> = {
-  title: 'shared/Page',
-  component: Page,
+const meta: Meta<typeof LangSwitcher> = {
+  title: 'widgets/LangSwitcher',
+  component: LangSwitcher,
   tags: ['autodocs'],
   argTypes: {},
   args: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof Page>;
+type Story = StoryObj<typeof LangSwitcher>;
 
 export const Light: Story = {
   args: {},

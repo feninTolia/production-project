@@ -1,5 +1,5 @@
+import { PageError } from '@/widgets/PageError';
 import React, { Component, ErrorInfo } from 'react';
-import { PageError } from '@/shared/ui/PageError/PageError';
 
 interface Props {
   children: React.ReactNode;

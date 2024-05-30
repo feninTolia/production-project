@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';
+import { Theme } from '@/shared/constants/theme';
+// eslint-disable-next-line ftoe-plugin/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
 const meta: Meta<typeof ThemeSwitcher> = {
   title: 'widgets/ThemeSwitcher',

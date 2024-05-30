@@ -28,7 +28,7 @@ export const ArticleDetailsPageHeader = memo(
         </AppLink>
         {canEdit && (
           <AppLink
-            to={RoutePath.article_details + article?.id + '/edit'}
+            to={`${RoutePath.article_details + article?.id}/edit`}
             className={cls.editButton}
           >
             <Button theme={ButtonTheme.OUTLINED}>{t('Edit')}</Button>

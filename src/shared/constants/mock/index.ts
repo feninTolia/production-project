@@ -1,3 +1,4 @@
+/* eslint-disable ftoe-plugin/layer-imports */
 import { ArticleBlockTypes, IArticle, IArticleType } from '@/entities/Article';
 import { UserRole } from '@/entities/User';
 

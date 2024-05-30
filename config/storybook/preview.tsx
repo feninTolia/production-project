@@ -1,5 +1,5 @@
+import { Theme } from '@/shared/constants/theme';
 import { Preview } from '@storybook/react';
-import { Theme } from '../../src/app/providers/ThemeProvider';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator';
 import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator';

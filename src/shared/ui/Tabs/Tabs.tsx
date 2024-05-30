@@ -3,7 +3,6 @@ import { classNames } from '@/shared/lib/classNames';
 import { Card, CardTheme } from '../Card/Card';
 import { Button, ButtonTheme } from '../Button/Button';
 import cls from './Tabs.module.scss';
-import { IArticleType } from '@/entities/Article';
 
 export interface ITabItem {
   value: string;
@@ -13,7 +12,7 @@ export interface ITabItem {
 interface ITabsProps {
   className?: string;
   tabs: ITabItem[];
-  value: IArticleType;
+  value: string;
   onTabClick: (tab: ITabItem) => void;
 }
 

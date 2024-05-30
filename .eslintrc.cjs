@@ -7,7 +7,7 @@ module.exports = {
 
   ignorePatterns: [
     '.eslintrc.cjs',
-    // 'config',
+    'config',
     'webpack.config.ts',
     'json-server',
     'scripts',
@@ -63,6 +63,13 @@ module.exports = {
           '**/*.story.*',
           '**/StoreDecorator.tsx',
         ],
+      },
+    ],
+    'ftoe-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
       },
     ],
   },

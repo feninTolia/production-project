@@ -2,7 +2,7 @@ import { getArticleDetailsData } from '@/entities/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';

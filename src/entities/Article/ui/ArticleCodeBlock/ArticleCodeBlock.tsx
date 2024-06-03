@@ -1,5 +1,5 @@
-import { Code } from '@/shared/ui/Code/Code';
-import { Text } from '@/shared/ui/Text/Text';
+import { Code } from '@/shared/ui/Code';
+import { Text } from '@/shared/ui/Text';
 import { memo } from 'react';
 import cls from './ArticleCodeBlock.module.scss';
 

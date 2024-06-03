@@ -7,7 +7,7 @@ import {
   useArticleRatingList,
   useRateArticle,
 } from '../../api/articleRatingApi';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface IArticleRatingProps {
   className?: string;

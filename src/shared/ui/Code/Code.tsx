@@ -11,7 +11,6 @@ interface ICodeProps {
 
 export const Code = memo((props: ICodeProps) => {
   const { className, code } = props;
-
   const handleCopy = useCallback(() => {
     void navigator.clipboard.writeText(code);
   }, [code]);

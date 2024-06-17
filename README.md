@@ -1,107 +1,98 @@
-## Запуск проекта
+# Project launch
 
+```text
+npm install - set dependencies
+npm run start:dev or npm run start:dev:vite - running server + frontend project in dev mode
 ```
-npm install - устанавливаем зависимости
-npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта в dev режиме
-```
 
 ---
 
-## Скрипты
+## Scripts
 
-- `npm run start` - Запуск frontend проекта на webpack dev server
-- `npm run start:vite` - Запуск frontend проекта на vite
-- `npm run start:dev` - Запуск frontend проекта на webpack dev server + backend
-- `npm run start:dev:vite` - Запуск frontend проекта на vite + backend
-- `npm run start:dev:server` - Запуск backend сервера
-- `npm run build:prod` - Сборка в prod режиме
-- `npm run build:dev` - Сборка в dev режиме (не минимизирован)
-- `npm run lint:ts` - Проверка ts файлов линтером
-- `npm run lint:ts:fix` - Исправление ts файлов линтером
-- `npm run lint:scss` - Проверка scss файлов style линтером
-- `npm run lint:scss:fix` - Исправление scss файлов style линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
-- `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
-- `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
-- `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
-- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
-- `npm run storybook` - запуск Storybook
-- `npm run storybook:build` - Сборка storybook билда
-- `npm run prepare` - прекоммит хуки
-- `npm run generate:slice` - Скрипт для генерации FSD слайсов
+- `npm run start` - Start frontend project on webpack dev server
+- `npm run start:vite` - Start frontend project on vite
+- `npm run start:dev` - Start frontend project on webpack dev server + backend
+- `npm run start:dev:vite` - Start frontend project on vite + backend
+- `npm run start:dev:server` - Start backend server
+- `npm run build:prod` - Build in prod mode
+- `npm run build:dev` - Build in dev mode (not minimized)
+- `npm run lint:ts` - Check ts files with linter
+- `npm run lint:ts:fix` - Fix ts files with linter
+- `npm run lint:scss` - Check scss files style by linter
+- `npm run lint:scss:fix` - Fix scss files with linter
+- `npm run test:unit` - Run unit tests with jest
+- `npm run storybook` - Run Storybook
+- `npm run storybook:build` - Build a storybook build
+- `npm run prepare` - pre-commit hooks
+- `npm run generate:slice` - Script for FSD slice generation
 
 ---
 
-## Архитектура проекта
+## Project Architecture
 
-Проект написан в соответствии с методологией Feature sliced design
+The project is written according to Feature sliced design methodology
 
-Ссылка на документацию - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
-
----
-
-## Работа с переводами
-
-В проекте используется библиотека i18next для работы с переводами.
-Файлы с переводами хранятся в public/locales.
-
-Для комфортной работы рекомендуем установить плагин для webstorm/vscode
-
-Документация i18next - [https://react.i18next.com/](https://react.i18next.com/)
+The link to the documentation is - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
 
 ---
 
-## Тесты
+## Working with translations
 
-В проекте используются 4 вида тестов:
+The project uses i18next library to work with translations.
 
-1. Обычные unit тесты на jest - `npm run test:unit`
-2. Тесты на компоненты с React testing library -`npm run test:unit`
-3. Скриншотное тестирование с loki `npm run test:ui`
-4. e2e тестирование с Cypress `npm run test:e2e`
+Files with translations are stored in public/locales.
 
-Подробнее о тестах - [документация тестирование](/docs/tests.md)
+Documentation i18next - [https://react.i18next.com/](https://react.i18next.com/)
 
 ---
 
-## Линтинг
+## Tests
 
-В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
+There are 4 types of tests used in the project:
 
-Также для строгого контроля главных архитектурных принципов
-используется собственный eslint plugin _eslint-plugin-ulbi-tv-plugin_,
-который содержит 3 правила
+1. regular unit tests on jest - `npm run test:unit`.
+2. tests on components with React testing library - `npm run test:unit`.
 
-1. path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
-2. layer-imports - проверяет корректность использования слоев с точки зрения FSD
-   (например widgets нельзя использовать в features и entitites)
-3. public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
+More information about tests - [documentation testing](/docs/tests.md)
 
-##### Запуск линтеров
+---
 
-- `npm run lint:ts` - Проверка ts файлов линтером
-- `npm run lint:ts:fix` - Исправление ts файлов линтером
-- `npm run lint:scss` - Проверка scss файлов style линтером
-- `npm run lint:scss:fix` - Исправление scss файлов style линтером
+## Linting
+
+The project uses eslint to check typescript code and stylelint to check style files.
+
+Also for strict control of the main architectural principles
+The project uses its own eslint plugin _eslint-plugin-ftoe-plugin_,
+which contains 3 rules
+
+1. path-checker - forbids to use absolute imports within one module
+2. layer-imports - checks if layers are used correctly from FSD point of view.
+   (e.g. widgets cannot be used in features and entities)
+3. public-api-imports - allows import from other modules only from public api. Has auto fix
+
+### Run lint
+
+- `npm run lint:ts` - Check ts files with linter
+- `npm run lint:ts:fix` - Fix ts files with linter
+- `npm run lint:scss` - Check scss files with linter
+- `npm run lint:scss:fix` - Fix scss style files with linter
 
 ---
 
 ## Storybook
 
-В проекте для каждого компонента описываются стори-кейсы.
-Запросы на сервер мокаются с помощью storybook-addon-mock.
+In the project, storybooks are described for each component.
+Requests to the server are mocked using storybook-addon-mock.
 
-Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
+A file with storybooks creates next to the component with the extension .stories.tsx
 
-Запустить сторибук можно командой:
+You can run the storybook with the command:
 
-- `npm run storybook`
+- `npm run storybook`.
 
-Подробнее о [Storybook](/docs/storybook.md)
+Read more about [Storybook](/docs/storybook.md)
 
-Пример:
+Example:
 
 ```typescript jsx
 import React from 'react';
@@ -112,71 +103,71 @@ import { Button, ButtonSize, ButtonTheme } from './Button';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Button',
-    component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'shared/Button',
+  component: Button,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: 'Text',
+  children: 'Text',
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
-    children: 'Text',
-    theme: ButtonTheme.CLEAR,
+  children: 'Text',
+  theme: ButtonTheme.CLEAR,
 };
 ```
 
 ---
 
-## Конфигурация проекта
+## Project Configuration
 
-Для разработки проект содержит 2 конфига:
+For development, the project contains 2 configs:
 
-1. Webpack - ./config/build
+1. webpack - ./config/build
 2. vite - vite.config.ts
 
-Оба сборщика адаптированы под основные фичи приложения.
+Both builds are adapted to the main features of the application.
 
-Вся конфигурация хранится в /config
+All configuration is stored in /config
 
 - /config/babel - babel
-- /config/build - конфигурация webpack
-- /config/jest - конфигурация тестовой среды
-- /config/storybook - конфигурация сторибука
+- /config/build - webpack configuration
+- /config/jest - test environment configuration
+- /config/storybook - storybook configuration
 
-В папке `scripts` находятся различные скрипты для рефакторинга\упрощения написания кода\генерации отчетов и тд.
-
----
-
-## CI pipeline и pre commit хуки
-
-Конфигурация github actions находится в /.github/workflows.
-В ci прогоняются все виды тестов, сборка проекта и сторибука, линтинг.
-
-В прекоммит хуках проверяем проект линтерами, конфиг в /.husky
+The `scripts` folder contains various scripts for refactoring/simplifying code writing/report generation etc.
 
 ---
 
-### Работа с данными
+## CI pipeline and pre commit hooks
 
-Взаимодействие с данными осуществляется с помощью redux toolkit.
-По возможности переиспользуемые сущности необходимо нормализовать с помощью EntityAdapter
+The github actions configuration is in /.github/workflows.
+In ci we run all kinds of tests, build project and storybook, linting.
 
-Запросы на сервер отправляются с помощью [RTK query](/src/shared/api/rtkApi.ts)
+In pre commit hooks we check the project with linters, config is in /.husky
 
-Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется
+---
+
+### Working with data
+
+Interacting with data is done using the redux toolkit.
+If possible, overused entities should be normalized using EntityAdapter
+
+Requests to the server are sent using [RTK query](/src/shared/api/rtkApi.ts)
+
+For asynchronous connection of reducers (so as not to pull them into a common bundle) we use
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 
 ---
 
-## Сущности (entities)
+## Entities
 
 - [Article](/src/entities/Article)
 - [Comment](/src/entities/Comment)
@@ -188,7 +179,7 @@ Clear.args = {
 - [Rating](/src/entities/Rating)
 - [User](/src/entities/User)
 
-## Фичи (features)
+## Features
 
 - [addCommentForm](/src/features/addCommentForm)
 - [articleEditForm](/src/features/articleEditForm)

@@ -1,11 +1,14 @@
 import { getArticleDetailsData } from '@/entities/Article';
-import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/constants/router';
+import {
+  getRouteArticles,
+  getRouteArticlesEdit,
+} from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getCanEditArticle } from '../../model/selectors/article';
 import cls from './ArticleDetailsPageHeader.module.scss';
 
@@ -19,16 +22,20 @@ export const ArticleDetailsPageHeader = memo(
     const canEdit = useSelector(getCanEditArticle);
     const article = useSelector(getArticleDetailsData);
 
+    if (!article) {
+      return null;
+    }
+
     return (
       <div
         className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}
       >
-        <AppLink to={RoutePath.articles}>
+        <AppLink to={getRouteArticles()}>
           <Button theme={ButtonTheme.OUTLINED}>{t('Back to list')}</Button>
         </AppLink>
         {canEdit && (
           <AppLink
-            to={`${RoutePath.article_details + article?.id}/edit`}
+            to={getRouteArticlesEdit(article.id)}
             className={cls.editButton}
           >
             <Button theme={ButtonTheme.OUTLINED}>{t('Edit')}</Button>

@@ -6,13 +6,13 @@ import { Icon } from '@/shared/ui/Icon';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { RoutePath } from '@/shared/constants/router';
 import { AppLink } from '@/shared/ui/AppLink';
 import Eye from '@/shared/assets/icons/eye-outlined.svg';
 import { IArticle, IArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import cls from './ArticleListItem.module.scss';
 import { ArticleBlockTypes, IArticlesView } from '../../model/constants';
+import { getRouteArticlesDetails } from '@/shared/constants/router';
 
 interface IArticleListItemProps {
   className?: string;
@@ -37,7 +37,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
     return (
       <AppLink
         target={target}
-        to={RoutePath.article_details + article.id}
+        to={getRouteArticlesDetails(article.id)}
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
       >
         <Card>
@@ -80,7 +80,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
           />
         )}
         <div className={cls.footer}>
-          <AppLink target={target} to={RoutePath.article_details + article.id}>
+          <AppLink target={target} to={getRouteArticlesDetails(article.id)}>
             <Button theme={ButtonTheme.OUTLINED}>{t('Read more... ')}</Button>
           </AppLink>
           {views}

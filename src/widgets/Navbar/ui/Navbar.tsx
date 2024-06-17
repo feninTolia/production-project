@@ -5,13 +5,13 @@ import { NotificationButton } from '@/features/notificationButton';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import cls from './Navbar.module.scss';
+import { getRouteArticlesCreate } from '@/shared/constants/router';
 
 interface INavbarProps {
   className?: string;
@@ -48,7 +48,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
       )}
       {user && (
         <HStack gap="32">
-          <AppLink to={RoutePath.article_create} theme={AppLinkTheme.INVERTED}>
+          <AppLink to={getRouteArticlesCreate()} theme={AppLinkTheme.INVERTED}>
             {t('Create New Article')}
           </AppLink>
 

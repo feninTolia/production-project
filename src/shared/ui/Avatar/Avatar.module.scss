@@ -1,5 +1,6 @@
 .Avatar {
   width: 100px;
-  object-fit: cover;
+  background: var(--inverted-bg-color);
   border-radius: 100%;
+  object-fit: cover;
 }

@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { RoutePath } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -7,6 +6,7 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
 import { IComment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
+import { getRouteProfile } from '@/shared/constants/router';
 
 interface ICommentCardProps {
   className?: string;
@@ -40,7 +40,7 @@ export const CommentCard = memo((props: ICommentCardProps) => {
     <div className={classNames(cls.CommentCard, {}, [className])}>
       <AppLink
         className={cls.userInfoBlock}
-        to={RoutePath.profile + comment.user.id}
+        to={getRouteProfile(comment.user.id)}
       >
         {comment.user.avatar ? (
           <Avatar src={comment.user.avatar ?? ''} alt="avatar" size="30px" />

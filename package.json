@@ -19,7 +19,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
     "generate:slice": "node ./scripts/createSlice",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "rm -rf ./node_modules/.cache"
   },
   "keywords": [],
   "author": "",

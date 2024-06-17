@@ -6,12 +6,6 @@ import { buildBabelLoader } from './loaders/buildBabelLoader';
 export function buildLoaders(options: IBuildOptions): RuleSetRule[] {
   const { isDev } = options;
 
-  // const typescriptLoader = {
-  //   test: /\.tsx?$/,
-  //   use: 'ts-loader',
-  //   exclude: /node_modules/,
-  // };
-
   const cssLoader = buildCssLoader(isDev);
 
   const svgLoader = {

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/constants/theme';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
+import { Theme } from '@/shared/constants/theme';
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-  title: 'entities/Article/ArticleTypeTabs',
+  title: 'features/ArticleTypeTabs',
   component: ArticleTypeTabs,
   tags: ['autodocs'],
   argTypes: {},

@@ -1,7 +1,5 @@
 import {
   ArticleSortField,
-  ArticleSortSelector,
-  ArticleTypeTabs,
   IArticleType,
   IArticlesView,
 } from '@/entities/Article';
@@ -25,6 +23,8 @@ import {
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slice/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 
 interface IArticlesPageFiltersProps {
   className?: string;

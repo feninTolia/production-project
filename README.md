@@ -1,8 +1,8 @@
 # Project launch
 
-```bash
-`npm install` - set dependencies
-npm run start:dev or `npm run start:dev:vite` - running server + frontend project in dev mode
+```text
+npm install - set dependencies
+npm run start:dev or npm run start:dev:vite - running server + frontend project in dev mode
 ```
 
 ---

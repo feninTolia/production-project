@@ -13,6 +13,8 @@ import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import cls from './ArticleListItem.module.scss';
 import { ArticleBlockTypes, IArticlesView } from '../../model/constants';
 import { getRouteArticlesDetails } from '@/shared/constants/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface IArticleListItemProps {
   className?: string;
@@ -42,7 +44,12 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
       >
         <Card>
           <div className={cls.imageWrapper}>
-            <img src={article.img} alt={article.title} className={cls.img} />
+            <AppImage
+              fallback={<Skeleton width="200px" height="200px" />}
+              src={article.img}
+              alt={article.title}
+              className={cls.img}
+            />
             <Text text={article.createdAt} className={cls.date} />
           </div>
           <div className={cls.infoWrapper}>
@@ -71,7 +78,12 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         </div>
         <Text title={article.title} className={cls.title} />
         {types}
-        <img src={article.img} alt={article.title} className={cls.img} />
+        <AppImage
+          fallback={<Skeleton width="100%" height="250px" />}
+          src={article.img}
+          alt={article.title}
+          className={cls.img}
+        />
         {textBlock && (
           <ArticleTextBlock
             paragraphs={textBlock.paragraphs}

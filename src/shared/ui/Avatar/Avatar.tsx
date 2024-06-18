@@ -1,5 +1,8 @@
-import { FC, useMemo, useState } from 'react';
+import Fallback from '@/shared/assets/female-avatar-girl-face-woman-user-9.svg';
 import { classNames } from '@/shared/lib/classNames';
+import { FC, useMemo } from 'react';
+import { AppImage } from '../AppImage';
+import { Skeleton } from '../Skeleton';
 import cls from './Avatar.module.scss';
 
 interface IAvatarProps {
@@ -9,22 +12,18 @@ interface IAvatarProps {
   size?: string;
 }
 
-const placeholderImg =
-  '/src/shared/assets/female-avatar-girl-face-woman-user-9.svg';
-
 export const Avatar: FC<IAvatarProps> = (props) => {
   const { className, src = '', alt, size = '100px' } = props;
-  const [imgSrc, setImgSrc] = useState(src);
 
   const style: React.CSSProperties = useMemo(() => {
     return { width: size, height: size };
   }, [size]);
-  console.log(src);
 
   return (
-    <img
-      src={imgSrc}
-      onError={() => setImgSrc(placeholderImg)}
+    <AppImage
+      fallback={<Skeleton width={size} height={size} borderRadius="100%" />}
+      errorFallback={<Fallback width={size} height={size} />}
+      src={src}
       alt={alt}
       style={style}
       className={classNames(cls.Avatar, {}, [className])}

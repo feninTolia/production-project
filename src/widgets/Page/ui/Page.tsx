@@ -17,8 +17,9 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import cls from './Page.module.scss';
+import { ITestProps } from '@/shared/types/tests';
 
-interface IPageProps {
+interface IPageProps extends ITestProps {
   className?: string;
   onScrollEnd?: () => void;
 }
@@ -57,6 +58,7 @@ export const Page = memo((props: PropsWithChildren<IPageProps>) => {
       className={classNames(cls.Page, {}, [className])}
       ref={wrapperRef}
       onScroll={handleScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}

@@ -1,6 +1,3 @@
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import DateIcon from '@/shared/assets/icons/date.svg';
 import EyeIcon from '@/shared/assets/icons/eye-outlined.svg';
 import { classNames } from '@/shared/lib/classNames';
@@ -12,6 +9,9 @@ import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { ArticleBlockTypes } from '../../model/constants';
 import {
   getArticleDetailsData,

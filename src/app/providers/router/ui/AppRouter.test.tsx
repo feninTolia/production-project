@@ -62,13 +62,13 @@ describe('app/providers/router/AppRouter', () => {
     expect(page).toBeInTheDocument();
   });
 
-  it('should open admin if user has admin role', async () => {
+  it('should open admin page if user has admin role', async () => {
     renderComponent(<AppRouter />, {
       route: getRouteAdmin(),
       initialState: { user: { authData: { roles: [UserRole.ADMIN] } } },
     });
 
-    const page = await screen.findByTestId('ForbiddenPage');
+    const page = await screen.findByTestId('AdminPage');
 
     expect(page).toBeInTheDocument();
   });

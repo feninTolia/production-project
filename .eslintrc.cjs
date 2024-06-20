@@ -9,6 +9,7 @@ module.exports = {
     '.eslintrc.cjs',
     'config',
     'webpack.config.ts',
+    'cypress.config.ts',
     'json-server',
     'scripts',
     'vite.config.ts',
@@ -53,6 +54,7 @@ module.exports = {
     'multiline-ternary': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/promise-function-async': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
     'ftoe-plugin/path-checker': ['error', { alias: '@' }],
     'ftoe-plugin/public-api-imports': [
       'error',

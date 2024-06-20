@@ -24,11 +24,11 @@
     ]
   },
   "include": [
-    // "./config/jest/jest-setup.ts",
     "./config/**/*.tsx",
     "./config/**/*.ts",
     "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "./src/**/*.tsx",
+    "cypress/tsconfig.json"
   ],
   "ts-node": {
     "compilerOptions": {

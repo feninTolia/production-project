@@ -104,7 +104,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
   }
   if (article) {
     content = (
-      <VStack gap="16">
+      <VStack gap="16" data-testid="ArticleDetails">
         <HStack justify="center" max>
           <Avatar
             size="200px"

@@ -20,6 +20,7 @@ export const CommentCard = memo((props: ICommentCardProps) => {
   if (isLoading) {
     return (
       <div
+        data-testid="CommentCard.Loading"
         className={classNames(cls.CommentCard, {}, [className, cls.loading])}
       >
         <div className={cls.userInfoBlock}>
@@ -37,7 +38,10 @@ export const CommentCard = memo((props: ICommentCardProps) => {
   }
 
   return (
-    <div className={classNames(cls.CommentCard, {}, [className])}>
+    <div
+      className={classNames(cls.CommentCard, {}, [className])}
+      data-testid="CommentCard.Content"
+    >
       <AppLink
         className={cls.userInfoBlock}
         to={getRouteProfile(comment.user.id)}

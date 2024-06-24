@@ -18,6 +18,10 @@ describe('User open article details page', () => {
   });
 
   it('should render article recommendation list', () => {
+    cy.intercept('GET', '**/articles/*', {
+      fixture: 'article-details.json',
+    });
+
     cy.getByTestId('ArticleRecommendationsList').should('exist');
   });
 
@@ -29,6 +33,7 @@ describe('User open article details page', () => {
   });
 
   it('should rate the article ', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetails');
     cy.getByTestId('RatingCard').scrollIntoView();
     cy.setRate(3, 'feedback');

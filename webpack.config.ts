@@ -9,7 +9,6 @@ import {
 import path from 'path';
 
 export default (env: IBuildEnv) => {
-  const mode: BuildMode = env.mode || 'development';
   const build = path.resolve(__dirname, 'build');
 
   const paths: IBuildPaths = {
@@ -21,9 +20,12 @@ export default (env: IBuildEnv) => {
     locales: path.resolve(__dirname, 'public', 'locales'),
     buildLocales: path.resolve(build, 'locales'),
   };
+
+  const mode: BuildMode = env?.mode || 'development';
+  const port = env?.port || 3001;
+  const apiUrl = env?.apiUrl || 'http://localhost:8000';
+
   const isDev = mode === 'development';
-  const port = env.port || 3001;
-  const apiUrl = env.apiUrl || 'http://localhost:8000';
 
   const options: IBuildOptions = {
     mode,

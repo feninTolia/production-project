@@ -167,6 +167,25 @@ For asynchronous connection of reducers (so as not to pull them into a common bu
 
 ---
 
+### Working with feature-flags
+
+Only allowed to use feature flags with the help of a helper toggleFeatures
+
+an object with options is passed to it
+
+{
+name: the name of the feature flags,
+on: the function that will work after the feature is switched,
+off: the function that will work after the feature is switched off
+}
+
+To automatically remove a fiche, use the remove-feature.ts script, which takes 2 arguments
+
+1. The name of the fiche-feature to be removed
+2. State (on or off)
+
+---
+
 ## Entities
 
 - [Article](/src/entities/Article)

@@ -1061,6 +1061,10 @@
       "id": "1",
       "password": "123",
       "username": "admin",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI",
       "roles": [
         "ADMIN"
@@ -1073,7 +1077,11 @@
       "avatar": "https://hips.hearstapps.com/hmg-prod/images/jess-hong-netflix-2-65fd9b0847eb3.jpg",
       "roles": [
         "USER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      }
     },
     {
       "id": "3",
@@ -1082,7 +1090,11 @@
       "avatar": "https://kinowar.com/wp-content/uploads/2022/09/%D0%95%D0%B9%D1%81%D0%B0-%D0%93%D0%BE%D0%BD%D1%81%D0%B0%D0%BB%D0%B5%D1%81-%D1%84%D0%BE%D1%82%D0%BE-Eiza-Gonz%C3%A1lez-photo-7.jpg",
       "roles": [
         "MANAGER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      }
     },
     {
       "id": "4",
@@ -1091,7 +1103,11 @@
       "avatar": "https://cdn.village.com.ua/the-village.com.ua/post_image-image/Qwgsb-eOoHDwqNETQzI8RQ.png",
       "roles": [
         "USER"
-      ]
+      ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      }
     }
   ],
   "profile": [
@@ -1099,7 +1115,7 @@
       "id": "1",
       "firstname": "Anatolii",
       "lastname": "Fenin",
-      "age": 25,
+      "age": 26,
       "currency": "UAH",
       "country": "Poland",
       "city": "Kharkiv",

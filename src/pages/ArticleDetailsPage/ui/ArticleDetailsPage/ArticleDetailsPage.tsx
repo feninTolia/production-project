@@ -13,6 +13,7 @@ import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
+import { getFeatureFlags } from '@/shared/lib/features';
 
 interface IArticleDetailsPageProps {
   className?: string;
@@ -21,6 +22,7 @@ interface IArticleDetailsPageProps {
 const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
+  const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
 
   const reducers: ReducersList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -36,7 +38,7 @@ const ArticleDetailsPage = memo((props: IArticleDetailsPageProps) => {
         <VStack gap="32" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

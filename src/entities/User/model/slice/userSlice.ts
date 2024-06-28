@@ -2,6 +2,8 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IUser, IUserSchema } from '../types/userSchema';
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/constants/localStorage';
 import { setFeatureFlags } from '@/shared/lib/features';
+import { saveJsonSettings } from '../services/saveJsonSettings';
+import { IJsonSettings } from '../types/jsonSettings';
 
 const initialState: IUserSchema = {
   _isMounted: false,
@@ -30,6 +32,16 @@ export const userSlice = createSlice({
 
       state._isMounted = true;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(
+      saveJsonSettings.fulfilled,
+      (state, action: PayloadAction<IJsonSettings>) => {
+        if (state.authData) {
+          state.authData.jsonSettings = action.payload;
+        }
+      }
+    );
   },
 });
 

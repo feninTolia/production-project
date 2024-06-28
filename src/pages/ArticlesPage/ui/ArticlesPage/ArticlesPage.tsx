@@ -13,7 +13,6 @@ import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { VStack } from '@/shared/ui/Stack';
-import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
 
 interface IArticlesPageProps {
   className?: string;
@@ -25,8 +24,6 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
   const { className } = props;
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
-  const data = useArticleItemById('1');
-  console.log(data);
 
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams));

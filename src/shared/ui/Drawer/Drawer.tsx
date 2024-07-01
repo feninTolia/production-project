@@ -7,6 +7,7 @@ import {
   AnimationProvider,
   useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 
 interface IDrawerProps {
   className?: string;
@@ -23,6 +24,7 @@ const DrawerContent = memo((props: IDrawerProps) => {
 
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
   const { className, children, onClose, isOpen } = props;
+  const { theme } = useTheme();
 
   const openDrawer = useCallback(() => {
     void api.start({ y: 0, immediate: false });
@@ -79,7 +81,7 @@ const DrawerContent = memo((props: IDrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.Drawer, {}, [className])}>
+      <div className={classNames(cls.Drawer, {}, [className, theme])}>
         <Overlay onClick={close} />
         <Spring.a.div
           className={cls.sheet}
@@ -95,6 +97,7 @@ const DrawerContent = memo((props: IDrawerProps) => {
 
 const DrawerAsync = (props: IDrawerProps) => {
   const { isLoaded } = useAnimationLibs();
+
   if (!isLoaded) {
     return null;
   }

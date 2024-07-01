@@ -13,6 +13,7 @@ import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { VStack } from '@/shared/ui/Stack';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 
 interface IArticlesPageProps {
   className?: string;
@@ -45,6 +46,7 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
           <ArticlesInfiniteList />
         </VStack>
       </Page>
+      <ArticlePageGreeting />
     </DynamicModuleLoader>
   );
 });

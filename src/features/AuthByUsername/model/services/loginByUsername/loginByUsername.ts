@@ -1,7 +1,6 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import { IThunkConfig } from '@/app/providers/StoreProvider';
 import { IUser, userActions } from '@/entities/User';
-import { USER_LOCAL_STORAGE_KEY } from '@/shared/constants/localStorage';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 interface ILoginByUsernameProps {
   username: string;
@@ -20,7 +19,6 @@ export const loginByUsername = createAsyncThunk<
     if (!response.data) {
       throw new Error('No user found');
     }
-    localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     dispatch(userActions.setAuthData(response.data));
 

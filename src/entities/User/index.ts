@@ -1,3 +1,4 @@
+export { initAuthData } from './model/services/initAuthData';
 export { UserRole } from './model/constants';
 export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 export { getUserIsMounted } from './model/selectors/getUserIsMounted/getUserIsMounted';

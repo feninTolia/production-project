@@ -4,6 +4,7 @@ import { USER_LOCAL_STORAGE_KEY } from '@/shared/constants/localStorage';
 import { setFeatureFlags } from '@/shared/lib/features';
 import { saveJsonSettings } from '../services/saveJsonSettings';
 import { IJsonSettings } from '../types/jsonSettings';
+import { initAuthData } from '../services/initAuthData';
 
 const initialState: IUserSchema = {
   _isMounted: false,
@@ -16,21 +17,11 @@ export const userSlice = createSlice({
     setAuthData: (state, action: PayloadAction<IUser>) => {
       state.authData = action.payload;
       setFeatureFlags(action.payload.features);
+      localStorage.setItem(USER_LOCAL_STORAGE_KEY, action.payload.id);
     },
     logout: (state) => {
       localStorage.removeItem(USER_LOCAL_STORAGE_KEY);
       state.authData = undefined;
-    },
-    initAuthData: (state) => {
-      const user = localStorage.getItem(USER_LOCAL_STORAGE_KEY);
-
-      if (user) {
-        const parsedUser = JSON.parse(user) as IUser;
-        state.authData = parsedUser;
-        setFeatureFlags(parsedUser.features);
-      }
-
-      state._isMounted = true;
     },
   },
   extraReducers: (builder) => {
@@ -42,6 +33,17 @@ export const userSlice = createSlice({
         }
       }
     );
+    builder.addCase(
+      initAuthData.fulfilled,
+      (state, action: PayloadAction<IUser>) => {
+        state.authData = action.payload;
+        setFeatureFlags(action.payload.features);
+        state._isMounted = true;
+      }
+    );
+    builder.addCase(initAuthData.rejected, (state) => {
+      state._isMounted = true;
+    });
   },
 });
 

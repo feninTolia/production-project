@@ -1,21 +1,26 @@
-import { getUserIsMounted, userActions } from '@/entities/User';
+import { getUserIsMounted, initAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 import { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
-import { useTheme } from '@/shared/lib/hooks/useTheme';
 
 export const App: FC = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const isUserMounted = useSelector(getUserIsMounted);
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
+    void dispatch(initAuthData());
   }, [dispatch]);
-  console.log('theme in app - ', theme);
+
+  if (!isUserMounted) {
+    return <PageLoader />;
+  }
 
   return (
     <div className={classNames('app', {}, [theme])}>

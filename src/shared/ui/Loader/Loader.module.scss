@@ -3,7 +3,7 @@
   aspect-ratio: 1;
 
   --g: no-repeat
-    radial-gradient(farthest-side, var(--inverted-bg-color) 94%, #0000);
+    radial-gradient(farthest-side, var(--inverted-bg-color, #898989) 94%, #0000);
 
   background:
     var(--g) 0 0,

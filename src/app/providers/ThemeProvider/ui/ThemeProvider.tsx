@@ -13,8 +13,6 @@ export const ThemeProvider = (props: IThemeProviderProps) => {
   const { theme: settingsTheme } = useJsonSettings();
   const [isThemeInited, setThemeInited] = useState(false);
 
-  console.log(settingsTheme);
-
   const [theme, setTheme] = useState<Theme>(
     initialTheme ?? settingsTheme ?? Theme.LIGHT
   );
@@ -24,7 +22,7 @@ export const ThemeProvider = (props: IThemeProviderProps) => {
       setTheme(settingsTheme);
       setThemeInited(true);
     }
-  }, [settingsTheme, isThemeInited]); // !Check
+  }, [settingsTheme, isThemeInited]);
 
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme]);
 

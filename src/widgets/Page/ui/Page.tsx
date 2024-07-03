@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import cls from './Page.module.scss';
 import { ITestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface IPageProps extends ITestProps {
   className?: string;
@@ -55,7 +56,15 @@ export const Page = memo((props: PropsWithChildren<IPageProps>) => {
 
   return (
     <main
-      className={classNames(cls.Page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => cls.PageRedesigned,
+          off: () => cls.Page,
+        }),
+        {},
+        [className]
+      )}
       ref={wrapperRef}
       onScroll={handleScroll}
       data-testid={props['data-testid'] ?? 'Page'}

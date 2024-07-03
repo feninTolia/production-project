@@ -2,16 +2,16 @@ import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
-import { memo, useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { getRouteArticlesCreate } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
-import { getRouteArticlesCreate } from '@/shared/constants/router';
 
 interface INavbarProps {
   className?: string;
@@ -29,32 +29,48 @@ export const Navbar = memo(({ className }: INavbarProps) => {
     setIsAuthModal(false);
   }, []);
 
+  if (user) {
+    return (
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+            <HStack gap="32">
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+        off={
+          <header className={classNames(cls.Navbar, {}, [className])}>
+            <HStack gap="32">
+              <AppLink
+                to={getRouteArticlesCreate()}
+                theme={AppLinkTheme.INVERTED}
+              >
+                {t('Create New Article')}
+              </AppLink>
+
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+      />
+    );
+  }
+
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
-      <Text title="LOGO" theme={TextTheme.INVERTED} />
-      {!user && (
-        <>
-          <Button
-            className={cls.links}
-            onClick={onOpenAuthModal}
-            theme={ButtonTheme.CLEAR_INVERTED}
-          >
-            {t('Login')}
-          </Button>
-          {isAuthModal && (
-            <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />
-          )}
-        </>
-      )}
-      {user && (
-        <HStack gap="32">
-          <AppLink to={getRouteArticlesCreate()} theme={AppLinkTheme.INVERTED}>
-            {t('Create New Article')}
-          </AppLink>
-
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
+      <Button
+        className={cls.links}
+        onClick={onOpenAuthModal}
+        theme={ButtonTheme.CLEAR_INVERTED}
+      >
+        {t('Login')}
+      </Button>
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />
       )}
     </header>
   );

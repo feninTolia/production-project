@@ -1063,14 +1063,16 @@
       "username": "admin",
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "avatar": "https://media.licdn.com/dms/image/D4D03AQHdxl-rZGHKdQ/profile-displayphoto-shrink_800_800/0/1664564414402?e=1718236800&v=beta&t=EnEc6ilJF3_1AmjEnxwGcBGo3rzITChZKHOHBKJzofI",
       "roles": [
         "ADMIN"
       ],
       "jsonSettings": {
-        "articlesPageHasBeenOpen": true
+        "articlesPageHasBeenOpen": true,
+        "theme": "app_pink_theme"
       }
     },
     {
@@ -1086,7 +1088,8 @@
         "isCounterEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_light_theme"
+        "theme": "app_light_theme",
+        "articlesPageHasBeenOpen": true
       }
     },
     {

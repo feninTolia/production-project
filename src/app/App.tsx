@@ -8,6 +8,8 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts';
 
 export const App: FC = () => {
   const { theme } = useTheme();
@@ -23,13 +25,28 @@ export const App: FC = () => {
   }
 
   return (
-    <div className={classNames('app', {}, [theme])}>
-      <Navbar />
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <div className={classNames('app_redesigned', {}, [theme])}>
+          <MainLayout
+            header={<Navbar />}
+            content={<AppRouter />}
+            sidebar={<Sidebar />}
+            toolbar={<div>TOOL</div>}
+          />
+        </div>
+      }
+      off={
+        <div className={classNames('app', {}, [theme])}>
+          <Navbar />
 
-      <div className="content-page">
-        <Sidebar />
-        {isUserMounted && <AppRouter />}
-      </div>
-    </div>
+          <div className="content-page">
+            <Sidebar />
+            <AppRouter />
+          </div>
+        </div>
+      }
+    />
   );
 };

@@ -1,5 +1,5 @@
-import { ListBox } from '@/shared/ui/Popups';
-import { ISelectOption } from '@/shared/ui/Select';
+import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ISelectOption } from '@/shared/ui/deprecated/Select';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Country } from '../../model/constants';

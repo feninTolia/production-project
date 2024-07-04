@@ -4,8 +4,8 @@ import cls from './ArticleViewSelector.module.scss';
 import { IArticlesView } from '@/entities/Article';
 import List from '@/shared/assets/icons/list.svg';
 import Tiled from '@/shared/assets/icons/tiled.svg';
-import { Icon } from '@/shared/ui/Icon';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 
 interface IArticleViewSelectorProps {
   className?: string;

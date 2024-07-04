@@ -1,0 +1,37 @@
+import Fallback from '@/shared/assets/female-avatar-girl-face-woman-user-9.svg';
+import { classNames } from '@/shared/lib/classNames';
+import { FC, useMemo } from 'react';
+import { AppImage } from '../AppImage';
+import { Skeleton } from '../Skeleton';
+import cls from './Avatar.module.scss';
+
+interface IAvatarProps {
+  className?: string;
+  alt: string;
+  src: string;
+  size?: string;
+}
+
+/**
+ * Is obsolete, use new redesigned components.
+ * @deprecated
+ * */
+
+export const Avatar: FC<IAvatarProps> = (props) => {
+  const { className, src = '', alt, size = '100px' } = props;
+
+  const style: React.CSSProperties = useMemo(() => {
+    return { width: size, height: size };
+  }, [size]);
+
+  return (
+    <AppImage
+      fallback={<Skeleton width={size} height={size} borderRadius="100%" />}
+      errorFallback={<Fallback width={size} height={size} />}
+      src={src}
+      alt={alt}
+      style={style}
+      className={classNames(cls.Avatar, {}, [className])}
+    />
+  );
+};

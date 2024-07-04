@@ -2,7 +2,7 @@ import { ArticleList } from '@/entities/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,

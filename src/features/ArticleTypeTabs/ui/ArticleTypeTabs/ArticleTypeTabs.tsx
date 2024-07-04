@@ -1,6 +1,6 @@
 import { IArticleType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames';
-import { ITabItem, Tabs } from '@/shared/ui/Tabs';
+import { ITabItem, Tabs } from '@/shared/ui/deprecated/Tabs';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 

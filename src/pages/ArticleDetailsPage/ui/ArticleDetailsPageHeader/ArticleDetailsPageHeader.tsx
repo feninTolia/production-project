@@ -4,8 +4,8 @@ import {
   getRouteArticlesEdit,
 } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

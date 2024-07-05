@@ -4,23 +4,23 @@
   height: calc(100vh - var(--navbar-height));
   padding: 15px;
   background-color: var(--inverted-bg-color);
-}
 
-.switchers {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+  .switchers {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 
-.collapseBtn {
-  position: absolute;
-  right: calc((var(--font-line-l) * (-1.3)));
-  bottom: calc(var(--font-line-l) * 1.3);
+  .collapseBtn {
+    position: absolute;
+    right: calc((var(--font-line-l) * (-1.3)));
+    bottom: calc(var(--font-line-l) * 1.3);
+  }
 }
 
 .collapsed {
@@ -36,12 +36,55 @@
 }
 
 .SidebarRedesigned {
+  position: relative;
   width: 220px;
   height: 100%;
   background: var(--light-bg-redesigned);
   border-radius: 32px;
+
+  .appLogo {
+    position: absolute;
+    top: 20px;
+
+    // padding-top: 20px;
+  }
+
+  .items {
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  .collapseBtn {
+    position: absolute;
+    right: 10px;
+    bottom: 50%;
+  }
+
+  .switchers {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
-.appLogo {
-  padding-top: 20px;
+.collapsedRedesigned {
+  width: 60px;
+
+  .switchers {
+    flex-direction: column;
+  }
+
+  .items {
+    align-items: center;
+  }
+
+  .collapseBtn {
+    right: 50%;
+    transform: translateX(50%) rotate(180deg);
+  }
 }

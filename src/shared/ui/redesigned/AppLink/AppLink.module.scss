@@ -1,0 +1,17 @@
+.primary {
+  color: var(--text-redesigned);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-redesigned);
+  }
+}
+
+.red {
+  color: var(--cancel-redesigned);
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}

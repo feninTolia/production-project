@@ -1072,7 +1072,7 @@
       ],
       "jsonSettings": {
         "articlesPageHasBeenOpen": true,
-        "theme": "app_pink_theme"
+        "theme": "app_dark_theme"
       }
     },
     {
@@ -1088,7 +1088,7 @@
         "isCounterEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_pink_theme",
+        "theme": "app_dark_theme",
         "articlesPageHasBeenOpen": true
       }
     },

@@ -9,7 +9,7 @@ import { Currency, CurrencySelect } from '@/entities/Currency';
 import { IProfile } from '../../model/types/profile';
 import { Country, CountrySelect } from '@/entities/Country';
 import cls from './ProfileCard.module.scss';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface IProfileCardProps {
   className?: string;

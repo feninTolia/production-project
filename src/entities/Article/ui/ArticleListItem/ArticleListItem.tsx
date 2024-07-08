@@ -13,7 +13,7 @@ import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import cls from './ArticleListItem.module.scss';
 import { ArticleBlockTypes, IArticlesView } from '../../model/constants';
 import { getRouteArticlesDetails } from '@/shared/constants/router';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface IArticleListItemProps {

@@ -6,7 +6,7 @@ import DynamicModuleLoader, {
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';

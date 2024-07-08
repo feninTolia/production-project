@@ -1,7 +1,7 @@
 import Fallback from '@/shared/assets/female-avatar-girl-face-woman-user-9.svg';
 import { classNames } from '@/shared/lib/classNames';
 import { FC, useMemo } from 'react';
-import { AppImage } from '../AppImage';
+import { AppImage } from '../../redesigned/AppImage';
 import { Skeleton } from '../Skeleton';
 import cls from './Avatar.module.scss';
 

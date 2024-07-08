@@ -7,11 +7,6 @@ interface IOverlayProps {
   onClick?: () => void;
 }
 
-/**
- * Is obsolete, use new redesigned components.
- * @deprecated
- * */
-
 export const Overlay = memo((props: IOverlayProps) => {
   const { className, onClick } = props;
 

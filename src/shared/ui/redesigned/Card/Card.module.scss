@@ -1,0 +1,37 @@
+.Card {
+  border-radius: 32px;
+}
+
+.normal {
+  background: var(--dark-bg-redesigned);
+}
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid var(--accent-redesigned);
+}
+
+.clear {
+  background-color: transparent;
+  border: none;
+}
+
+.max {
+  width: 100%;
+}
+
+.gap_0 {
+  padding: 0;
+}
+
+.gap_8 {
+  padding: 8px;
+}
+
+.gap_16 {
+  padding: 16px;
+}
+
+.gap_24 {
+  padding: 24px;
+}

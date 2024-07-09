@@ -14,12 +14,10 @@
 
 .link {
   width: 100%;
-  border-radius: 12px;
   transition: 200ms;
 
   &:hover,
   &:focus {
     filter: brightness(1.4);
-    box-shadow: 2px 2px 5px var(--skeleton-shadow);
   }
 }

@@ -31,7 +31,7 @@ export const NotificationList = memo((props: INotificationListProps) => {
 
   return (
     <VStack
-      gap="16"
+      gap="8"
       max
       className={classNames(cls.NotificationList, {}, [className])}
     >

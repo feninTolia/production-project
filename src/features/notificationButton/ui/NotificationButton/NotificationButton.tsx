@@ -1,9 +1,12 @@
 import { NotificationList } from '@/entities/Notification';
 import Notify from '@/shared/assets/icons/icon-notify.svg';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Drawer } from '@/shared/ui/deprecated/Drawer';
-import { Icon } from '@/shared/ui/deprecated/Icon';
-import { Popover } from '@/shared/ui/deprecated/Popups';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
+import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Popover } from '@/shared/ui/redesigned/Popups';
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 
@@ -23,9 +26,23 @@ export const NotificationButton = memo((props: INotificationButtonProps) => {
   }, []);
 
   const trigger = (
-    <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
-      <Icon Svg={Notify} inverted />
-    </Button>
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={
+        <Icon
+          Svg={Notify}
+          clickable
+          onClick={onOpenDrawer}
+          width={24}
+          height={24}
+        />
+      }
+      off={
+        <Button onClick={onOpenDrawer} theme={ButtonTheme.CLEAR}>
+          <IconDeprecated Svg={Notify} inverted />
+        </Button>
+      }
+    />
   );
 
   return (
@@ -38,9 +55,27 @@ export const NotificationButton = memo((props: INotificationButtonProps) => {
       </MobileView>
 
       <BrowserView>
-        <Popover className={className} direction="bottomLeft" trigger={trigger}>
-          <NotificationList />
-        </Popover>
+        <ToggleFeatures
+          feature={'isAppRedesigned'}
+          on={
+            <Popover
+              className={className}
+              direction="bottomLeft"
+              trigger={trigger}
+            >
+              <NotificationList />
+            </Popover>
+          }
+          off={
+            <PopoverDeprecated
+              className={className}
+              direction="bottomLeft"
+              trigger={trigger}
+            >
+              <NotificationList />
+            </PopoverDeprecated>
+          }
+        />
       </BrowserView>
     </div>
   );

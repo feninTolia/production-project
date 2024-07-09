@@ -1,7 +1,10 @@
-import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames';
-import { Card, CardTheme } from '@/shared/ui/deprecated/Card';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Card as CardDeprecated, CardTheme } from '@/shared/ui/deprecated/Card';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { memo } from 'react';
 import { INotification } from '../../types';
 import cls from './NotificationItem.module.scss';
 
@@ -15,17 +18,36 @@ export const NotificationItem = memo((props: INotificationItemProps) => {
   if (!notification) return null;
 
   const content = (
-    <Card
-      theme={CardTheme.OUTLINED}
-      className={classNames(cls.NotificationItem, {}, [className])}
-    >
-      <Text
-        title={notification.title}
-        text={notification.description}
-        className={cls.text}
-        size={TextSize.S}
-      />
-    </Card>
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={
+        <Card
+          padding="8"
+          variant="clear"
+          className={classNames(cls.NotificationItem, {}, [className])}
+        >
+          <Text
+            title={notification.title}
+            text={notification.description}
+            className={cls.text}
+            size="s"
+          />
+        </Card>
+      }
+      off={
+        <CardDeprecated
+          theme={CardTheme.OUTLINED}
+          className={classNames(cls.NotificationItem, {}, [className])}
+        >
+          <TextDeprecated
+            title={notification.title}
+            text={notification.description}
+            className={cls.text}
+            size={TextSize.S}
+          />
+        </CardDeprecated>
+      }
+    />
   );
 
   if (notification.href) {

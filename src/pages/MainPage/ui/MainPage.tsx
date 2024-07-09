@@ -1,5 +1,6 @@
 import { Counter } from '@/entities/Counter';
 import { getFeatureFlags } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +10,12 @@ const MainPage = () => {
 
   return (
     <Page data-testid="MainPage">
-      <h1>{t('Main page 🦋')}</h1>
+      <Text
+        title={t('Main page 🦋')}
+        text={t('Test')}
+        size="m"
+        variant="accent"
+      />
       {isCounterEnabled && <Counter />}
     </Page>
   );

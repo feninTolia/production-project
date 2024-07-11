@@ -1,6 +1,8 @@
 import { IArticleType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames';
-import { ITabItem, Tabs } from '@/shared/ui/deprecated/Tabs';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ITabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
+import { Tabs } from '@/shared/ui/redesigned/Tabs';
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -33,8 +35,25 @@ export const ArticleTypeTabs = memo((props: IArticleTypeTabsProps) => {
   );
 
   return (
-    <div className={classNames('', {}, [className])}>
-      <Tabs onTabClick={handleTabClick} tabs={typeTabs} value={value} />
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Tabs
+          onTabClick={handleTabClick}
+          tabs={typeTabs}
+          value={value}
+          className={className}
+        />
+      }
+      off={
+        <div className={classNames('', {}, [className])}>
+          <TabsDeprecated
+            onTabClick={handleTabClick}
+            tabs={typeTabs}
+            value={value}
+          />
+        </div>
+      }
+    />
   );
 });

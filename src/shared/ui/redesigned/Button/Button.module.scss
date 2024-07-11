@@ -23,6 +23,11 @@
   border: 1px solid var(--accent-redesigned);
 }
 
+.filled {
+  background: var(--light-bg-redesigned);
+  border-radius: 34px;
+}
+
 .squared {
   padding: 0;
   border-radius: 0;

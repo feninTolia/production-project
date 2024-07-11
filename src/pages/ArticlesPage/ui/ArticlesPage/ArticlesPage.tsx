@@ -1,19 +1,23 @@
-import { memo, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { classNames } from '@/shared/lib/classNames';
 import DynamicModuleLoader, {
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
+import { memo, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { ArticlePageGreeting } from '@/features/articlePageGreeting';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 
 interface IArticlesPageProps {
   className?: string;
@@ -34,18 +38,42 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
+  const content = (
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={
+        <StickyContentLayout
+          right={<FiltersContainer />}
+          left={<ViewSelectorContainer />}
+          content={
+            <Page
+              data-testid="ArticlesPage"
+              className={classNames('', {}, [className])}
+              onScrollEnd={handleLoadNextPart}
+            >
+              <ArticlesInfiniteList />
+            </Page>
+          }
+        />
+      }
+      off={
+        <Page
+          data-testid="ArticlesPage"
+          className={classNames('', {}, [className])}
+          onScrollEnd={handleLoadNextPart}
+        >
+          <VStack gap="16" max>
+            <ArticlesPageFilters />
+            <ArticlesInfiniteList />
+          </VStack>
+        </Page>
+      }
+    />
+  );
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        data-testid="ArticlesPage"
-        className={classNames('', {}, [className])}
-        onScrollEnd={handleLoadNextPart}
-      >
-        <VStack gap="16" max>
-          <ArticlesPageFilters />
-          <ArticlesInfiniteList />
-        </VStack>
-      </Page>
+      {content}
       <ArticlePageGreeting />
     </DynamicModuleLoader>
   );

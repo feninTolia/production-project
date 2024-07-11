@@ -22,3 +22,11 @@
     stroke: var(--secondary-color);
   }
 }
+
+.ArticleViewSelectorRedesigned {
+  color: var(--icon-redesigned);
+
+  .notSelectedRedesigned {
+    color: var(--light-bg-redesigned);
+  }
+}

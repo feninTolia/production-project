@@ -1,5 +1,5 @@
 import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import { Button } from '../../../Button/Button';
@@ -7,24 +7,24 @@ import { HStack } from '../../../../redesigned/Stack';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
 
-export interface ILIstBoxItem {
-  value: string;
+export interface ILIstBoxItem<T extends string> {
+  value: T;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface IListBoxProps {
-  items: ILIstBoxItem[];
+interface IListBoxProps<T extends string> {
+  items: Array<ILIstBoxItem<T>>;
   className?: string;
-  value?: string;
+  value?: T;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange: (value: T) => void;
   label?: string;
   disabled?: boolean;
   direction?: DropdownDirection;
 }
 
-export function ListBox(props: Readonly<IListBoxProps>) {
+export function ListBox<T extends string>(props: IListBoxProps<T>) {
   const {
     items,
     className,
@@ -35,6 +35,10 @@ export function ListBox(props: Readonly<IListBoxProps>) {
     disabled,
     direction = 'bottomRight',
   } = props;
+
+  const selectedValue = useMemo(() => {
+    return items?.find((item) => item.value === value);
+  }, [items, value]);
 
   return (
     <HStack
@@ -52,8 +56,8 @@ export function ListBox(props: Readonly<IListBoxProps>) {
         disabled={disabled}
       >
         <HListBox.Button as="div" className={popupCls.trigger}>
-          <Button variant="outline" disabled={disabled}>
-            {value ?? defaultValue}
+          <Button variant="filled" disabled={disabled}>
+            {selectedValue?.content ?? defaultValue}
           </Button>
         </HListBox.Button>
         <HListBox.Options
@@ -75,6 +79,7 @@ export function ListBox(props: Readonly<IListBoxProps>) {
                     cls.option,
                     {
                       [popupCls.active]: active,
+                      [popupCls.selected]: selected,
                       [popupCls.disabled]: item.disabled,
                     },
                     []

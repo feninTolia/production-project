@@ -9,7 +9,7 @@ import { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { MainLayout } from '@/shared/layouts';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 export const App: FC = () => {
   const { theme } = useTheme();

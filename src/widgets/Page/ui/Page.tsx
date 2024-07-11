@@ -41,7 +41,11 @@ export const Page = memo((props: PropsWithChildren<IPageProps>) => {
 
   useInfiniteScroll({
     triggerRef,
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isArticleRatingEnabled',
+      off: () => wrapperRef,
+      on: () => undefined,
+    }),
     callback: onScrollEnd,
   });
 

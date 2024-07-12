@@ -1,14 +1,32 @@
+.addonLeft,
+.addonRight {
+  display: flex;
+}
+
+.addonLeft svg,
+.addonRight svg {
+  color: var(--hint-redesigned);
+}
+
 .Button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  max-height: 32px;
   padding: 8px 16px;
   color: var(--text-redesigned);
   cursor: pointer;
   border: none;
   outline: none;
-  transition: 150ms ease-in;
 
   &:hover,
   &:focus {
     color: var(--accent-redesigned);
+
+    .addonLeft svg,
+    .addonRight svg {
+      color: var(--accent-redesigned);
+    }
   }
 }
 
@@ -26,26 +44,6 @@
 .filled {
   background: var(--light-bg-redesigned);
   border-radius: 34px;
-}
-
-.squared {
-  padding: 0;
-  border-radius: 0;
-
-  &.m {
-    width: calc(var(--font-line-m) * 1.3);
-    height: calc(var(--font-line-m) * 1.3);
-  }
-
-  &.l {
-    width: calc(var(--font-line-l) * 1.3);
-    height: calc(var(--font-line-l) * 1.3);
-  }
-
-  &.xl {
-    width: calc(var(--font-line-xl) * 1.3);
-    height: calc(var(--font-line-xl) * 1.3);
-  }
 }
 
 .m {

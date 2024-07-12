@@ -1,0 +1,51 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 8px 16px;
+  border: 1px solid var(--icon-redesigned);
+  border-radius: 48px;
+}
+
+.input {
+  width: 100%;
+  color: var(--text-redesigned);
+  text-overflow: ellipsis;
+  background: none;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: var(--hint-redesigned);
+  }
+}
+
+.readonly {
+  opacity: 0.7;
+
+  .input {
+    cursor: default;
+  }
+}
+
+.isFocused {
+  border: 1px solid var(--accent-redesigned);
+
+  .addonLeft svg,
+  .addonRight svg {
+    color: var(--accent-redesigned);
+  }
+}
+
+.withAddonRight {
+  padding-right: 8px;
+}
+
+.withAddonLeft {
+  padding-left: 8px;
+}
+
+.addonLeft,
+.addonRight {
+  display: flex;
+}

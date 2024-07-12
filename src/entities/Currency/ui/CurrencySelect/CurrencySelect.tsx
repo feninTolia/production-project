@@ -1,7 +1,9 @@
-import { Currency } from '../../model/constants';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { Currency } from '../../model/constants';
 
 interface ICurrencySelectProps {
   className?: string;
@@ -36,15 +38,21 @@ export const CurrencySelect: FC<ICurrencySelectProps> = (props) => {
     [onChange]
   );
 
+  const attributes = {
+    className,
+    value,
+    onChange: onChangeHandler,
+    items: currencyOptions,
+    label: t('Set your currency'),
+    disabled: readonly,
+    direction: 'topRight' as const,
+  };
+
   return (
-    <ListBox
-      className={className}
-      value={value}
-      onChange={onChangeHandler}
-      items={currencyOptions}
-      label={t('Set your currency')}
-      disabled={readonly}
-      direction="topRight"
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={<ListBox {...attributes} />}
+      off={<ListBoxDeprecated {...attributes} />}
     />
   );
 };

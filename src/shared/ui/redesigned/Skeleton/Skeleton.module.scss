@@ -1,16 +1,16 @@
 .Skeleton {
   width: 70px;
   height: 70px;
-  background: var(--skeleton-bg);
+  background: var(--dark-bg-redesigned);
   background: linear-gradient(
     97deg,
-    var(--skeleton-bg) 8%,
-    var(--skeleton-color) 18%,
-    var(--skeleton-bg) 33%
+    var(--light-bg-redesigned) 8%,
+    var(--dark-bg-redesigned) 18%,
+    var(--light-bg-redesigned) 33%
   );
   background-size: 200% 100%;
   border-radius: 5px;
-  box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
+  box-shadow: 0 2px 10px 0 var(--light-bg-redesigned);
   animation: 1.5s shine linear infinite;
 }
 

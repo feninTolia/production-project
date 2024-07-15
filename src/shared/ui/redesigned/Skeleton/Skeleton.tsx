@@ -9,11 +9,6 @@ interface ISkeletonProps {
   borderRadius?: string;
 }
 
-/**
- * Is obsolete, use new redesigned components.
- * @deprecated
- * */
-
 export const Skeleton = memo((props: ISkeletonProps) => {
   const { className, width, height, borderRadius } = props;
   const style: CSSProperties = {

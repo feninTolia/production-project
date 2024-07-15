@@ -3,12 +3,12 @@ import { CurrencySelect } from '@/entities/Currency';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Input } from '@/shared/ui/redesigned/Input';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IProfileCardProps } from '../ProfileCard/ProfileCard';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 export const ProfileCardLoaderRedesigned = () => {
   return (

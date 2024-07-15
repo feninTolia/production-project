@@ -8,7 +8,8 @@ describe('Button', () => {
   });
 
   it('should render with clear theme', () => {
-    render(<Button variant="clear"> Test</Button>);
+    render(<Button variant="clear">Test</Button>);
+    screen.debug();
     expect(screen.getByText('Test')).toHaveClass('clear');
   });
 });

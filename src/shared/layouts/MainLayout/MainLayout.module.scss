@@ -2,6 +2,7 @@
   display: grid;
   grid-template-areas: 'sidebar content rightbar';
   grid-template-columns: min-content 1fr 100px;
+  width: 100%;
   min-height: 100vh;
 }
 

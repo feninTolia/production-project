@@ -1,9 +1,11 @@
 .title {
+  overflow: hidden;
   font: var(--font-l-redesigned);
   color: var(--text-redesigned);
 }
 
 .description {
+  overflow: hidden;
   font: var(--font-m-redesigned);
   color: var(--text-redesigned);
 }
@@ -39,20 +41,14 @@
 }
 
 .error {
-  .title {
-    color: var(--cancel-redesigned);
-  }
-
+  .title,
   .description {
     color: var(--cancel-redesigned);
   }
 }
 
 .accent {
-  .title {
-    color: var(--accent-redesigned);
-  }
-
+  .title,
   .description {
     color: var(--accent-redesigned);
   }
@@ -68,4 +64,11 @@
 
 .center {
   text-align: center;
+}
+
+.bold {
+  .title,
+  .description {
+    font-weight: 700;
+  }
 }

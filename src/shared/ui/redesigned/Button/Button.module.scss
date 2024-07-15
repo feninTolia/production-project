@@ -15,6 +15,7 @@
   max-height: 32px;
   padding: 8px 16px;
   color: var(--text-redesigned);
+  white-space: nowrap;
   cursor: pointer;
   border: none;
   outline: none;
@@ -36,9 +37,10 @@
   border: none;
 }
 
-.outlined {
+.outline {
   background: none;
   border: 1px solid var(--accent-redesigned);
+  border-radius: 16px;
 }
 
 .filled {

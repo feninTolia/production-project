@@ -1,0 +1,22 @@
+.BIG {
+  .img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+  }
+
+  .header {
+    margin-bottom: 8px;
+  }
+
+  .textBlock {
+    max-height: 72px;
+    overflow-y: hidden;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+  }
+}

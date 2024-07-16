@@ -29,12 +29,17 @@ export const ArticleListItemRedesigned = memo(
     const { className, article, view, target } = props;
     const { t } = useTranslation();
 
-    const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
       <HStack gap="8">
         <Icon Svg={Eye} className={cls.views} />
         <Text text={String(article.views)} />
       </HStack>
+    );
+    const userInfo = (
+      <>
+        <Avatar size="32px" src={article.user.avatar ?? ''} alt="avatar" />
+        <Text bold text={article.user.username} />
+      </>
     );
 
     if (view === IArticlesView.SMALL) {
@@ -48,21 +53,25 @@ export const ArticleListItemRedesigned = memo(
           ])}
           data-testid="ArticleListItem"
         >
-          <Card>
-            <div className={cls.imageWrapper}>
-              <AppImage
-                fallback={<Skeleton width="200px" height="200px" />}
-                src={article.img}
-                alt={article.title}
-                className={cls.img}
-              />
-              <Text text={article.createdAt} className={cls.date} />
-            </div>
-            <div className={cls.infoWrapper}>
-              {types}
-              {views}
-            </div>
-            <Text text={article.title} className={cls.title} />
+          <Card padding="0">
+            <AppImage
+              fallback={<Skeleton width="250px" height="140px" />}
+              src={article.img}
+              alt={article.title}
+              className={cls.img}
+            />
+            <VStack gap="8" className={cls.cardWrapper}>
+              <VStack justify="between" className={cls.cardContent} max>
+                <Text text={article.title} className={cls.title} size="l" />
+                <HStack max justify="between">
+                  <Text text={article.createdAt} className={cls.date} />
+                  {views}
+                </HStack>
+              </VStack>
+              <HStack gap="4" className={cls.userInfo}>
+                {userInfo}
+              </HStack>
+            </VStack>
           </Card>
         </AppLink>
       );
@@ -83,8 +92,7 @@ export const ArticleListItemRedesigned = memo(
         padding="24"
       >
         <HStack className={cls.header} gap="8">
-          <Avatar size="32px" src={article.user.avatar ?? ''} alt="avatar" />
-          <Text bold text={article.user.username} />
+          {userInfo}
           <Text text={article.createdAt} />
         </HStack>
 

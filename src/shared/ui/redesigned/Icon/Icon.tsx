@@ -2,10 +2,11 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames';
 import cls from './Icon.module.scss';
 
-type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
+type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick' | 'data-testid'>;
 
 interface IIconBaseProps extends SvgProps {
   className?: string;
+  'data-testid': string;
   Svg: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
@@ -27,6 +28,7 @@ export const Icon = memo((props: IconProps) => {
     width = 24,
     height = 24,
     clickable,
+    'data-testid': dataTestId,
     ...otherProps
   } = props;
 
@@ -37,6 +39,7 @@ export const Icon = memo((props: IconProps) => {
       ])}
       width={width}
       height={height}
+      data-testid={dataTestId}
       {...otherProps}
       onClick={undefined}
     />
@@ -48,6 +51,7 @@ export const Icon = memo((props: IconProps) => {
         type="button"
         className={cls.button}
         onClick={props.onClick}
+        data-testid={dataTestId}
         style={{ width, height }}
       >
         {icon}

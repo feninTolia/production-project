@@ -15,10 +15,21 @@
 .content {
   max-width: 60%;
   padding: 35px 20px;
-  background-color: var(--bg-color);
   border-radius: 20px;
   transition: scale 200ms;
   scale: 0.7;
+}
+
+.modalOld {
+  .content {
+    background-color: var(--bg-color);
+  }
+}
+
+.modalNew {
+  .content {
+    background-color: var(--bg-redesigned);
+  }
 }
 
 .opened {

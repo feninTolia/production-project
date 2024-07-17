@@ -2,7 +2,7 @@ import { NotificationList } from '@/entities/Notification';
 import Notify from '@/shared/assets/icons/icon-notify.svg';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Icon } from '@/shared/ui/redesigned/Icon';

@@ -8,6 +8,7 @@ import {
   useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface IDrawerProps {
   className?: string;
@@ -18,11 +19,6 @@ interface IDrawerProps {
 }
 
 const height = window.innerHeight - 100;
-
-/**
- * Is obsolete, use new redesigned components.
- * @deprecated
- * */
 
 const DrawerContent = memo((props: IDrawerProps) => {
   const { Gesture, Spring } = useAnimationLibs();
@@ -86,7 +82,17 @@ const DrawerContent = memo((props: IDrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.Drawer, {}, [className, theme])}>
+      <div
+        className={classNames(cls.Drawer, {}, [
+          className,
+          theme,
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.drawerNew,
+            off: () => cls.drawerOld,
+          }),
+        ])}
+      >
         <Overlay onClick={close} />
         <Spring.a.div
           className={cls.sheet}

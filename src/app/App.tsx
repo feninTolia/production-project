@@ -28,7 +28,7 @@ export const App: FC = () => {
     <ToggleFeatures
       feature="isAppRedesigned"
       on={
-        <div className={classNames('app_redesigned', {}, [theme])}>
+        <div id="app" className={classNames('app_redesigned', {}, [theme])}>
           <MainLayout
             header={<Navbar />}
             content={<AppRouter />}
@@ -38,7 +38,7 @@ export const App: FC = () => {
         </div>
       }
       off={
-        <div className={classNames('app', {}, [theme])}>
+        <div id="app" className={classNames('app', {}, [theme])}>
           <Navbar />
 
           <div className="content-page">

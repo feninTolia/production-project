@@ -5,14 +5,17 @@
 @import 'themes/pink';
 
 body {
-  min-width: fit-content;
-  font: var(--font-m);
-  color: var(--primary-color);
+  // min-width: fit-content;
+  // font: var(--font-m);
+  // color: var(--primary-color);
 }
 
 .app {
   min-width: 380px;
+  min-width: fit-content;
   min-height: 100vh;
+  font: var(--font-m);
+  color: var(--primary-color);
   background-color: var(--bg-color);
 }
 

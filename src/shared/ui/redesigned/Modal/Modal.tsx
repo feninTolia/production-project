@@ -5,6 +5,7 @@ import { Overlay } from '../../redesigned/Overlay/Overlay';
 import { Portal } from '../../redesigned/Portal/Portal';
 import cls from './Modal.module.scss';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface IModalProps {
   className?: string;
@@ -15,11 +16,6 @@ interface IModalProps {
 }
 
 const ANIMATION_DELAY = 150;
-
-/**
- * Is obsolete, use new redesigned components.
- * @deprecated
- * */
 
 export const Modal = (props: IModalProps) => {
   const { className, children, isOpen, onClose, lazy } = props;
@@ -37,8 +33,18 @@ export const Modal = (props: IModalProps) => {
   }
 
   return (
-    <Portal>
-      <div className={classNames(cls.Modal, mods, [className, theme])}>
+    <Portal element={document.getElementById('app') ?? document.body}>
+      <div
+        className={classNames(cls.Modal, mods, [
+          className,
+          theme,
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.modalNew,
+            off: () => cls.modalOld,
+          }),
+        ])}
+      >
         <Overlay className={cls.overlay} onClick={close} />
         <div className={cls.content}>{children}</div>
       </div>

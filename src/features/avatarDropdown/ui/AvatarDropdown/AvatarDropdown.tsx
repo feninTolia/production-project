@@ -9,7 +9,11 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
-import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
+import {
+  getRouteAdmin,
+  getRouteProfile,
+  getRouteSettings,
+} from '@/shared/constants/router';
 import cls from './AvatarDropdown.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -49,6 +53,10 @@ export const AvatarDropdown = memo((props: IAvatarDropdownProps) => {
     {
       content: t('Profile'),
       href: getRouteProfile(user.id),
+    },
+    {
+      content: t('Settings'),
+      href: getRouteSettings(),
     },
     {
       content: t('Logout'),

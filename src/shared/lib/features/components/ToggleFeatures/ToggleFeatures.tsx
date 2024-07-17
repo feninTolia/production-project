@@ -1,6 +1,6 @@
 import { IFeatureFlags } from '@/shared/types/featureFlags';
 import { ReactElement } from 'react';
-import { getFeatureFlag } from '../setGetFeatures';
+import { getFeatureFlag } from '../../lib/setGetFeatures';
 
 interface ITogleFeatureProps {
   feature: keyof IFeatureFlags;

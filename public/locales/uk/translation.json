@@ -13,5 +13,9 @@
   "views": "переглядам",
   "Sort by:": "Сортувати по:",
   "ascend": "зростанню",
-  "descent": "спаданню"
+  "descent": "спаданню",
+  "{{count}} views_zero": "{{count}} переглядів",
+  "{{count}} views_one": "{{count}} перегляд",
+  "{{count}} views_few": "{{count}} перегляди",
+  "{{count}} views_many": "{{count}} переглядів"
 }

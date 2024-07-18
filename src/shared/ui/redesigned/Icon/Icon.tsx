@@ -6,7 +6,7 @@ type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick' | 'data-testid'>;
 
 interface IIconBaseProps extends SvgProps {
   className?: string;
-  'data-testid': string;
+  'data-testid'?: string;
   Svg: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 

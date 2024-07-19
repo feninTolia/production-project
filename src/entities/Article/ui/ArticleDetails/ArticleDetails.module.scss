@@ -9,3 +9,11 @@
 .contentWrapper {
   min-width: 100%;
 }
+
+.redesigned {
+  .articleImg {
+    object-fit: cover;
+    width: 100%;
+    max-height: 420px;
+  }
+}

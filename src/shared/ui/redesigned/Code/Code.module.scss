@@ -1,0 +1,25 @@
+.codeWrapper {
+  position: relative;
+  width: 100%;
+  padding: 18px 32px;
+  background-color: var(--light-bg-redesigned);
+  border-radius: 16px;
+}
+
+.copyBtn {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    stroke-opacity: 0.8;
+  }
+}
+
+.code {
+  width: 100%;
+  overflow-x: scroll;
+  text-overflow: ellipsis;
+}

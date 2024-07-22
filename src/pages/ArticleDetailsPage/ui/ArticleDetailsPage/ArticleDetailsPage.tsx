@@ -13,11 +13,11 @@ import { Page } from '@/widgets/Page';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { articleDetailsPageReducer } from '../../model/slice';
+import { AdditionalDetailsContainer } from '../AdditionalDetailsContainer/AdditionalDetailsContainer';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsContainer } from '../ArticleDetailsContainer/ArticleDetailsContainer';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cls from './ArticleDetailsPage.module.scss';
-import { AdditionalDetailsContainer } from '../AdditionalDetailsContainer/AdditionalDetailsContainer';
 
 interface IArticleDetailsPageProps {
   className?: string;

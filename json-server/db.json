@@ -1054,6 +1054,18 @@
       "userId": "4",
       "text": "Test text",
       "id": "xkONVLj"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "chernivci",
+      "id": "quzcup_"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "These enhancements promise to make JavaScript development more intuitive, powerful, and efficient. As these features progress towards finalization, developers should keep an eye on their development and consider how they can be leveraged to improve future projects.",
+      "id": "8zSjxjp"
     }
   ],
   "users": [
@@ -1085,7 +1097,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_pink_theme",
@@ -1207,6 +1220,12 @@
       "rate": 3,
       "feedback": "wow",
       "id": "EqM3w0m"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "rate": 3,
+      "id": "ONBmxTn"
     }
   ],
   "profile-ratings": [

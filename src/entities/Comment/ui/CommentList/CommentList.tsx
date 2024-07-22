@@ -1,8 +1,10 @@
+import { classNames } from '@/shared/lib/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames';
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text } from '@/shared/ui/deprecated/Text';
 import { IComment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 
@@ -37,7 +39,11 @@ export const CommentList = memo((props: ICommentListProps) => {
           />
         ))
       ) : (
-        <Text text={t('No comments yet')} />
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={<Text text={t('No comments yet')} />}
+          off={<TextDeprecated text={t('No comments yet')} />}
+        />
       )}
     </VStack>
   );

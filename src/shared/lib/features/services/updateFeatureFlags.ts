@@ -13,7 +13,7 @@ export const updateFeatureFlag = createAsyncThunk<
   undefined,
   IMutationArgs,
   IThunkConfig<string>
->('user/saveJsonSettings', async ({ userId, newFeatures }, thunkApi) => {
+>('features /updateFeatureFlag', async ({ userId, newFeatures }, thunkApi) => {
   const { dispatch, rejectWithValue } = thunkApi;
 
   try {

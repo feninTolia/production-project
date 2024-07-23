@@ -8,7 +8,7 @@ export const setFeatureFlags = (newFeatureFlags?: IFeatureFlags) => {
   }
 };
 export const getFeatureFlag = (flag: keyof IFeatureFlags) => {
-  return featureFlags?.[flag] ?? true;
+  return featureFlags?.[flag];
 };
 export const getAllFeatureFlags = () => {
   return featureFlags;

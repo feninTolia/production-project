@@ -53,6 +53,7 @@ const LoginForm = memo((props: ILoginFormProps) => {
     const result = await dispatch(loginByUsername({ username, password }));
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
+      window.location.reload();
     }
   }, [dispatch, onSuccess, password, username]);
 

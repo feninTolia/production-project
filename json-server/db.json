@@ -1098,7 +1098,7 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "theme": "app_pink_theme",
@@ -1115,10 +1115,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_pink_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": "true",
         "settingsPageHasBeenOpen": "true",
         "articlesPageHasBeenOpen": true

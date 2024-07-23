@@ -11,7 +11,7 @@ import DynamicModuleLoader, {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -21,6 +21,8 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ValidateProfileError } from '../../model/constants';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -111,11 +113,23 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
         {validateErrors?.map((valError) => {
           return (
-            <Text
-              text={validateErrorTranslates[valError]}
+            <ToggleFeatures
               key={valError}
-              theme={TextTheme.ERROR}
-              data-testid="EditableProfileCard.Error"
+              feature={'isAppRedesigned'}
+              on={
+                <Text
+                  text={validateErrorTranslates[valError]}
+                  variant="error"
+                  data-testid="EditableProfileCard.Error"
+                />
+              }
+              off={
+                <TextDeprecated
+                  text={validateErrorTranslates[valError]}
+                  theme={TextTheme.ERROR}
+                  data-testid="EditableProfileCard.Error"
+                />
+              }
             />
           );
         })}

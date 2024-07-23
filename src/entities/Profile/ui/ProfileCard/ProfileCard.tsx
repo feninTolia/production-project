@@ -2,7 +2,6 @@ import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import { IProfile } from '../../model/types/profile';
 import { ProfileCardDeprecated } from '../ProfileCardDeprecated/ProfileCardDeprecated';
 import { ProfileCardRedesigned } from '../ProfileCardRedesigned/ProfileCardRedesigned';
@@ -24,9 +23,6 @@ export interface IProfileCardProps {
 }
 
 export const ProfileCard: FC<IProfileCardProps> = (props) => {
-  const { className, isLoading } = props;
-  const { t } = useTranslation('profile');
-
   return (
     <ToggleFeatures
       feature={'isAppRedesigned'}

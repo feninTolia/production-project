@@ -23,9 +23,6 @@
 
 .StarRatingRedesigned {
   .hovered {
-    color: var(--icon-redesigned);
-    fill: var(--icon-redesigned);
-
     & path {
       fill: var(--icon-redesigned);
     }

@@ -8,6 +8,10 @@
   background: var(--inverted-bg-color);
 }
 
+.Navbar:has(.loginButtonRedesigned) {
+  background: unset;
+}
+
 .NavbarRedesigned {
   display: flex;
   gap: 16px;

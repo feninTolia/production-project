@@ -82,7 +82,7 @@ export const ProfileCardRedesigned = memo((props: IProfileCardProps) => {
   }
 
   return (
-    <Card padding="24">
+    <Card padding="24" max>
       <VStack gap="16">
         {data.avatar && (
           <HStack max justify="center">
@@ -91,7 +91,7 @@ export const ProfileCardRedesigned = memo((props: IProfileCardProps) => {
         )}
 
         <HStack gap="32" max>
-          <VStack gap="12">
+          <VStack gap="12" max>
             <Input
               value={data.firstname}
               placeholder={t('Max')}
@@ -123,7 +123,7 @@ export const ProfileCardRedesigned = memo((props: IProfileCardProps) => {
               onChange={onChangeCity}
             />
           </VStack>
-          <VStack gap="12">
+          <VStack gap="12" max>
             <Input
               value={data.username}
               placeholder={t('SuperMax')}

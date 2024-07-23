@@ -16,4 +16,8 @@
   background: none;
   border: none;
   outline: none;
+
+  &:hover {
+    background-color: var(--light-bg-redesigned);
+  }
 }

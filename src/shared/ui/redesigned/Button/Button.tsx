@@ -3,12 +3,13 @@ import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import cls from './Button.module.scss';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
-
+export type ButtonColor = 'default' | 'success' | 'error';
 export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: ButtonVariant;
+  color?: ButtonColor;
   squared?: boolean;
   size?: ButtonSize;
   fullWidth?: boolean;
@@ -21,6 +22,7 @@ export const Button = memo((props: IButtonProps) => {
     className,
     children,
     variant = 'clear',
+    color = 'default',
     squared = false,
     size = 'm',
     disabled,
@@ -41,6 +43,7 @@ export const Button = memo((props: IButtonProps) => {
       className={classNames(cls.Button, mods, [
         className,
         cls[variant],
+        cls[color],
         cls[size],
       ])}
       disabled={disabled}

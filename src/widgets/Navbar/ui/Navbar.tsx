@@ -5,13 +5,21 @@ import { NotificationButton } from '@/features/notificationButton';
 import { getRouteArticlesCreate } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+  AppLink as AppLinkDeprecated,
+  AppLinkTheme,
+} from '@/shared/ui/deprecated/AppLink';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import cls from './Navbar.module.scss';
+// import { AppLink } from '@/shared/ui/redesigned/AppLink';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 interface INavbarProps {
   className?: string;
@@ -36,6 +44,9 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         on={
           <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
             <HStack gap="32">
+              {/* <AppLink to={getRouteArticlesCreate()}>
+                {t('Create New Article')}
+              </AppLink> */}
               <NotificationButton />
               <AvatarDropdown />
             </HStack>
@@ -44,12 +55,12 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         off={
           <header className={classNames(cls.Navbar, {}, [className])}>
             <HStack gap="32">
-              <AppLink
+              <AppLinkDeprecated
                 to={getRouteArticlesCreate()}
                 theme={AppLinkTheme.INVERTED}
               >
                 {t('Create New Article')}
-              </AppLink>
+              </AppLinkDeprecated>
 
               <NotificationButton />
               <AvatarDropdown />
@@ -62,13 +73,28 @@ export const Navbar = memo(({ className }: INavbarProps) => {
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
-      <Button
-        className={cls.links}
-        onClick={onOpenAuthModal}
-        theme={ButtonTheme.CLEAR_INVERTED}
-      >
-        {t('Login')}
-      </Button>
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <Button
+            className={cls.loginButtonRedesigned}
+            onClick={onOpenAuthModal}
+            variant="clear"
+          >
+            {t('Login')}
+          </Button>
+        }
+        off={
+          <ButtonDeprecated
+            className={cls.links}
+            onClick={onOpenAuthModal}
+            theme={ButtonTheme.CLEAR_INVERTED}
+          >
+            {t('Login')}
+          </ButtonDeprecated>
+        }
+      />
+
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />
       )}

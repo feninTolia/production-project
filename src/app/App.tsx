@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 export const App: FC = () => {
   const { theme } = useTheme();
@@ -17,11 +18,25 @@ export const App: FC = () => {
   const isUserMounted = useSelector(getUserIsMounted);
 
   useEffect(() => {
-    void dispatch(initAuthData());
-  }, [dispatch]);
+    if (!isUserMounted) {
+      void dispatch(initAuthData());
+    }
+  }, [dispatch, isUserMounted]);
 
   if (!isUserMounted) {
-    return <PageLoader />;
+    console.log('in');
+
+    return (
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    );
   }
 
   return (

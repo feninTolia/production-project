@@ -8,12 +8,13 @@ import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
-import { FC, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { AppRouter } from './providers/router';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { AppRouter } from './providers/router';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
-export const App: FC = () => {
+const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const isUserMounted = useSelector(getUserIsMounted);
@@ -64,4 +65,6 @@ export const App: FC = () => {
       }
     />
   );
-};
+});
+
+export default withTheme(App);

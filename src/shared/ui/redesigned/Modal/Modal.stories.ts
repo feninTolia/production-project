@@ -3,9 +3,10 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import { Modal } from './Modal';
 import { fn } from '@storybook/test';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof Modal> = {
-  title: 'shared/Modal',
+  title: 'shared/redesigned/Modal',
   component: Modal,
   tags: ['autodocs'],
   argTypes: {},
@@ -15,6 +16,7 @@ const meta: Meta<typeof Modal> = {
     children:
       'Lorem ipsum dolor sit consectetur, provident e libero quia o. Lore ipsum dolor sit consectetur, provident e libero quia o. Lorem ipsum dolor sit consectetur, provident e libero quia o. Lorem ipsum dolor sit consectetur, provident e libero quia o.',
   },
+  decorators: [NewDesignDecorator],
 };
 
 export default meta;

@@ -2,12 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import { Tabs } from './Tabs';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof Tabs> = {
-  title: 'shared/Tabs',
+  title: 'shared/redesigned/Tabs',
   component: Tabs,
   tags: ['autodocs'],
   argTypes: {},
+  decorators: [NewDesignDecorator],
   args: {
     tabs: [
       { value: 'ALL', content: 'ALL' },

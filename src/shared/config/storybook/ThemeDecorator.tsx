@@ -6,9 +6,9 @@ import { StoryFn } from '@storybook/react';
 export const ThemeDecorator = (theme: Theme) => (Story: StoryFn) => {
   return (
     <ThemeProvider initialTheme={theme}>
-      <body className={`app ${theme}`}>
+      <div className={`app ${theme}`}>
         <Story />
-      </body>
+      </div>
     </ThemeProvider>
   );
 };

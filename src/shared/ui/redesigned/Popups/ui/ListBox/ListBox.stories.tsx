@@ -2,12 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import { ListBox } from './ListBox';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof ListBox> = {
-  title: 'shared/ListBox',
+  title: 'shared/redesigned/ListBox',
   component: ListBox,
   tags: ['autodocs'],
   decorators: [
+    NewDesignDecorator,
     (Story) => (
       <div style={{ padding: 200, width: 'fit-content' }}>
         <Story />

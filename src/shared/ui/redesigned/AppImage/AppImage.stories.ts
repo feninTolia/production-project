@@ -2,13 +2,15 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import { AppImage } from './AppImage';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof AppImage> = {
-  title: 'all/AppImage',
+  title: 'shared/redesigned/AppImage',
   component: AppImage,
   tags: ['autodocs'],
   argTypes: {},
   args: {},
+  decorators: [NewDesignDecorator],
 };
 
 export default meta;

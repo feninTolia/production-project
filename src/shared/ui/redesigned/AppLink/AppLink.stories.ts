@@ -3,9 +3,10 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import { AppLink } from './AppLink';
 import { fn } from '@storybook/test';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof AppLink> = {
-  title: 'shared/AppLink',
+  title: 'shared/redesigned/AppLink',
   component: AppLink,
   tags: ['autodocs'],
   argTypes: {},
@@ -13,6 +14,7 @@ const meta: Meta<typeof AppLink> = {
     children: 'test Link',
     to: '/',
   },
+  decorators: [NewDesignDecorator],
 };
 
 export default meta;

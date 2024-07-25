@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Button } from './Button';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof Button> = {
-  title: 'shared/Button',
+  title: 'shared/redesigned/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {},
   args: { onClick: fn() },
+  decorators: [NewDesignDecorator],
 };
 
 export default meta;
@@ -16,6 +18,7 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   args: {
     children: 'Button',
+    variant: 'filled',
   },
 };
 

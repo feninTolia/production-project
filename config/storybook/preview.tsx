@@ -5,6 +5,7 @@ import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator';
+import { FeatureFlagsDecorator } from '@/shared/config/storybook/FeatureFlagsDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -22,6 +23,7 @@ const preview: Preview = {
     StoreDecorator({}),
     RouterDecorator,
     SuspenseDecorator,
+    FeatureFlagsDecorator({}),
   ],
 };
 

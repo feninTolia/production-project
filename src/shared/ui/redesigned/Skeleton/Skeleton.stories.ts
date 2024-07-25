@@ -2,13 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import { Skeleton } from './Skeleton';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof Skeleton> = {
-  title: 'shared/Skeleton',
+  title: 'shared/redesigned/Skeleton',
   component: Skeleton,
   tags: ['autodocs'],
   argTypes: {},
   args: {},
+  decorators: [NewDesignDecorator],
 };
 
 export default meta;

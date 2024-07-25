@@ -3,12 +3,14 @@ import { Theme } from '@/shared/constants/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Button } from '../../../Button/Button';
 import { Dropdown } from './Dropdown';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'shared/Dropdown',
+  title: 'shared/redesigned/Dropdown',
   component: Dropdown,
   tags: ['autodocs'],
   decorators: [
+    NewDesignDecorator,
     (Story) => (
       <div style={{ padding: 200, width: 'fit-content' }}>
         <Story />

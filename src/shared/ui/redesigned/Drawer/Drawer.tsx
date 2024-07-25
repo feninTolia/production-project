@@ -1,14 +1,14 @@
-import { ReactNode, memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames';
-import { Overlay } from '../../redesigned/Overlay/Overlay';
-import { Portal } from '../../redesigned/Portal/Portal';
-import cls from './Drawer.module.scss';
 import {
   AnimationProvider,
   useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
-import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { toggleFeatures } from '@/shared/lib/features';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
+import { ReactNode, memo, useCallback, useEffect } from 'react';
+import { Overlay } from '../../redesigned/Overlay/Overlay';
+import { Portal } from '../../redesigned/Portal/Portal';
+import cls from './Drawer.module.scss';
 
 interface IDrawerProps {
   className?: string;

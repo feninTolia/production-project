@@ -2,13 +2,15 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from './Text';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof Text> = {
-  title: 'shared/Text',
+  title: 'shared/redesigned/Text',
   component: Text,
   tags: ['autodocs'],
   argTypes: {},
   args: {},
+  decorators: [NewDesignDecorator],
 };
 
 export default meta;

@@ -2,12 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/constants/theme';
 import { Flex } from './Flex';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator';
 
 const meta: Meta<typeof Flex> = {
-  title: 'shared/Flex',
+  title: 'shared/redesigned/Flex',
   component: Flex,
   tags: ['autodocs'],
   argTypes: {},
+  decorators: [NewDesignDecorator],
   args: {
     children: (
       <>

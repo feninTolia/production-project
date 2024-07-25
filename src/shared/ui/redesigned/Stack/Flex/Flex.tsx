@@ -43,6 +43,7 @@ export interface IFlexProps extends DivProps {
   direction: FlexDirection;
   gap?: FlexGap;
   max?: boolean;
+  maxHeight?: boolean;
 }
 
 export const Flex = (props: IFlexProps) => {
@@ -54,6 +55,7 @@ export const Flex = (props: IFlexProps) => {
     direction = 'row',
     gap,
     max,
+    maxHeight,
     ...otherProps
   } = props;
 
@@ -67,6 +69,7 @@ export const Flex = (props: IFlexProps) => {
 
   const mods = {
     [cls.max]: max,
+    [cls.maxHeight]: maxHeight,
   };
   return (
     <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>

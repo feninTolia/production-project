@@ -1,5 +1,8 @@
 import { getUserIsMounted, initAuthData } from '@/entities/User';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 import { classNames } from '@/shared/lib/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { Navbar } from '@/widgets/Navbar';
@@ -8,14 +11,13 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { MainLayout } from '@/shared/layouts/MainLayout';
-import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 export const App: FC = () => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const isUserMounted = useSelector(getUserIsMounted);
+  const Toolbar = useAppToolbar();
 
   useEffect(() => {
     if (!isUserMounted) {
@@ -24,8 +26,6 @@ export const App: FC = () => {
   }, [dispatch, isUserMounted]);
 
   if (!isUserMounted) {
-    console.log('in');
-
     return (
       <ToggleFeatures
         feature={'isAppRedesigned'}
@@ -48,7 +48,7 @@ export const App: FC = () => {
             header={<Navbar />}
             content={<AppRouter />}
             sidebar={<Sidebar />}
-            toolbar={<div>TOOL</div>}
+            toolbar={Toolbar}
           />
         </div>
       }

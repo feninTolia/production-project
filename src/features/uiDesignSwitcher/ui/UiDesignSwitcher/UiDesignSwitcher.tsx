@@ -1,10 +1,12 @@
 import { getUserAuthData } from '@/entities/User';
-import { updateFeatureFlag } from '@/shared/lib/features';
+import { ToggleFeatures, updateFeatureFlag } from '@/shared/lib/features';
 import { getFeatureFlag } from '@/shared/lib/features/lib/setGetFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -42,16 +44,34 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
   );
 
   return (
-    <HStack gap="16">
-      <Text text="Interface variant" />
-      <ListBox
-        className={className}
-        items={items}
-        // eslint-disable-next-line @typescript-eslint/no-misused-promises
-        onChange={onChange}
-        value={isAppRedesigned ? 'new' : 'old'}
-      />
-      {isLoading && <Text text="Loading..." />}
-    </HStack>
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={
+        <HStack gap="16">
+          <Text text="Interface variant" />
+          <ListBox
+            className={className}
+            items={items}
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onChange={onChange}
+            value={isAppRedesigned ? 'new' : 'old'}
+          />
+          {isLoading && <Text text="Loading..." />}
+        </HStack>
+      }
+      off={
+        <HStack gap="16">
+          <TextDeprecated text="Interface variant" />
+          <ListBoxDeprecated
+            className={className}
+            items={items}
+            // eslint-disable-next-line @typescript-eslint/no-misused-promises
+            onChange={onChange}
+            value={isAppRedesigned ? 'new' : 'old'}
+          />
+          {isLoading && <TextDeprecated text="Loading..." />}
+        </HStack>
+      }
+    />
   );
 });

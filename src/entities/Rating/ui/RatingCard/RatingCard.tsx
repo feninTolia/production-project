@@ -97,7 +97,6 @@ export const RatingCard = memo((props: IRatingCardProps) => {
 
   const content = (
     <>
-      {' '}
       <VStack gap="16" align="center">
         <ToggleFeatures
           feature={'isAppRedesigned'}

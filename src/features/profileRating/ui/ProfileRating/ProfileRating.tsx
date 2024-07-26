@@ -1,6 +1,6 @@
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -8,6 +8,8 @@ import {
   useProfileRatingList,
   useRateProfile,
 } from '../../api/profileRatingApi';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface IProfileRatingProps {
   className?: string;
@@ -58,7 +60,13 @@ const ProfileRating = memo((props: IProfileRatingProps) => {
   );
 
   if (isLoading) {
-    return <Skeleton width="100%" height="100px" />;
+    return (
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={<Skeleton width="100%" height="150px" borderRadius="32px" />}
+        off={<SkeletonDeprecated width="100%" height="100px" />}
+      />
+    );
   }
 
   const rating = data?.[0];

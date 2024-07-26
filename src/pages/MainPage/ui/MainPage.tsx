@@ -1,6 +1,7 @@
 import { Counter } from '@/entities/Counter';
-import { getFeatureFlags } from '@/shared/lib/features';
+import { getFeatureFlags, ToggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/redesigned/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Page } from '@/widgets/Page';
 import { useTranslation } from 'react-i18next';
 
@@ -10,12 +11,19 @@ const MainPage = () => {
 
   return (
     <Page data-testid="MainPage">
-      <Text
-        title={t('Main page 🦋')}
-        text={t('Test')}
-        size="m"
-        variant="accent"
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <Text
+            title={t('Main page 🦋')}
+            text={t('Test')}
+            size="m"
+            variant="accent"
+          />
+        }
+        off={<TextDeprecated title={t('Main page 🦋')} text={t('Test')} />}
       />
+
       {isCounterEnabled && <Counter />}
     </Page>
   );

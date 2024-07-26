@@ -1,16 +1,16 @@
 import { ArticleSortField, IArticleType } from '@/entities/Article';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
 import { classNames } from '@/shared/lib/classNames';
 import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticlesFilters.module.scss';
-import SearchIcon from '@/shared/assets/icons/SearchIcon.svg';
-import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface IArticlesFiltersProps {
   className?: string;

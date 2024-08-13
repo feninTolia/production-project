@@ -1,4 +1,3 @@
-import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { classNames } from '@/shared/lib/classNames';
 import DynamicModuleLoader, {
@@ -74,7 +73,7 @@ const ArticlesPage = memo((props: IArticlesPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       {content}
-      <ArticlePageGreeting />
+      {/* <ArticlePageGreeting /> */}
     </DynamicModuleLoader>
   );
 });
